@@ -6,27 +6,12 @@
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "@vx/axis": "0.0.179",
-    "@vx/curve": "0.0.165",
-    "@vx/gradient": "0.0.165",
-    "@vx/grid": "0.0.180",
-    "@vx/group": "0.0.170",
-    "@vx/heatmap": "0.0.179",
-    "@vx/mock-data": "0.0.179",
-    "@vx/responsive": "0.0.179",
-    "@vx/scale": "0.0.179",
-    "@vx/shape": "0.0.179",
-    "@vx/text": "0.0.179",
     "@zeit/next-css": "^1.0.1",
-    "aos": "^2.3.4",
-    "d3-array": "^2.0.2",
     "moment": "^2.22.2",
     "next": "7.0.2",
     "prop-types": "^15.6.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
-    "reactstrap": "^6.5.0",
-    "save": "^2.3.2",
     "victory": "^31.0.1"
   }
 }
