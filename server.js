@@ -6,6 +6,7 @@ const {
   sweepsByMonth,
   reportsByMonth,
   targetAreaSweepsByMonth,
+  targetAreaReportsByMonth,
   // reportsAggressiveCount,
   // campEstimatesByMonth,
 } = require('./utils/serverUtils');
@@ -20,6 +21,7 @@ app.prepare().then(() => {
     res.sweepsByMonth = sweepsByMonth;
     res.reportsByMonth = reportsByMonth;
     res.targetAreaSweepsByMonth = targetAreaSweepsByMonth;
+    res.targetAreaReportsByMonth = targetAreaReportsByMonth;
     // res.reportsAggressiveCount = reportsAggressiveCount;
     // res.campEstimatesByMonth = campEstimatesByMonth;
     handle(req, res);
