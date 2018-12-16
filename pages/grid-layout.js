@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Head from '../components/head';
-import './styles.css';
+import './grid-styles.css';
 import BarChart from '../components/BarChart';
+import ScatterPlot from '../components/ScatterPlot';
 
 
 class Layout extends Component {
@@ -17,13 +18,13 @@ class Layout extends Component {
         <div className="container">
           <div className="grid-one">
             <div className="item-1 content">
-              <h3> Headline (i.e) Magnitude of Urban Campsite Sweeps</h3>
+              <h3> Reports Data (full) </h3>
             </div>
             <div className="item-2 content">
               <h5>When enough hardships collide - you lose your job, healthcare, food stamps, housing, leave a domestic violence situation - you end up with no place to go. Before you can get back on your feet, you need to survive- to sleep, eat, bathe, and seek shelter.</h5>
             </div>
             <div className="item-3 content">
-              <BarChart data={Object.entries(this.props.sweepsByMonth)} />
+              <ScatterPlot data={Object.entries(this.props.reportsByMonth)} />
             </div>
             <div className="item-4 content">
               <h5>When enough hardships collide - you lose your job, healthcare, food stamps, housing, leave a domestic violence situation - you end up with no place to go. Before you can get back on your feet, you need to survive- to sleep, eat, bathe, and seek shelter.</h5>
@@ -32,11 +33,13 @@ class Layout extends Component {
             <div className="item-5 content">5</div>
           </div>
           <div className="grid-two">
-            <div className="item-1 content">1</div>
+            <div className="item-1 content">Reports Data Target Area</div>
             <div className="item-2 content">2</div>
             <div className="item-3 content">
 
-              <BarChart data={Object.entries(this.props.targetAreaSweepsByMonth)} />
+
+              <ScatterPlot data={Object.entries(this.props.targetAreaReportsByMonth)} />
+
 
             </div>
             <div className="item-4 content">4</div>
@@ -129,16 +132,19 @@ Layout.getInitialProps = ({ req, res }) => {
   return {
     sweepsByMonth: res.sweepsByMonth,
     targetAreaSweepsByMonth: res.targetAreaSweepsByMonth,
-    heatmapsStructureSweeps,
     reportsByMonth: res.reportsByMonth,
-
-    // heatmapsStructureReports,
-    // // reportsAggressiveCount: res.reportsAggressiveCount,
-    // // campEstimatesByMonth: res.campEstimatesByMonth,
-    // campsiteEstimatesSweepsData,
-    // BubbleScatterData,
-    // BubbleScatterDataSweeps,
+    targetAreaReportsByMonth: res.targetAreaReportsByMonth,
   };
 };
+
+
+// heatmapsStructureReports,
+// // reportsAggressiveCount: res.reportsAggressiveCount,
+// // campEstimatesByMonth: res.campEstimatesByMonth,
+// campsiteEstimatesSweepsData,
+// BubbleScatterData,
+//     // BubbleScatterDataSweeps,
+//   };
+// };
 
 export default Layout;
