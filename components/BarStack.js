@@ -1,31 +1,61 @@
 import React from 'react';
-import { VictoryStack, VictoryBar, VictoryAxis, VictoryChart } from 'victory';
+import {
+  VictoryStack, VictoryBar, VictoryAxis, VictoryChart, VictoryLabel,
+} from 'victory';
+
+import theme from './victoryTheme';
 
 const BarStack = props => (
   <div>
 
-    <VictoryChart>
+    <VictoryChart
+      domainPadding={3}
+      theme={theme}
+    >
+
+      <VictoryAxis
+        crossAxis
+        label="Date"
+        fixLabelOverlap
+
+        tickLabelComponent={(
+          <VictoryLabel
+            angle={30}
+            textAnchor="start"
+            verticalAnchor="end"
+          />
+        )}
+      />
+      <VictoryAxis
+        fixLabelOverlap
+        dependentAxis
+        crossAxis
+        label="Unique campsites and campsite reports"
+      />
 
       <VictoryStack
-        colorScale={["tomato", "orange", "gold"]}
+        colorScale={['tomato', 'orange', 'gold']}
       >
 
         <VictoryBar
           data={props.data}
+          x="Week"
+          y="estimatedSites"
         />
         <VictoryBar
-          data={props.dataSweeps}
+          data={props.data}
+          x="Week"
+          y="totalReports"
+        />
+
+        <VictoryBar
+          data={props.sweepsData}
+          x={0}
+          y={1}
         />
       </VictoryStack>
-      <VictoryAxis dependentAxis
-        tickFormat={(tick) => `${tick}%`}
-      />
-      <VictoryAxis
-        tickValues={['March 2017', 'April 2018']}
 
-      />
-
-    </VictoryChart >
+    </VictoryChart>
   </div>
 
 

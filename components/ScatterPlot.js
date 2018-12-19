@@ -4,7 +4,7 @@ import {
 } from 'victory';
 import theme from './victoryTheme';
 
-const ScatterPlot = props => (
+const ScatterPlot = ({ data, x, y }) => (
   <VictoryChart
     theme={theme}
   >
@@ -30,9 +30,9 @@ const ScatterPlot = props => (
 
     <VictoryScatter
       size={2}
-      data={props.data}
-      x={0}
-      y={1}
+      data={data}
+      x={x}
+      y={y}
     />
   </VictoryChart>
 );

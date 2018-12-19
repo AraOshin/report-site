@@ -2,6 +2,7 @@ const moment = require('moment');
 const { sweepsData } = require('../data-store/sweeps');
 // const { reportsDataNew } = require('../data-store/campsite_reports_final');
 const { reportsData } = require('../data-store/campsiteReports');
+const { uniqueSites } = require('../data-store/uniqueSites');
 
 const targetNeighborhoods = ['KERNS', 'BUCKMAN', 'HOSFORD-ABERNETHY'];
 
@@ -11,7 +12,7 @@ const targetAreaSweepsData = sweepsData.features
 const targetAreaReportsData = reportsData.features
   .filter(feature => targetNeighborhoods.includes(feature.NAME));
 
-console.log(targetAreaReportsData);
+
 const getDates = (someArray, dateKey) => someArray
   .map(feature => feature.properties[dateKey])
   .sort((a, b) => (moment(a).isAfter(moment(b)) ? 1 : -1));
@@ -29,6 +30,19 @@ const reportsDates = getDatesJson(reportsData.features, 'Date.Created.New');
 
 const targetAreaReportsDates = getDatesJson(targetAreaReportsData, 'Date.Created.New');
 
+const uniqueSitesData = uniqueSites.features
+  .map(feature => ({
+    Week: moment(feature.Date).format('MM/DD/YY'),
+    estimatedSites: feature.EstimatedSites,
+    totalReports: feature.TotalReports,
+  }))
+  .sort(
+    (a, b) => (moment(a.Week)
+      .isAfter(moment(b.Week))
+      ? 1
+      : -1
+    ),
+  );
 
 // returns object keyed by month (format: Jan 18) with  value of total sweeps for that month
 
@@ -39,6 +53,14 @@ const getMonthlyCount = someArray => someArray.reduce((acc, curr) => {
   return acc;
 }, {});
 
+const yearlyReports = reportsDates.reduce((acc, curr) => {
+  const key = moment(curr).format('YY');
+  if (acc[key]) acc[key]++;
+  else acc[key] = 1;
+  return acc;
+}, {});
+
+
 const sweepsByMonth = getMonthlyCount(sweepsDates);
 const targetAreaSweepsByMonth = getMonthlyCount(targetAreaSweepsDates);
 
@@ -46,25 +68,27 @@ const reportsByMonth = getMonthlyCount(reportsDates);
 const targetAreaReportsByMonth = getMonthlyCount(targetAreaReportsDates);
 
 
+const reportsAggressive = reportsData.features.map(feature => feature['Repeated.instances.of.overly.aggressive.behavior.from.campers']);
+
+const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
+  const key = curr;
+  if (acc[key]) acc[key]++;
+  else acc[key] = 1;
+  return acc;
+}, {});
+
+console.log(reportsAggressiveCount);
+
 module.exports = {
   sweepsByMonth,
   reportsByMonth,
   targetAreaSweepsByMonth,
   targetAreaReportsByMonth,
-
-  // reportsAggressiveCount,
+  reportsAggressiveCount,
+  yearlyReports,
+  uniqueSitesData,
   // campEstimatesByMonth,
 };
-
-
-// const reportsAggressive = reportsData.features.map(feature => feature.properties['Excessive trash and/or biohazards']);
-
-// const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
-//   const key = curr;
-//   if (acc[key]) acc[key]++;
-//   else acc[key] = 1;
-//   return acc;
-// }, {});
 
 
 // const campEstimatesWeekSum = campsiteEstimatesData.reduce((acc, curr) => {

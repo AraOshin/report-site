@@ -16,7 +16,7 @@ const secondary = colors[1];
 // Typography
 const sansSerif = 'sans-serif';
 const letterSpacing = 'normal';
-const fontSize = 6;
+const fontSize = 4;
 
 // Layout
 const baseProps = {

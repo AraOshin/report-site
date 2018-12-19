@@ -1,0 +1,151 @@
+body, html, #__next, .site { 
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: white;
+  }
+
+
+/* .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  transition:  all ..2s ease-in-out;
+} */
+/* 
+.scrolled-content {
+} */
+
+
+.main-container{
+}
+
+
+.splash {
+  width: 100vw;
+  height: 624px;
+  overflow-x: hidden;
+  background: #388EDB
+}
+
+
+.splash-top{
+  height: 359px;
+  background-image: url('/static/newskyline.jpeg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  border-radius: 0% 0% 100% 100% / 0% 0% 60% 60%;
+  width: 110%;
+  position: relative;
+  left: -5%;
+}
+
+.splash-banner{
+  background: #388EDB;
+  height: 265px;
+}
+
+.splash-footer{
+  height: 75px;
+  background: #012A42;
+  display: flex;
+  align-items: flex-end;
+  transition-property: height, align-items;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+.scrolled-splash-footer{
+  height: 65px;
+  align-items: center;
+}
+
+.splash-footer-icons{
+  display: flex;
+  width: 75%;
+  align-items: flex-end;
+  justify-content: space-between;
+  color:  #388EDB;
+  font-size: 3em;
+  padding-left: 15%;
+  padding-right: 15%;
+  transition-property: font-size, align-items;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+.scrolled-splash-footer-icons{
+  font-size: 36px;
+  align-items: center;
+
+}
+
+.splash-footer-icon{
+  display:flex;
+  flex-direction: column;
+  border-radius: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  width: 95px;
+  height: 100px; 
+  overflow: visible;
+  background: #012A42;
+  transition-property: justify-content, align-items, background;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+
+.scrolled-splash-footer-icon{
+
+  flex-direction: row;
+  background: none;
+  justify-content: center;
+  align-items: center;
+  height: 65px; 
+  overflow: hidden;
+
+ 
+}
+
+.icon-label {
+  width: 300px;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+}
+
+
+.report {
+  height: 400px;
+  background: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 8.5%;
+  padding-right: 8.5%;
+}
+
+.about-banner {
+  /* height: 50%; */
+  height: 450px;
+  width: 100vw;
+  padding-left: 8.5%;
+  padding-right: 8.5%;
+  background:  #388EDB;
+}
+
+.footer {
+  /* height: 50%; */
+  height: 300px;
+  width: 100vw;
+  background: #012A42;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+
+.responsive-img { 
+  height: 100%;
+  width: auto;
+}

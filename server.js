@@ -7,8 +7,9 @@ const {
   reportsByMonth,
   targetAreaSweepsByMonth,
   targetAreaReportsByMonth,
-  // reportsAggressiveCount,
-  // campEstimatesByMonth,
+  reportsAggressiveCount,
+  yearlyReports,
+  uniqueSitesData,
 } = require('./utils/serverUtils');
 
 
@@ -22,8 +23,10 @@ app.prepare().then(() => {
     res.reportsByMonth = reportsByMonth;
     res.targetAreaSweepsByMonth = targetAreaSweepsByMonth;
     res.targetAreaReportsByMonth = targetAreaReportsByMonth;
-    // res.reportsAggressiveCount = reportsAggressiveCount;
-    // res.campEstimatesByMonth = campEstimatesByMonth;
+    res.yearlyReports = yearlyReports;
+
+    res.reportsAggressiveCount = reportsAggressiveCount;
+    res.uniqueSitesData = uniqueSitesData;
     handle(req, res);
   }).listen(3000, (err) => {
     if (err) throw err;
