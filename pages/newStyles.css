@@ -2,33 +2,26 @@ body, html, #__next, .site {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   background: white;
-  }
-
-
-/* .content {
-  display: grid;
-  grid-template-columns: 1fr;
-  transition:  all ..2s ease-in-out;
-} */
-/* 
-.scrolled-content {
-} */
-
-
-.main-container{
+  width: 100vw;
+  max-width:100%;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 .splash {
   width: 100vw;
-  height: 624px;
-  overflow-x: hidden;
-  background: #388EDB
+  max-width:100%;
+  height: calc(100vh - 10vh);
+  background: #388EDB;
+  overflow-x: hidden; 
+
 }
 
 
 .splash-top{
-  height: 359px;
+  height: 55%;
   background-image: url('/static/newskyline.jpeg'); 
   background-size: cover; 
   background-position: center;
@@ -37,17 +30,17 @@ body, html, #__next, .site {
   border-radius: 0% 0% 100% 100% / 0% 0% 60% 60%;
   width: 110%;
   position: relative;
-  left: -5%;
+  left: -5%; 
 }
 
 .splash-banner{
   background: #388EDB;
-  height: 265px;
+  height: 45%;
 }
 
 .splash-footer{
-  height: 75px;
-  background: #012A42;
+  height: 10vh;
+  background: #0B2B40;
   display: flex;
   align-items: flex-end;
   transition-property: height, align-items;
@@ -56,26 +49,27 @@ body, html, #__next, .site {
 }
 
 .scrolled-splash-footer{
-  height: 65px;
+  height: 5vw;
   align-items: center;
 }
 
 .splash-footer-icons{
   display: flex;
-  width: 75%;
+  height: 6vw;
+  width: 100%;
   align-items: flex-end;
   justify-content: space-between;
   color:  #388EDB;
-  font-size: 3em;
   padding-left: 15%;
   padding-right: 15%;
+  font-size: 7vh;
   transition-property: font-size, align-items;
   transition-duration: .2s;
   transition-timing-function: linear;
 }
 
 .scrolled-splash-footer-icons{
-  font-size: 36px;
+  font-size: 2.8vw;
   align-items: center;
 
 }
@@ -86,10 +80,11 @@ body, html, #__next, .site {
   border-radius: 50%;
   justify-content: flex-end;
   align-items: center;
-  width: 95px;
-  height: 100px; 
+  width: 110px;
+  min-width: 110px;
+  height: 16vh; 
   overflow: visible;
-  background: #012A42;
+  background: #0B2B40;
   transition-property: justify-content, align-items, background;
   transition-duration: .2s;
   transition-timing-function: linear;
@@ -102,46 +97,57 @@ body, html, #__next, .site {
   background: none;
   justify-content: center;
   align-items: center;
-  height: 65px; 
+  height: 5vw; 
   overflow: hidden;
 
  
 }
 
 .icon-label {
-  width: 300px;
+  width: 300%;
   text-align: center;
-  font-size: 20px;
-  padding: 5px;
+  font-size: 3.2vh;
+  padding: 7.5%;
 }
 
+.report-container {
+  width: 100vw;
+  max-width:100%;
+  background: white;
+
+}
 
 .report {
-  height: 400px;
-  background: white;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 4.8vw;
+  padding-bottom: 4.8vw;
   padding-left: 8.5%;
   padding-right: 8.5%;
 }
 
+
+.section-one {
+  height: 37vw;
+}
+
+.section-banner {
+  height: 26vw;
+  background: #0B2B40;
+}
+
+.section-two {
+  height: 72vw;
+}
+
+
+
 .about-banner {
-  /* height: 50%; */
-  height: 450px;
-  width: 100vw;
-  padding-left: 8.5%;
-  padding-right: 8.5%;
+  height: 42vw;
   background:  #388EDB;
 }
 
 .footer {
-  /* height: 50%; */
-  height: 300px;
-  width: 100vw;
-  background: #012A42;
-  justify-content: center;
-  display: flex;
-  align-items: center;
+  height: 21vw;
+  background: #0B2B40;
 }
 
 
@@ -149,3 +155,56 @@ body, html, #__next, .site {
   height: 100%;
   width: auto;
 }
+
+
+.report-text{
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  color: #0B2B40;
+}
+.heading{
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  font-family: 'Leto', sans-serif;
+  color: #2FD89F;
+  font-weight: 300;
+  padding-bottom: 3.3vw;
+
+}
+.sub-heading{
+  font-size: 1.8vw; 
+  font-family: 'Leto', sans-serif;
+  /* padding-bottom: 1.8vw;  */
+}
+
+.spacer-line{
+  border-bottom: #2FD89F solid 3px;
+  width: 3vw;
+
+  margin-top: 1.7vw;
+}
+
+.paragraph{
+  padding-top: 1.7vw;
+  font-size: 1.1vw; 
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2vw;
+}
+
+.report-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3.8vw;
+}
+
+.report-vis{
+  border: grey solid 4px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.read-more{
+    padding-top: 1.7vw;
+}
+
