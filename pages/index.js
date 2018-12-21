@@ -6,7 +6,6 @@ import PieChart from '../components/PieChart';
 import ScatterPlot from '../components/ScatterPlot';
 import ScatterSize from '../components/ScatterSize';
 import BarStack from '../components/BarStack';
-import './styles.css';
 
 
 const Home = ({
@@ -82,7 +81,7 @@ const Home = ({
         sweeps={Object.entries(sweepsByMonth)}
       />
     </div>
-  );
+);
 
 Home.getInitialProps = ({ req, res }) => {
   const sweepsData = Object.entries(res.sweepsByMonth);

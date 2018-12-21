@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Head from '../components/head';
 import './newStyles.css';
 import { StickyContainer, Sticky } from 'react-sticky';
+import SectionOne from '../components/Layout/SectionOne';
 
 const shouldTransform = distanceFromTop => distanceFromTop <= 50;
 const getIconClassName = transform => `splash-footer-icon ${transform && 'scrolled-splash-footer-icon'}`;
@@ -54,37 +55,12 @@ const Layout = () => (
       </Sticky>
 
 
-      <div
-        className="report-container"
-      >
+      <div className="report-container">
         <div className="tab campsites">
-          <div className="report section-one">
-            <div className="report-text heading">
-              Policing Report
-            </div>
+
+          <SectionOne />
 
 
-            <div className="report-columns">
-              <div>
-                <div className="report-text sub-heading">
-                  Policing Subsection One Title
-                </div>
-                <div className="spacer-line" />
-                <div className="paragraph">
-                  This diagram is a comparison of requests to services for policing in 2017 and 2018.
-                </div>
-                <div className="paragraph">
-                  Pellentesque habitant hyperlink style senectus et netus et malesuada fames ac turpis egestas. Cras velit elit, finibus eget mattis sit amet, maximus vitae urna. Duis a nulla arcu. Aenean ut magna sed tellus vehicula euismod. Vivamus aliquam in diam sit amet feugiat. Curabitur id neque sit amet libero aliquet aliquam tempor dapibus felis.
-
-                </div>
-
-              </div>
-
-              <div className="report-vis" />
-            </div>
-
-
-          </div>
           <div className="section-banner" />
           <div className="report section-two" />
           <div className="section-banner" />

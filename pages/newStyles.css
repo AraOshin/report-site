@@ -68,6 +68,13 @@ body, html, #__next, .site {
   transition-timing-function: linear;
 }
 
+@media (max-width: 1100px) {
+  .splash-footer-icons {
+    padding-left: 8%;
+    padding-right: 8%; 
+  } 
+}
+
 .scrolled-splash-footer-icons{
   font-size: 2.8vw;
   align-items: center;
@@ -80,9 +87,9 @@ body, html, #__next, .site {
   border-radius: 50%;
   justify-content: flex-end;
   align-items: center;
-  width: 110px;
-  min-width: 110px;
-  height: 16vh; 
+  width: 15vh;
+  min-width: 15vh;
+  height: 15vh; 
   overflow: visible;
   background: #0B2B40;
   transition-property: justify-content, align-items, background;
@@ -114,20 +121,28 @@ body, html, #__next, .site {
   width: 100vw;
   max-width:100%;
   background: white;
-
+  /* display: flex;
+  justify-content: center; */
 }
 
 .report {
-  padding-top: 4.8vw;
-  padding-bottom: 4.8vw;
-  padding-left: 8.5%;
-  padding-right: 8.5%;
+
+  padding-left: 6%;
+  padding-right: 6%;
+
 }
 
 
 .section-one {
   height: 37vw;
+  padding-top: 4.8vw;
+  padding-bottom: 4.8vw;
 }
+/* 
+.inner-section-one {
+  max-width: 900px;
+} */
+
 
 .section-banner {
   height: 26vw;
@@ -168,11 +183,13 @@ body, html, #__next, .site {
   font-family: 'Leto', sans-serif;
   color: #2FD89F;
   font-weight: 300;
-  padding-bottom: 3.3vw;
+  /* padding-bottom: 3.3vw; */
+  padding-bottom: 2vw;
 
 }
 .sub-heading{
-  font-size: 1.8vw; 
+  /* font-size: 1.8vw;  */
+  font-size: 1.6vw;
   font-family: 'Leto', sans-serif;
   /* padding-bottom: 1.8vw;  */
 }
@@ -180,21 +197,48 @@ body, html, #__next, .site {
 .spacer-line{
   border-bottom: #2FD89F solid 3px;
   width: 3vw;
-
   margin-top: 1.7vw;
+}
+
+.paragraph-container{
+  display:grid;
+  height: 200px;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  overflow: hidden; 
 }
 
 .paragraph{
   padding-top: 1.7vw;
-  font-size: 1.1vw; 
+  /* font-size: 1.1vw;  */
+  font-size: 1vw;
   font-family: 'Open Sans', sans-serif;
   line-height: 2vw;
+  min-width: 100%;
+
+
+
+  
+  
 }
 
 .report-columns{
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3.8vw;
+  grid-column-gap: 3.8vw; */
+
+  display:flex;
+
+}
+
+.text-col{
+  width: 50%;
+  padding-right: 1vw;
+}
+
+.vis-col{
+  width: 50%;
+  padding-left: 1vw;
 }
 
 .report-vis{
@@ -204,7 +248,13 @@ body, html, #__next, .site {
   height: 100%;
 }
 
-.read-more{
-    padding-top: 1.7vw;
+.read-more-button{
+  margin-top: 1.7vw;
+  border: grey solid 4px;
+  border-radius: 1px;
+  width: 8vw;
+  height: 2vw;
+
 }
+
 
