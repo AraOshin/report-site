@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from '../components/head';
+import Layout from '../components/Layout/Layout';
+import '../styles/styles.css';
+
 import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 import ScatterPlot from '../components/ScatterPlot';
@@ -19,69 +22,29 @@ const Home = ({
 }) => (
     <div>
       <Head title="Home" />
-
-
-      <div className="splash">
-        <div className="splash-top" />
-        <div className="splash-banner" />
-        <div className="splash-footer">
-          <div className="splash-footer-icons">
-            <div className="splash-footer-icon">
-              <i className="fas fa-campground" />
-              <span className="text-stuff"> campsites </span>
-            </div>
-            <div className="splash-footer-icon">
-              <i className="fas fa-taxi" />
-              <span className="text-stuff"> policing </span>
-            </div>
-            <div className="splash-footer-icon">
-              <i className="fas fa-tint" />
-              <span className="text-stuff"> Hygiene Access </span>
-            </div>
-            <div className="splash-footer-icon">
-              <i className="fas fa-trash" />
-              <div className="text-stuff">Waste Disposal Access</div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-      <div className="report-one">
-        <div className="sticky-header" />
-        <div className="report-one-sub-one">
-          <div className="report-half-viz">
-            <ScatterSize />
-          </div>
-        </div>
-        <div className="report-one-banner" />
-        <div className="report-one-sub-two" />
-      </div>
-      <div className="site-bottom">
-        <div className="about-banner">
-          <img className="responsive-img" src="/static/about-img.png" />
-        </div>
-        <div className="footer"> Footer </div>
-      </div>
-
       {console.log('log==========', uniqueSitesData)}
-      <BarChart data={Object.entries(sweepsByMonth)} />
-      <BarChart data={Object.entries(targetAreaSweepsByMonth)} />
-      <ScatterPlot data={Object.entries(reportsByMonth)} x={0} y={1} />
-      <ScatterPlot data={Object.entries(targetAreaReportsByMonth)} x={0} y={1} />
-      <PieChart data={Object.entries(reportsAggressiveCount)} />
-      <ScatterSize data={Object.entries(reportsAggressiveCount)} />
-      <ScatterPlot
-        data={uniqueSitesData}
-        x="Week"
-        y="estimatedSites"
-      />
-      <BarStack
-        data={uniqueSitesData}
-        sweeps={Object.entries(sweepsByMonth)}
-      />
+      <Layout />
     </div>
 );
+
+
+{ /* <BarChart data={Object.entries(sweepsByMonth)} />
+    <BarChart data={Object.entries(targetAreaSweepsByMonth)} />
+    <ScatterPlot data={Object.entries(reportsByMonth)} x={0} y={1} />
+    <ScatterPlot data={Object.entries(targetAreaReportsByMonth)} x={0} y={1} />
+    <PieChart data={Object.entries(reportsAggressiveCount)} />
+    <ScatterSize data={Object.entries(reportsAggressiveCount)} />
+    <ScatterPlot
+      data={uniqueSitesData}
+      x="Week"
+      y="estimatedSites"
+    />
+    <BarStack
+      data={uniqueSitesData}
+      sweeps={Object.entries(sweepsByMonth)}
+    />
+    </div >
+); */ }
 
 Home.getInitialProps = ({ req, res }) => {
   const sweepsData = Object.entries(res.sweepsByMonth);
