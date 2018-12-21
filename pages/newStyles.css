@@ -121,8 +121,6 @@ body, html, #__next, .site {
   width: 100vw;
   max-width:100%;
   background: white;
-  /* display: flex;
-  justify-content: center; */
 }
 
 .report {
@@ -137,16 +135,20 @@ body, html, #__next, .site {
   height: 37vw;
   padding-top: 4.8vw;
   padding-bottom: 4.8vw;
+  display: flex;
+  justify-content: center;
 }
-/* 
-.inner-section-one {
-  max-width: 900px;
-} */
+
+.inner-section {
+  max-width: 1200px;
+}
 
 
 .section-banner {
   height: 26vw;
   background: #0B2B40;
+  display: flex;
+  justify-content: center;
 }
 
 .section-two {

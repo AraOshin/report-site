@@ -6,7 +6,7 @@ const SectionOne = () => (
 
   <div className="report section-one">
 
-    <div className="inner-section-one">
+    <div className="inner-section">
 
       <div className="report-text heading">
         Policing Report

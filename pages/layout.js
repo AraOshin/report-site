@@ -61,7 +61,12 @@ const Layout = () => (
           <SectionOne />
 
 
-          <div className="section-banner" />
+  <div className="section-banner">
+    <div className="inner-section" />
+  </div>
+
+
+          
           <div className="report section-two" />
           <div className="section-banner" />
         </div>
