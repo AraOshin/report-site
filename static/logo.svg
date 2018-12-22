@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="265px" height="58px" viewBox="0 0 265 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Neighbor2Neighbor_logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Neighbor2Neighbor_logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="Neighbor2Neighbor" font-family="DINCondensed-Bold, DIN Condensed" font-size="44" font-style="condensed" font-weight="bold">
+            <tspan x="0.456" y="45" fill="#2FD89F">Neighbor</tspan>
+            <tspan x="124.316" y="45" fill="#FFFFFF">2</tspan>
+            <tspan x="140.684" y="45" fill="#2FD89F">Neighbor</tspan>
+        </text>
+        <path d="M0,1.5 L112,1.5" id="Line-18-Copy-11" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+        <path d="M146,57.5 L258,57.5" id="Line-18-Copy-12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+    </g>
+</svg>

@@ -20,24 +20,47 @@ body, html, #__next, .site {
 .splash-heading {
   width:940px;
   padding: 20px;
-  font-size: 42px;
+  font-size: 30pt;
   text-transform: uppercase;
   text-align: center;
   font-family: 'Leto', sans-serif;
   line-height: 64px;
-  letter-spacing: 1px;
+  letter-spacing: .2px;
   color: white;
   font-weight: 300;
+}
+
+
+.splash-sub-heading {
+  width:940px;
+  font-size: 16pt;
+  text-align: center;
+  font-family: 'Leto', sans-serif;
+  line-height: 30px;
+  letter-spacing: .2px;
+  color: white;
+  font-weight: 300;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  margin-bottom: 2%;
 }
 
 .splash-background {
   height: 100%;
   background-image: url('/static/splash_background_desktop.png'); 
   background-size: cover; 
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 2.5fr 2.5fr;
+  justify-items: center;
+  padding-top: 5%;
+}
+
+.logo{
+  width: 265px;
+  height: 58px;
 }
 
 /* .splash-top{
@@ -263,7 +286,6 @@ body, html, #__next, .site {
 .paragraph{
   padding-top: 20px;
   font-size: 16pt;
-
   font-family: 'Open Sans', sans-serif;
   line-height: 30px;
 
