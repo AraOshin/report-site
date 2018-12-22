@@ -13,16 +13,18 @@ const getIconClassName = transform => `splash-footer-icon ${transform ? ' scroll
 
 class IconBar extends Component {
   state = {
-    active: '',
+    active: 'campsites',
   }
 
   componentDidMount = () => {
     const getpositionFromBottom = id => document.getElementById(id).getBoundingClientRect().bottom;
 
-    this.campsites = getpositionFromBottom('campsites-section');
-    this.police = getpositionFromBottom('police-section');
-    this.hygiene = getpositionFromBottom('hygiene-section');
-    this.waste = getpositionFromBottom('waste-section');
+    const getpositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
+
+    this.campsites = getpositionFromTop('campsites-section');
+    this.police = getpositionFromTop('police-section') - 1 ;
+    this.hygiene = getpositionFromTop('hygiene-section') - 1;
+    this.waste = getpositionFromTop('waste-section') - 1;
     console.log(this.campsites, this.police, this.hygiene, this.waste);
   }
 
@@ -31,9 +33,8 @@ class IconBar extends Component {
     // { console.log(sectionPosition); }
     const sectionPosition = document.getElementById(id).offsetTop;
 
-    const print = document.getElementById(id).offsetTop
 
-      + console.log('rect bottom', Math.round(rect.bottom));
+    +console.log('rect bottom', Math.round(rect.bottom));
     console.log(this.state.positionFromBottom);
 
     window.scrollTo({
@@ -42,32 +43,47 @@ class IconBar extends Component {
     });
   }
 
-  handleScroll = (sectionPosition, distanceFromTop) => {
-    sectionPosition;
+  handleScroll = (distanceFromTop) => {
+    const reportScrollPosition = Math.abs(Math.round(distanceFromTop) - this.campsites);
+
+    let activeSection = 'campsites';
+
+    if (reportScrollPosition >= this.waste) {
+      activeSection = 'waste';
+    } else if (reportScrollPosition >= this.hygiene) {
+      activeSection = 'hygiene';
+    } else if (reportScrollPosition >= this.police) {
+      activeSection = 'police';
+    } else {
+      activeSection = 'campsites';
+    }
+
+    if (this.state.active !== activeSection) this.setState({ active: activeSection });
   }
+
 
   render() {
     return (
       <Sticky>
         {({ style, distanceFromTop, ...rest }) => {
           const transform = shouldTransform(distanceFromTop);
+          this.handleScroll(distanceFromTop);
 
           return (
             <div
               style={style}
               className={`splash-footer ${transform && 'scrolled-splash-footer'}`}
-              onScroll={this.handleScroll}
             >
-              {/* {console.log('distance from bottom', Math.round(rest.distanceFromBottom) + 75)} */}
               <div className={`splash-footer-icons ${transform ? 'scrolled-splash-footer-icons' : ''}`}>
                 <div
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('campsites-section')}
                 >
-                  <Tent />
+                  <Tent fill={this.state.active === 'campsites' ? '#2FD89F' : '#4992D5'} />
                   {!transform && (
                     <span
                       className="icon-label"
+                      style={{ color: '#2FD89F' }}
                     >
                       Campsites
                     </span>
@@ -79,7 +95,7 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('police-section')}
                 >
-                  <Police />
+                  <Police fill={this.state.active === 'police' ? '#2FD89F' : '#4992D5'} />
                   {!transform && <span className="icon-label"> Police Action </span>}
                   <div className="icon-line" />
                 </div>
@@ -87,7 +103,7 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('hygiene-section')}
                 >
-                  <Hygine />
+                  <Hygine fill={this.state.active === 'hygiene' ? '#2FD89F' : '#4992D5'} />
                   {!transform && <span className="icon-label"> Hygiene Access </span>}
                   <div className="icon-line" />
                 </div>
@@ -95,7 +111,7 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('waste-section')}
                 >
-                  <Waste />
+                  <Waste fill={this.state.active === 'waste' ? '#2FD89F' : '#4992D5'} />
                   {!transform && <span className="icon-label">Waste Disposal Access</span>}
                   <div className="icon-line" />
                 </div>

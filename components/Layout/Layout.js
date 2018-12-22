@@ -29,19 +29,19 @@ const Layout = () => (
           <div className="section-banner" />
         </div>
         <div className="tab police-action" id="police-section">
-          <div className="report section-one" />
+          <div className="report section-one"> police </div>
           <div className="section-banner" />
           <div className="report section-two" />
           <div className="section-banner" />
         </div>
         <div className="tab hygiene-access" id="hygiene-section">
-          <div className="report section-one" />
+          <div className="report section-one"> hygiene </div>
           <div className="section-banner" />
           <div className="report section-two" />
           <div className="section-banner" />
         </div>
         <div className="tab waste-disposal" id="waste-section">
-          <div className="report section-one" />
+        <div className="report section-one"> waste </div>
           <div className="section-banner" />
           <div className="report section-two" />
         </div>
