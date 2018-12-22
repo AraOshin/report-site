@@ -10,6 +10,7 @@ import ScatterPlot from '../components/ScatterPlot';
 import ScatterSize from '../components/ScatterSize';
 import BarStack from '../components/BarStack';
 
+export const DataContext = React.createContext({});
 
 const Home = ({
   targetAreaSweepsByMonth,
@@ -22,8 +23,12 @@ const Home = ({
 }) => (
     <div>
       <Head title="Home" />
-      {console.log('log==========', uniqueSitesData)}
-      <Layout />
+      {/* {console.log('log==========', uniqueSitesData)} */}
+      <DataContext.Provider value={Object.entries(sweepsByMonth)}>
+        <Layout />
+      </DataContext.Provider>
+
+
     </div>
 );
 

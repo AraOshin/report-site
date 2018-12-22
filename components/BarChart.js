@@ -3,37 +3,48 @@ import {
   VictoryBar, VictoryAxis, VictoryChart, VictoryLabel,
 } from 'victory';
 import theme from './victoryTheme';
+import { DataContext } from '../pages/index';
 
-const BarChart = props => (
-  <VictoryChart
-    domainPadding={3}
-    theme={theme}
-  >
-    <VictoryAxis
-      crossAxis
-      label="Date"
-      fixLabelOverlap
 
-      tickLabelComponent={(
-        <VictoryLabel
-          angle={30}
-          textAnchor="start"
-          verticalAnchor="end"
+const BarChart = () => (
+
+  <DataContext.Consumer>
+    {data => (
+      <VictoryChart
+        domainPadding={3}
+        theme={theme}
+      >
+        <VictoryAxis
+          crossAxis
+          label="Date"
+          fixLabelOverlap
+
+          tickLabelComponent={(
+            <VictoryLabel
+              angle={30}
+              textAnchor="start"
+              verticalAnchor="end"
+            />
+          )}
         />
-      )}
-    />
-    <VictoryAxis
-      dependentAxis
-      crossAxis
-      label="Number of Sites Swept"
-    />
-    <VictoryBar
+        <VictoryAxis
+          dependentAxis
+          crossAxis
+          label="Number of Sites Swept"
+        />
 
-      data={props.data}
-      x={0}
-      y={1}
-    />
-  </VictoryChart>
+        <VictoryBar
+
+          data={data}
+          x={0}
+          y={1}
+        />
+
+      </VictoryChart>
+    )}
+  </DataContext.Consumer>
+
+
 );
 
 export default BarChart;

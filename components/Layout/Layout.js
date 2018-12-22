@@ -6,7 +6,7 @@ import Splash from './Splash';
 import IconBar from './IconBar';
 
 
-const Layout = () => (
+const Layout = ({ chart }) => (
   <div>
     <Head title="Home" />
     <Splash />
@@ -17,7 +17,7 @@ const Layout = () => (
       <div className="report-container">
         <div className="tab campsites" id="campsites-section">
 
-          <SectionOne />
+          <SectionOne chart={chart} />
 
 
           <div className="section-banner">
@@ -41,7 +41,7 @@ const Layout = () => (
           <div className="section-banner" />
         </div>
         <div className="tab waste-disposal" id="waste-section">
-        <div className="report section-one"> waste </div>
+          <div className="report section-one"> waste </div>
           <div className="section-banner" />
           <div className="report section-two" />
         </div>
