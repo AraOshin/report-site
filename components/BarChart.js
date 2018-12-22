@@ -35,7 +35,7 @@ const BarChart = () => (
 
         <VictoryBar
 
-          data={data}
+          data={data.sweepsByMonth}
           x={0}
           y={1}
         />
