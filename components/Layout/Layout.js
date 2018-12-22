@@ -2,6 +2,8 @@ import React from 'react';
 import { StickyContainer } from 'react-sticky';
 import Head from '../head';
 import SectionOne from './SectionOne';
+import PercentBanner from './banners/PercentBanner';
+import AboutBanner from './banners/AboutBanner';
 import Splash from './Splash';
 import IconBar from './IconBar';
 
@@ -12,21 +14,51 @@ const Layout = ({ chart }) => (
     <Splash />
     <StickyContainer className="site-container">
       <IconBar />
-
-
       <div className="report-container">
         <div className="tab campsites" id="campsites-section">
-
           <SectionOne chart={chart} />
+          <PercentBanner
+            bigText="47%"
+            smallTextOne={(
+              <span>
+                <strong>increase</strong>
 
+                in
 
-          <div className="section-banner">
-            <div className="inner-section" />
-          </div>
+                <strong>police</strong>
+              </span>
+            )}
+            smallTextTwo={(
+              <span>
+                <strong>actions</strong>
 
-
+                in 2018
+              </span>
+            )}
+            imgUrl="/static/police_img.png"
+          />
           <div className="report section-two" />
-          <div className="section-banner" />
+          <PercentBanner
+            bigText="47%"
+            smallTextOne={(
+              <span>
+                <strong>increase</strong>
+
+                in
+
+                <strong>police</strong>
+              </span>
+            )}
+            smallTextTwo={(
+              <span>
+                <strong>actions</strong>
+
+                in 2018
+              </span>
+            )}
+            imgUrl="/static/police_img.png"
+            imgOnRight={false}
+          />
         </div>
         <div className="tab police-action" id="police-section">
           <div className="report section-one"> police </div>
@@ -49,9 +81,7 @@ const Layout = ({ chart }) => (
     </StickyContainer>
 
 
-    <div className="reprt about-banner">
-      <img className="responsive-img" src="/static/about-img.png" />
-    </div>
+    <AboutBanner />
     <div className="footer" />
 
 

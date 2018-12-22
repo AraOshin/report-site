@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import BarChart from '../BarChart';
@@ -48,27 +49,6 @@ class SectionOne extends Component {
     </div>
   )
 
-  renderVisCol = () => (
-    <div className="vis-col">
-      <Sticky bottomOffset={80}>
-        {
-          ({ style, distanceFromTop }) => (
-            <div
-              style={{
-                ...style,
-                marginTop: distanceFromTop <= 0
-                  ? 75
-                  : 0,
-              }}
-              className="report-vis"
-            >
-              <BarChart />
-            </div>
-          )}
-      </Sticky>
-    </div>
-  )
-
   render() {
     const expandableStyle = this.state.expanded
       ? { height: 'auto' }
@@ -85,7 +65,24 @@ class SectionOne extends Component {
           </div>
           <div className="report-columns">
             {this.renderTextCol()}
-            {this.renderVisCol()}
+            <div className="vis-col">
+              <Sticky bottomOffset={80}>
+                {
+                  ({ style, distanceFromTop }) => (
+                    <div
+                      style={{
+                        ...style,
+                        marginTop: distanceFromTop <= 0
+                          ? 75
+                          : 0,
+                      }}
+                      className="report-vis"
+                    >
+                      <BarChart />
+                    </div>
+                  )}
+              </Sticky>
+            </div>
           </div>
         </StickyContainer>
       </div>

@@ -10,6 +10,10 @@ body, html, #__next, .site {
   box-sizing: border-box;
 }
 
+strong {
+  font-weight: 900
+}
+
 .splash {
   width: 100vw;
   max-width:100%;
@@ -43,7 +47,7 @@ body, html, #__next, .site {
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  margin-bottom: 2%;
+
 }
 
 .splash-background {
@@ -241,6 +245,8 @@ body, html, #__next, .site {
 .about-banner {
   height: 438px;
   background:  #4992D5;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -328,7 +334,67 @@ body, html, #__next, .site {
   color:#4992D5;
   font-family: 'Leto', sans-serif;
   letter-spacing: .6px;
+  cursor: pointer;
 
 }
 
 
+
+.banner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.percent-banner-img {
+  background-position: left;
+  background-size: cover;
+}
+
+.percent-banner-text {
+  color: #2FD89F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.percent-banner-percent {
+  font-size: 50px;
+}
+
+.percent-banner-description-block {
+  text-align: center;
+}
+
+
+.about-banner-img {
+  background: url('/static/about-img.png');
+  background-position: left;
+  background-size: cover;
+}
+
+.about-banner-text-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 60%;
+}
+
+.about-us {
+  font-size: 30px;
+}
+
+.about-us-description {
+  line-height: 25px;
+  letter-spacing: 1px;
+}
