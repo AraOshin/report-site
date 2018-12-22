@@ -14,7 +14,6 @@ body, html, #__next, .site {
   width: 100vw;
   max-width:100%;
   height: calc(100vh - 75px);
-  background: #4992D5;
   overflow-x: hidden; 
 }
 
@@ -30,9 +29,15 @@ body, html, #__next, .site {
   font-weight: 300;
 }
 
+.splash-background {
+  height: 100%;
+  background-image: url('/static/splash_background_desktop.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-
-.splash-top{
+/* .splash-top{
   height: 55%;
   background-image: url('/static/newskyline.jpeg'); 
   background-size: cover; 
@@ -43,12 +48,12 @@ body, html, #__next, .site {
   width: 110%;
   position: relative;
   left: -5%; 
-}
+} */
 
-.splash-banner{
+/* .splash-banner{
   background: #4992D5;
   height: 45%;
-}
+} */
 
 .splash-footer{
   height: 75px;
