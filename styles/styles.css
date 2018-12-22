@@ -22,6 +22,7 @@ body, html, #__next, .site {
   padding: 20px;
   font-size: 42px;
   text-transform: uppercase;
+  text-align: center;
   font-family: 'Leto', sans-serif;
   line-height: 64px;
   letter-spacing: 1px;
@@ -35,6 +36,8 @@ body, html, #__next, .site {
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
 }
 
 /* .splash-top{
