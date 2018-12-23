@@ -12,6 +12,10 @@ class SectionOne extends Component {
 
   renderTextCol = () => (
     <div className="text-col">
+      <div className="report-text sub-heading">
+        Policing Subsection One Title Which May Be Any Length
+      </div>
+      <div className="spacer-line" />
       <div className="paragraph-container">
         <div className="paragraph">
           This diagram is a comparison of requests to services for policing in 2017 and 2018.
@@ -59,19 +63,18 @@ class SectionOne extends Component {
           <div className="report-text heading">
             Policing Report
           </div>
-          <div className="report-text sub-heading">
-            Policing Subsection One Title  Policing Subsection One Title Which May Be Any Length
-          </div>
-          <div className="spacer-line" />
           <div className="report-columns">
             {this.renderTextCol()}
             <div className="vis-col">
-              <Sticky topOffset={0}>
+              <Sticky bottomOffset={80}>
                 {
                   ({ style, distanceFromTop }) => (
                     <div
                       style={{
-
+                        ...style,
+                        marginTop: distanceFromTop <= 0
+                          ? 85
+                          : 0,
                       }}
                       className="report-vis"
                     >

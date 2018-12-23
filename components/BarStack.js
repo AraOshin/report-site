@@ -1,65 +1,65 @@
-import React from 'react';
-import {
-  VictoryStack, VictoryBar, VictoryAxis, VictoryChart, VictoryLabel,
-} from 'victory';
+// import React from 'react';
+// import {
+//   VictoryStack, VictoryBar, VictoryAxis, VictoryChart, VictoryLabel,
+// } from 'victory';
 
-import theme from './victoryTheme';
+// import theme from './victoryTheme';
 
-const BarStack = props => (
-  <div>
+// const BarStack = props => (
+//   <div>
 
-    <VictoryChart
-      domainPadding={3}
-      theme={theme}
-    >
+//     <VictoryChart
+//       domainPadding={3}
+//       theme={theme}
+//     >
 
-      <VictoryAxis
-        crossAxis
-        label="Date"
-        fixLabelOverlap
+//       <VictoryAxis
+//         crossAxis
+//         label="Date"
+//         fixLabelOverlap
 
-        tickLabelComponent={(
-          <VictoryLabel
-            angle={30}
-            textAnchor="start"
-            verticalAnchor="end"
-          />
-        )}
-      />
-      <VictoryAxis
-        fixLabelOverlap
-        dependentAxis
-        crossAxis
-        label="Unique campsites and campsite reports"
-      />
+//         tickLabelComponent={(
+//           <VictoryLabel
+//             angle={30}
+//             textAnchor="start"
+//             verticalAnchor="end"
+//           />
+//         )}
+//       />
+//       <VictoryAxis
+//         fixLabelOverlap
+//         dependentAxis
+//         crossAxis
+//         label="Unique campsites and campsite reports"
+//       />
 
-      <VictoryStack
-        colorScale={['tomato', 'orange', 'gold']}
-      >
+//       <VictoryStack
+//         colorScale={['tomato', 'orange', 'gold']}
+//       >
 
-        <VictoryBar
-          data={props.data}
-          x="Week"
-          y="estimatedSites"
-        />
-        <VictoryBar
-          data={props.data}
-          x="Week"
-          y="totalReports"
-        />
+//         <VictoryBar
+//           data={props.data}
+//           x="Week"
+//           y="estimatedSites"
+//         />
+//         <VictoryBar
+//           data={props.data}
+//           x="Week"
+//           y="totalReports"
+//         />
 
-        <VictoryBar
-          data={props.sweepsData}
-          x={0}
-          y={1}
-        />
-      </VictoryStack>
+//         <VictoryBar
+//           data={props.sweepsData}
+//           x={0}
+//           y={1}
+//         />
+//       </VictoryStack>
 
-    </VictoryChart>
-  </div>
-
-
-);
+//     </VictoryChart>
+//   </div>
 
 
-export default BarStack;
+// );
+
+
+// export default BarStack;

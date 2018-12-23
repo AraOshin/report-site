@@ -2,25 +2,29 @@
 
 // Colors
 const colors = [
-  '#1b232e',
-  '#94A8A1',
-  'yellow',
-  'green',
-  'blue',
+  '#4992D5',
+  '#0B2B40',
+  '#02B67A',
+  '#2FD89F',
+  'D8D8D8',
   'purple',
   'pink',
 ];
-const primary = colors[0];
-const secondary = colors[1];
+const lightBlue = colors[0];
+const darkBlue = colors[1];
+
+const lightGreen = colors[3];
+const lightGrey = colors[4];
 
 // Typography
 const sansSerif = 'sans-serif';
+const openSans = 'Open Sans';
 const letterSpacing = 'normal';
-const fontSize = 4;
+const fontSize = 9.75;
 
 // Layout
 const baseProps = {
-  width: 450,
+  width: 600,
   height: 300,
   padding: 50,
   colorScale: colors,
@@ -28,11 +32,11 @@ const baseProps = {
 
 // Labels
 const baseLabelStyles = {
-  fontFamily: sansSerif,
+  fontFamily: openSans,
   fontSize,
   letterSpacing,
   padding: 8,
-  fill: secondary,
+  fill: darkBlue,
   stroke: 'transparent',
 };
 const centeredLabelStyles = Object.assign({ textAnchor: 'middle' }, baseLabelStyles);
@@ -46,7 +50,7 @@ const theme = {
   area: Object.assign({
     style: {
       data: {
-        fill: primary,
+        fill: lightBlue,
       },
       labels: centeredLabelStyles,
     },
@@ -55,8 +59,8 @@ const theme = {
     style: {
       axis: {
         fill: 'transparent',
-        stroke: secondary,
-        strokeWidth: 5,
+        stroke: darkBlue,
+        strokeWidth: 1,
         strokeLinecap,
         strokeLinejoin,
       },
@@ -79,7 +83,7 @@ const theme = {
   bar: Object.assign({
     style: {
       data: {
-        fill: primary,
+        fill: lightBlue,
         padding: 8,
         strokeWidth: 0,
       },
@@ -88,15 +92,15 @@ const theme = {
   }, baseProps),
   boxplot: Object.assign({
     style: {
-      max: { padding: 8, stroke: primary, strokeWidth: 1 },
+      max: { padding: 8, stroke: lightBlue, strokeWidth: 1 },
       maxLabels: baseLabelStyles,
-      median: { padding: 8, stroke: primary, strokeWidth: 1 },
+      median: { padding: 8, stroke: lightBlue, strokeWidth: 1 },
       medianLabels: baseLabelStyles,
-      min: { padding: 8, stroke: primary, strokeWidth: 1 },
+      min: { padding: 8, stroke: lightBlue, strokeWidth: 1 },
       minLabels: baseLabelStyles,
-      q1: { padding: 8, fill: secondary },
+      q1: { padding: 8, fill: darkBlue },
       q1Labels: baseLabelStyles,
-      q3: { padding: 8, fill: secondary },
+      q3: { padding: 8, fill: darkBlue },
       q3Labels: baseLabelStyles,
     },
     boxWidth: 20,
@@ -104,14 +108,14 @@ const theme = {
   candlestick: Object.assign({
     style: {
       data: {
-        stroke: primary,
+        stroke: lightGreen,
         strokeWidth: 1,
       },
       labels: centeredLabelStyles,
     },
     candleColors: {
       positive: '#ffffff',
-      negative: primary,
+      negative: lightBlue,
     },
   }, baseProps),
   chart: baseProps,
@@ -120,7 +124,7 @@ const theme = {
     style: {
       data: {
         fill: 'transparent',
-        stroke: primary,
+        stroke: lightBlue,
         strokeWidth: 2,
       },
       labels: centeredLabelStyles,
@@ -146,8 +150,8 @@ const theme = {
     style: {
       data: {
         fill: 'transparent',
-        stroke: primary,
-        strokeWidth: 2,
+        stroke: lightBlue,
+        strokeWidth: 3,
       },
       labels: centeredLabelStyles,
     },
@@ -169,7 +173,7 @@ const theme = {
   scatter: Object.assign({
     style: {
       data: {
-        fill: primary,
+        fill: lightBlue,
         stroke: 'transparent',
         strokeWidth: 0,
       },
@@ -182,7 +186,7 @@ const theme = {
   tooltip: {
     style: Object.assign({}, centeredLabelStyles, { padding: 5, pointerEvents: 'none' }),
     flyoutStyle: {
-      stroke: primary,
+      stroke: lightBlue,
       strokeWidth: 1,
       fill: '#f0f0f0',
       pointerEvents: 'none',
@@ -199,7 +203,7 @@ const theme = {
       },
       labels: Object.assign({}, centeredLabelStyles, { padding: 5, pointerEvents: 'none' }),
       flyout: {
-        stroke: primary,
+        stroke: lightBlue,
         strokeWidth: 1,
         fill: '#f0f0f0',
         pointerEvents: 'none',

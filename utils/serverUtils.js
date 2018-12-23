@@ -44,10 +44,39 @@ const uniqueSitesData = uniqueSites.features
     ),
   );
 
+
+const uniqueSitesByWeek = uniqueSites.features
+  .sort(
+    (a, b) => (
+      moment(a.Date)
+        .isAfter(b.Date)
+        ? 1
+        : -1
+    ),
+  )
+  .map(feature => ([
+    moment(feature.Date).format('MM/DD/YY'), Number(feature.EstimatedSites),
+  ]));
+
+
+const reportsPerUniqueSiteByWeek = uniqueSites.features
+  .sort(
+    (a, b) => (
+      moment(a.Date)
+        .isAfter(b.Date)
+        ? 1
+        : -1
+    ),
+  )
+  .map(feature => ([
+    moment(feature.Date).format('MM/DD/YY'), Number(feature.TotalReports) / Number(feature.EstimatedSites),
+  ]));
+
+
 // returns object keyed by month (format: Jan 18) with  value of total sweeps for that month
 
 const getMonthlyCount = someArray => someArray.reduce((acc, curr) => {
-  const key = moment(curr).format('MMM YY');
+  const key = moment(curr).format('MMM YYYY');
   if (acc[key]) acc[key]++;
   else acc[key] = 1;
   return acc;
@@ -70,6 +99,38 @@ const targetAreaReportsByMonth = getMonthlyCount(targetAreaReportsDates);
 
 const reportsAggressive = reportsData.features.map(feature => feature['Repeated.instances.of.overly.aggressive.behavior.from.campers']);
 
+
+const uniqueSitesWeekSum = uniqueSites.features.reduce((acc, curr) => {
+  const key = moment(curr.Week).format('MMM YYYY');
+  if (acc[key]) {
+    acc[key] = {
+      weeks: acc[key].weeks + 1,
+      weeksSum: acc[key].weeksSum + curr.EstimatedSites,
+    };
+  } else {
+    acc[key] = {
+      weeks: 1,
+      weeksSum: curr.EstimatedSites,
+    };
+  }
+  return acc;
+}, {});
+
+
+// const uniqueSitesByMonth = Object.entries(uniqueSitesWeekSum).map(monthWeekSumArray => ({
+//   [monthWeekSumArray[0]]: (monthWeekSumArray[1].weeksSum / monthWeekSumArray[1].weeks),
+// }));
+
+
+const uniqueSitesByMonth = Object.entries(uniqueSitesWeekSum)
+  .reduce((acc, curr) => {
+    const val = (curr[1].weeksSum / curr[1].weeks);
+    const key = curr[0];
+    acc[key] = val;
+    return acc;
+  }, {});
+
+
 const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
   const key = curr;
   if (acc[key]) acc[key]++;
@@ -87,27 +148,8 @@ module.exports = {
   reportsAggressiveCount,
   yearlyReports,
   uniqueSitesData,
-  // campEstimatesByMonth,
+  uniqueSitesByWeek,
+  reportsPerUniqueSiteByWeek,
+  uniqueSitesByMonth,
 };
 
-
-// const campEstimatesWeekSum = campsiteEstimatesData.reduce((acc, curr) => {
-//   const key = moment(curr.dataKey).format('MMM YY');
-//   if (acc[key]) {
-//     acc[key] = {
-//       weeks: acc[key].weeks + 1,
-//       weeksSum: acc[key].weeksSum + curr.dataValue,
-//     };
-//   } else {
-//     acc[key] = {
-//       weeks: 1,
-//       weeksSum: curr.dataValue,
-//     };
-//   }
-//   return acc;
-// }, {});
-
-
-// const campEstimatesByMonth = Object.entries(campEstimatesWeekSum).map(monthWeekSumArray => ({
-//   [monthWeekSumArray[0]]: (monthWeekSumArray[1].weeksSum / monthWeekSumArray[1].weeks) * 4.3,
-// }));

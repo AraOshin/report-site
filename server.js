@@ -10,6 +10,9 @@ const {
   reportsAggressiveCount,
   yearlyReports,
   uniqueSitesData,
+  uniqueSitesByWeek,
+  reportsPerUniqueSiteByWeek,
+  uniqueSitesByMonth,
 } = require('./utils/serverUtils');
 
 
@@ -27,6 +30,9 @@ app.prepare().then(() => {
 
     res.reportsAggressiveCount = reportsAggressiveCount;
     res.uniqueSitesData = uniqueSitesData;
+    res.uniqueSitesByWeek = uniqueSitesByWeek;
+    res.reportsPerUniqueSiteByWeek = reportsPerUniqueSiteByWeek;
+    res.uniqueSitesByMonth = uniqueSitesByMonth;
     handle(req, res);
   }).listen(3000, (err) => {
     if (err) throw err;
