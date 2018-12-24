@@ -10,6 +10,7 @@ import UniqueSitesSection from './Campsites/UniqueSitesSection';
 import SweepsSection from './Campsites/SweepsSection';
 import ReportsSectionCES from './Campsites/ReportsSectionCES';
 import SweepsSectionCES from './Campsites/SweepsSectionCES';
+import SweepsTimeline from './HygieneAccess/SweepsTimeline';
 
 
 const Layout = () => (
@@ -39,6 +40,17 @@ const Layout = () => (
 
           <SweepsSectionCES />
 
+          <div className="section-divider">
+            <div className="section-divider-line" />
+          </div>
+
+          <SweepsTimeline />
+
+          <div className="section-divider">
+            <div className="section-divider-line" />
+          </div>
+
+          <SweepsSectionCES />
 
         </div>
         <div className="tab police-action" id="police-section">

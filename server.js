@@ -13,6 +13,7 @@ const {
   uniqueSitesByWeek,
   reportsPerUniqueSiteByWeek,
   uniqueSitesByMonth,
+  policingReportsByYear,
 } = require('./utils/serverUtils');
 
 
@@ -33,6 +34,7 @@ app.prepare().then(() => {
     res.uniqueSitesByWeek = uniqueSitesByWeek;
     res.reportsPerUniqueSiteByWeek = reportsPerUniqueSiteByWeek;
     res.uniqueSitesByMonth = uniqueSitesByMonth;
+    res.policingReportsByYear = policingReportsByYear;
     handle(req, res);
   }).listen(3000, (err) => {
     if (err) throw err;

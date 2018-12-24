@@ -3,12 +3,27 @@ import ScatterPlot from '../../ScatterPlot';
 import Subsection from '../Subsection';
 
 
-const ReportsSection = () => (
+const SweepTimeline = () => (
   <Subsection
-    isRow
-    vis={<ScatterPlot dataContext="reportsByMonth"  legendLabel="Number of Reports Filed" />}
-    headingText="Public Reporting of Campsites"
-    subHeadingText="People are Submitting More and More Reports"
+    isRow={false}
+    vis={
+      (
+        <div>
+          <img className="responsive-img" src="./static/police_img.png" />
+        </div>
+      )}
+    expandedVis={
+      (
+        <div>
+          <img className="responsive-img" src="./static/police_img.png" />
+          <img className="responsive-img" src="./static/police_img.png" />
+          <img className="responsive-img" src="./static/police_img.png" />
+          <img className="responsive-img" src="./static/police_img.png" />
+          <img className="responsive-img" src="./static/police_img.png" />
+        </div>
+      )}
+    headingText="Timeline of a campsite sweep in photos"
+    subHeadingText="Sweeps Cause Trauma and are Bad for the Environment"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -32,4 +47,4 @@ const ReportsSection = () => (
   />
 );
 
-export default ReportsSection;
+export default SweepTimeline;

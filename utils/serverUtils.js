@@ -3,6 +3,7 @@ const { sweepsData } = require('../data-store/sweeps');
 // const { reportsDataNew } = require('../data-store/campsite_reports_final');
 const { reportsData } = require('../data-store/campsiteReports');
 const { uniqueSites } = require('../data-store/uniqueSites');
+const { policingReports } = require('../data-store/policingReports');
 
 const targetNeighborhoods = ['KERNS', 'BUCKMAN', 'HOSFORD-ABERNETHY'];
 
@@ -154,6 +155,9 @@ const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
   return acc;
 }, {});
 
+
+const policingReportsByYear = policingReports.features;
+
 console.log(reportsAggressiveCount);
 
 module.exports = {
@@ -167,5 +171,6 @@ module.exports = {
   uniqueSitesByWeek,
   reportsPerUniqueSiteByWeek,
   uniqueSitesByMonth,
+  policingReportsByYear
 };
 

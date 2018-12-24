@@ -22,7 +22,6 @@ const ScatterPlot = ({ dataContext, legendLabel }) => (
       >
 
         <VictoryLegend x={50}
-
           data={[
             { name: legendLabel },
           ]}
@@ -30,8 +29,8 @@ const ScatterPlot = ({ dataContext, legendLabel }) => (
 
         <VictoryAxis
           fixLabelOverlap
-          tickFormat={(label) => `${moment(label).format('YYYY')}\n${moment(label).format('MMM')}`}
-          tickCount={(data.length / 3)}
+          tickFormat={(label) => `${moment(label).format('YYYY')}\n${moment(label).format('MMMM')}`}
+          tickCount={(data[dataContext].length / 3)}
         />
 
         <VictoryAxis
@@ -56,15 +55,15 @@ const ScatterPlot = ({ dataContext, legendLabel }) => (
         />
 
         {/* <VictoryLine
-      interpolation="linear"
-      style={{
-        data: { stroke: 'red', strokeWidth: 1, },
-        parent: { border: '1px solid #ccc' },
-      }}
-      data={data}
-      x={0}
-      y={1}
-    /> */}
+          interpolation="linear"
+          style={{
+            data: { stroke: 'red', strokeWidth: 1, },
+            parent: { border: '1px solid #ccc' },
+          }}
+          data={data[dataContext]}
+          x={0}
+          y={1}
+        /> */}
 
         {/* <VictoryScatter
       size={1}

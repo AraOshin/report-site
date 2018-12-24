@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Head from '../components/head';
 import Layout from '../components/Layout/Layout';
 import '../styles/styles.css';
+import BarGroup from '../components/BarGroup';
 
 export const DataContext = React.createContext({});
 
@@ -14,10 +15,11 @@ const Home = ({
   reportsAggressiveCount,
   reportsPerUniqueSiteByWeek,
   uniqueSitesByMonth,
+  policingReportsByYear
 }) => (
     <div>
       <Head title="Home" />
-      {console.log(reportsPerUniqueSiteByWeek)}
+      {console.log(policingReportsByYear)}
 
       <DataContext.Provider
         value={{
@@ -27,13 +29,17 @@ const Home = ({
           sweepsByMonth: Object.entries(sweepsByMonth),
           targetAreaSweepsByMonth: Object.entries(targetAreaSweepsByMonth),
           reportsAggressiveCount: Object.entries(reportsAggressiveCount),
+          policingReportsByYear,
+
         }}
       >
         <Layout />
       </DataContext.Provider>
 
+      <BarGroup data={policingReportsByYear} />
+
     </div>
-);
+  );
 
 
 Home.getInitialProps = ({ res }) => (
@@ -48,6 +54,7 @@ Home.getInitialProps = ({ res }) => (
     uniqueSitesByWeek: res.uniqueSitesByWeek,
     reportsPerUniqueSiteByWeek: res.reportsPerUniqueSiteByWeek,
     uniqueSitesByMonth: res.uniqueSitesByMonth,
+    policingReportsByYear: res.policingReportsByYear
   });
 
 Home.propTypes = {
@@ -58,6 +65,7 @@ Home.propTypes = {
   reportsAggressiveCount: PropTypes.object,
   reportsPerUniqueSiteByWeek: PropTypes.array,
   uniqueSitesByMonth: PropTypes.object,
+
 
 };
 

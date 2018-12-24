@@ -1,41 +1,46 @@
 
 import React, { Component } from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
-import BarChart from '../BarChart';
-import { DataContext } from '../../pages/index';
+import PropTypes from 'prop-types';
 
-class SectionOne extends Component {
+
+class Subsection extends Component {
   state = {
     expanded: false,
   }
 
   toggleExpanded = () => this.setState({ expanded: !this.state.expanded })
 
-  renderTextSection = () => (
-    <div className={this.props.isRow ? 'text-row' : 'text-col'}>
+  renderTextSection = () => {
+    const { isRow, visableText, expandedText } = this.props;
+    const { expanded } = this.state;
 
 
+    return (
+      <div className={isRow ? 'text-row' : 'text-col'}>
 
-      {this.props.visableText}
+        {visableText}
 
-      {this.state.expanded && this.props.expandedText}
+        {expanded && expandedText}
 
-      {!this.state.expanded
-        && (
-          <div
-            className="read-more-button"
-            onClick={this.toggleExpanded}
-          >
-            Read More
-          </div>
-        )
-      }
-    </div>
-  )
+        {!expanded
+          && (
+            <div
+              className="read-more-button"
+              onClick={this.toggleExpanded}
+            >
+              Read More
+            </div>
+          )
+        }
+      </div>
+    );
+  }
 
   renderRowVisSection = () => {
 
     const { isRow } = this.props
+    const { expanded } = this.state;
 
     return (
       <div className='vis-row'>
@@ -47,11 +52,14 @@ class SectionOne extends Component {
 
   renderColVisSection = () => {
 
-    const { isRow } = this.props
+    const { isRow, vis, expandedVis } = this.props
+    const { expanded } = this.state;
+
 
     return (
       <div className='vis-col'>
-        {this.props.vis}
+        {vis}
+        {expanded && expandedVis}
         {/* <Sticky topOffset={0}>
           {
             ({ style, distanceFromTop }) => (
@@ -71,25 +79,28 @@ class SectionOne extends Component {
 
 
   render() {
-    const expandableStyle = this.state.expanded
+
+    const { expanded } = this.state;
+    const { isRow, headingText, subHeadingText } = this.props;
+
+    const expandableStyle = expanded
       ? { height: 'auto' }
       : {};
 
-    const { isRow } = this.props
     return (
       <div
-        className="report section"
+        className={isRow ? 'report section-rows' : 'report section-columns'}
         style={expandableStyle}
       >
         <StickyContainer className="inner-section">
           <div className="report-text heading">
-            {this.props.headingText}
+            {headingText}
           </div>
           <div className="report-text sub-heading">
-            {this.props.subHeadingText}
+            {subHeadingText}
           </div>
           <div className="spacer-line" />
-          <div className={this.props.isRow ? 'report-rows' : 'report-columns'}>
+          <div className={isRow ? 'report-rows' : 'report-columns'}>
             {this.renderTextSection()}
             {isRow
               ? this.renderRowVisSection()
@@ -102,4 +113,12 @@ class SectionOne extends Component {
   }
 }
 
-export default SectionOne;
+Subsection.propTypes = {
+  isRow: PropTypes.bool,
+  visableText: PropTypes.object,
+  expandedText: PropTypes.object,
+  headingText: PropTypes.string,
+  subHeadingText: PropTypes.string,
+}
+
+export default Subsection;

@@ -34,7 +34,7 @@ const baseLabelStyles = {
   fontFamily: openSans,
   fontSize,
   letterSpacing,
-  padding: 8,
+  padding: 8.2,
   fill: darkBlue,
   stroke: 'transparent',
 };
