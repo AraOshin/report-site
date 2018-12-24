@@ -6,7 +6,7 @@ import theme from './victoryTheme';
 import { DataContext } from '../pages/index';
 
 
-const BarChart = () => (
+const BarChart = ({ dataContext }) => (
 
   <DataContext.Consumer>
     {data => (
@@ -35,7 +35,7 @@ const BarChart = () => (
 
         <VictoryBar
 
-          data={data.sweepsByMonth}
+          data={data[dataContext]}
           x={0}
           y={1}
         />

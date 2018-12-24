@@ -100,35 +100,51 @@ const targetAreaReportsByMonth = getMonthlyCount(targetAreaReportsDates);
 const reportsAggressive = reportsData.features.map(feature => feature['Repeated.instances.of.overly.aggressive.behavior.from.campers']);
 
 
-const uniqueSitesWeekSum = uniqueSites.features.reduce((acc, curr) => {
+// const uniqueSitesWeekSum = uniqueSites.features.reduce((acc, curr) => {
+//   const key = moment(curr.Week).format('MMM YYYY');
+//   if (acc[key]) {
+//     acc[key] = {
+//       weeks: acc[key].weeks + 1,
+//       weeksSum: acc[key].weeksSum + curr.EstimatedSites,
+//     };
+//   } else {
+//     acc[key] = {
+//       weeks: 1,
+//       weeksSum: curr.EstimatedSites,
+//     };
+//   }
+//   return acc;
+// }, {});
+
+
+const uniqueSitesAndReportsWeekSum = uniqueSites.features.reduce((acc, curr) => {
   const key = moment(curr.Week).format('MMM YYYY');
   if (acc[key]) {
     acc[key] = {
       weeks: acc[key].weeks + 1,
-      weeksSum: acc[key].weeksSum + curr.EstimatedSites,
+      weeksSumReports: acc[key].weeksSumReports + curr.Count_AllReports,
+      weeksSumSites: acc[key].weeksSumSites + curr.EstimatedSites,
     };
   } else {
     acc[key] = {
       weeks: 1,
-      weeksSum: curr.EstimatedSites,
+      weeksSumReports: curr.Count_AllReports,
+      weeksSumSites: curr.EstimatedSites,
     };
   }
   return acc;
 }, {});
 
 
-// const uniqueSitesByMonth = Object.entries(uniqueSitesWeekSum).map(monthWeekSumArray => ({
-//   [monthWeekSumArray[0]]: (monthWeekSumArray[1].weeksSum / monthWeekSumArray[1].weeks),
-// }));
 
-
-const uniqueSitesByMonth = Object.entries(uniqueSitesWeekSum)
+const uniqueSitesByMonth = Object.entries(uniqueSitesAndReportsWeekSum)
   .reduce((acc, curr) => {
-    const val = (curr[1].weeksSum / curr[1].weeks);
+    const val = (curr[1].weeksSumSites / curr[1].weeks);
     const key = curr[0];
     acc[key] = val;
     return acc;
   }, {});
+
 
 
 const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {

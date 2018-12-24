@@ -20,13 +20,12 @@ const lightGrey = colors[4];
 const sansSerif = 'sans-serif';
 const openSans = 'Open Sans';
 const letterSpacing = 'normal';
-const fontSize = 9.75;
+const fontSize = 9;
 
 // Layout
 const baseProps = {
   width: 600,
   height: 300,
-  padding: 50,
   colorScale: colors,
 };
 

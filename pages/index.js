@@ -26,13 +26,12 @@ const Home = ({
 
       <DataContext.Provider
         value={{
-          sweepsByMonth: Object.entries(sweepsByMonth),
-          targetAreaSweepsByMonth: Object.entries(targetAreaSweepsByMonth),
           reportsByMonth: Object.entries(reportsByMonth),
           targetAreaReportsByMonth: Object.entries(targetAreaReportsByMonth),
-          reportsAggressiveCount: Object.entries(reportsAggressiveCount),
-          uniqueSitesData,
-          yearlyReports,
+          uniqueSitesByMonth: Object.entries(uniqueSitesByMonth),
+          sweepsByMonth: Object.entries(sweepsByMonth),
+          targetAreaSweepsByMonth: Object.entries(targetAreaSweepsByMonth),
+
         }}
       >
         <Layout />
@@ -52,13 +51,13 @@ const Home = ({
         <ScatterPlot
           data={Object.entries(sweepsByMonth)}
         />
-        <ScatterPlot
+        {/* <ScatterPlot
           data={Object.entries(targetAreaReportsByMonth)}
         />
 
         <ScatterPlot
           data={Object.entries(targetAreaSweepsByMonth)}
-        />
+        /> */}
 
       </div>
 

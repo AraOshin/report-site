@@ -1,14 +1,18 @@
 import React from 'react';
 import { StickyContainer } from 'react-sticky';
 import Head from '../head';
-import SectionOne from './SectionOne';
 import PercentBanner from './banners/PercentBanner';
 import AboutBanner from './banners/AboutBanner';
 import Splash from './Splash';
 import IconBar from './IconBar';
+import ReportsSection from './Campsites/ReportsSection';
+import UniqueSitesSection from './Campsites/UniqueSitesSection';
+import SweepsSection from './Campsites/SweepsSection';
+import ReportsSectionCES from './Campsites/ReportsSectionCES';
+import SweepsSectionCES from './Campsites/SweepsSectionCES';
 
 
-const Layout = ({ chart }) => (
+const Layout = () => (
   <div>
     <Head title="Home" />
     <Splash />
@@ -16,7 +20,28 @@ const Layout = ({ chart }) => (
       <IconBar />
       <div className="report-container">
         <div className="tab campsites" id="campsites-section">
-          <SectionOne chart={chart} />
+          <ReportsSection />
+          <div className="section-divider">
+            <div className="section-divider-line" />
+          </div>
+          <UniqueSitesSection />
+          <div className="section-divider">
+            <div className="section-divider-line" />
+          </div>
+          <SweepsSection />
+          <div className="section-divider">
+            <div className="section-divider-line" />
+          </div>
+          <ReportsSectionCES />
+          <div className="section-divider">
+            <div className="section-divider-line" />
+          </div>
+
+          <SweepsSectionCES />
+
+
+        </div>
+        <div className="tab police-action" id="police-section">
           <PercentBanner
             bigText="47%"
             smallTextOne={(
@@ -37,7 +62,7 @@ const Layout = ({ chart }) => (
             )}
             imgUrl="/static/police_img.png"
           />
-          <div className="report section-two" />
+
           <PercentBanner
             bigText="47%"
             smallTextOne={(
@@ -59,9 +84,7 @@ const Layout = ({ chart }) => (
             imgUrl="/static/police_img.png"
             imgOnRight={false}
           />
-        </div>
-        <div className="tab police-action" id="police-section">
-          <div className="report section-one"> police </div>
+
           <div className="section-banner" />
           <div className="report section-two" />
           <div className="section-banner" />

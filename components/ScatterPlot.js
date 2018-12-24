@@ -1,48 +1,75 @@
 import React from 'react';
+import moment from 'moment';
 import {
-  VictoryScatter, VictoryAxis, VictoryChart, VictoryLabel, VictoryLine, VictoryLegend, LineSegment
+  VictoryScatter,
+  VictoryAxis,
+  VictoryChart,
+  VictoryLine,
+  VictoryLegend,
 } from 'victory';
 import theme from './victoryTheme';
-const moment = require('moment');
 
-const ScatterPlot = ({ data }) => (
+import { DataContext } from '../pages/index';
 
-  <VictoryChart
-    theme={theme}
-  >
+const ScatterPlot = ({ dataContext }) => (
 
-    <VictoryAxis
-      crossAxis
-      fixLabelOverlap
-      tickLabelComponent={<VictoryLabel dy={10} />}
-      style={{ tickLabels: { stroke: 'red' } }}
-      tickFormat={(label) => `${moment(label).format('YYYY')} \n ${moment(label).format('MMMM')}`}
-    />
-    <VictoryAxis
-      dependentAxis
-      crossAxis
-      axisLabelComponent={<VictoryLabel dy={-15} />}
-      label="label"
-    />
+  <DataContext.Consumer>
+    {data => (
+      <VictoryChart
+        theme={theme}
+        domainPadding={{ x: [30, 10], y: [0, 5] }}
+        minDomain={{ y: 0 }}
+      >
 
-    <VictoryLegend />
+        <VictoryAxis
+          fixLabelOverlap
+          tickFormat={(label) => `${moment(label).format('YYYY')}\n${moment(label).format('MMM')}`}
+          tickCount={(data.length / 3)}
+        />
 
-    <VictoryLine
+        <VictoryAxis
+          dependentAxis
+          crossAxis={false}
+          style={{
+            axis: { stroke: "white" },
+            grid: { stroke: "#D8D8D8" },
+          }}
+        />
+
+
+        <VictoryLine
+          interpolation="monotoneX"
+          style={{
+            data: { stroke: '#2FD89F' },
+            parent: { border: '1px solid #ccc' },
+          }}
+          data={data[dataContext]}
+          x={0}
+          y={1}
+        />
+
+        {/* <VictoryLine
+      interpolation="linear"
       style={{
-        data: { stroke: '#2FD89F', },
+        data: { stroke: 'red', strokeWidth: 1, },
         parent: { border: '1px solid #ccc' },
       }}
       data={data}
       x={0}
       y={1}
-    />
+    /> */}
 
-    <VictoryScatter
+        {/* <VictoryScatter
       size={1}
       data={data}
       x={0}
       y={1}
-    />
-  </VictoryChart>
+    /> */}
+
+      </VictoryChart>
+
+    )}
+  </DataContext.Consumer>
+
 );
 export default ScatterPlot;
