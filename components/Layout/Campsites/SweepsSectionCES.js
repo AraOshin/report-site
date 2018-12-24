@@ -6,7 +6,7 @@ import Subsection from '../Subsection';
 const SweepsSectionCES = () => (
   <Subsection
     isRow
-    vis={<ScatterPlot dataContext="targetAreaSweepsByMonth" />}
+    vis={<ScatterPlot dataContext="targetAreaSweepsByMonth" legendLabel="Number of Sweeps" />}
     headingText="CES - Sweeps Over Time"
     subHeadingText="CES - City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
     visableText={(

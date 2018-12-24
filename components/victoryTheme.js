@@ -2,18 +2,18 @@
 
 // Colors
 const colors = [
-  '#4992D5',
+  '#2FD89F',
   '#0B2B40',
   '#02B67A',
-  '#2FD89F',
+  '#4992D5',
   'D8D8D8',
   'purple',
   'pink',
 ];
-const lightBlue = colors[0];
+const lightBlue = colors[3];
 const darkBlue = colors[1];
 
-const lightGreen = colors[3];
+const lightGreen = colors[0];
 const lightGrey = colors[4];
 
 // Typography
@@ -133,10 +133,12 @@ const theme = {
     colorScale: colors,
   }, baseProps),
   legend: {
+    title: 'LEGEND',
+    titleOrientation: 'left',
     colorScale: colors,
-    gutter: 10,
-    orientation: 'vertical',
-    titleOrientation: 'top',
+    gutter: 0,
+    orientation: 'horizontal',
+
     style: {
       data: {
         type: 'circle',

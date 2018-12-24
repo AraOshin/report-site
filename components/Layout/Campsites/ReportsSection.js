@@ -6,7 +6,7 @@ import Subsection from '../Subsection';
 const ReportsSection = () => (
   <Subsection
     isRow
-    vis={<ScatterPlot dataContext="reportsByMonth" />}
+    vis={<ScatterPlot dataContext="reportsByMonth" legendLabel="Number of Reports Filed" />}
     headingText="Public Reporting of Campsites"
     subHeadingText="People are Submitting More and More Reports"
     visableText={(

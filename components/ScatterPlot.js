@@ -11,7 +11,7 @@ import theme from './victoryTheme';
 
 import { DataContext } from '../pages/index';
 
-const ScatterPlot = ({ dataContext }) => (
+const ScatterPlot = ({ dataContext, legendLabel }) => (
 
   <DataContext.Consumer>
     {data => (
@@ -20,6 +20,13 @@ const ScatterPlot = ({ dataContext }) => (
         domainPadding={{ x: [30, 10], y: [0, 5] }}
         minDomain={{ y: 0 }}
       >
+
+        <VictoryLegend x={50}
+
+          data={[
+            { name: legendLabel },
+          ]}
+        />
 
         <VictoryAxis
           fixLabelOverlap
