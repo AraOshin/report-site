@@ -11,7 +11,7 @@ import theme from './victoryTheme';
 
 import { DataContext } from '../pages/index';
 
-const ScatterPlot = ({ dataContext, legendLabel }) => (
+const LineChart = ({ dataContext, legendLabel }) => (
 
   <DataContext.Consumer>
     {data => (
@@ -78,4 +78,4 @@ const ScatterPlot = ({ dataContext, legendLabel }) => (
   </DataContext.Consumer>
 
 );
-export default ScatterPlot;
+export default LineChart;

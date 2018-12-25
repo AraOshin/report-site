@@ -1,12 +1,12 @@
 import React from 'react';
-import ScatterPlot from '../../ScatterPlot';
+import LineChart from '../../LineChart';
 import Subsection from '../Subsection';
 
 
 const ReportsSection = () => (
   <Subsection
     isRow
-    vis={<ScatterPlot dataContext="reportsByMonth"  legendLabel="Number of Reports Filed" />}
+    vis={<LineChart dataContext="reportsByMonth" legendLabel="Number of Reports Filed" />}
     headingText="Public Reporting of Campsites"
     subHeadingText="People are Submitting More and More Reports"
     visableText={(

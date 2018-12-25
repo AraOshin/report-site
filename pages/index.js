@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Head from '../components/head';
 import Layout from '../components/Layout/Layout';
 import '../styles/styles.css';
-import BarGroup from '../components/BarGroup';
 
 export const DataContext = React.createContext({});
 
@@ -13,9 +12,8 @@ const Home = ({
   reportsByMonth,
   targetAreaReportsByMonth,
   reportsAggressiveCount,
-  reportsPerUniqueSiteByWeek,
   uniqueSitesByMonth,
-  policingReportsByYear
+  policingReportsByYear,
 }) => (
     <div>
       <Head title="Home" />
@@ -35,9 +33,6 @@ const Home = ({
       >
         <Layout />
       </DataContext.Provider>
-
-      {/* <BarGroup data={policingReportsByYear} /> */}
-
     </div>
   );
 
@@ -49,12 +44,9 @@ Home.getInitialProps = ({ res }) => (
     reportsByMonth: res.reportsByMonth,
     targetAreaReportsByMonth: res.targetAreaReportsByMonth,
     reportsAggressiveCount: res.reportsAggressiveCount,
-    yearlyReports: res.yearlyReports,
-    uniqueSitesData: res.uniqueSitesData,
-    uniqueSitesByWeek: res.uniqueSitesByWeek,
-    reportsPerUniqueSiteByWeek: res.reportsPerUniqueSiteByWeek,
+    // reportsPerUniqueSiteByWeek: res.reportsPerUniqueSiteByWeek,
     uniqueSitesByMonth: res.uniqueSitesByMonth,
-    policingReportsByYear: res.policingReportsByYear
+    policingReportsByYear: res.policingReportsByYear,
   });
 
 Home.propTypes = {
@@ -63,8 +55,8 @@ Home.propTypes = {
   targetAreaReportsByMonth: PropTypes.object,
   reportsByMonth: PropTypes.object,
   reportsAggressiveCount: PropTypes.object,
-  reportsPerUniqueSiteByWeek: PropTypes.array,
   uniqueSitesByMonth: PropTypes.object,
+  policingReportsByYear: PropTypes.array,
 
 
 };

@@ -1,12 +1,12 @@
 import React from 'react';
-import ScatterPlot from '../../ScatterPlot';
+import LineChart from '../../LineChart';
 import Subsection from '../Subsection';
 
 
 const SweepsSection = () => (
   <Subsection
     isRow
-    vis={<ScatterPlot dataContext="sweepsByMonth" legendLabel="Number of Sweeps" />}
+    vis={<LineChart dataContext="sweepsByMonth" legendLabel="Number of Sweeps" />}
     headingText="Sweeps Over Time"
     subHeadingText="City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
     visableText={(

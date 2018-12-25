@@ -1,12 +1,12 @@
 import React from 'react';
-import ScatterPlot from '../../ScatterPlot';
+import LineChart from '../../LineChart';
 import Subsection from '../Subsection';
 
 
 const UniqueSitesSection = () => (
   <Subsection
     isRow
-    vis={<ScatterPlot dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
+    vis={<LineChart dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
     headingText="Unique Campsites"
     subHeadingText="Unique Campsites Estimates Are Not Changing"
     visableText={(

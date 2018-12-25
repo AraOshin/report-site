@@ -1,5 +1,4 @@
 import React from 'react';
-import ScatterPlot from '../../ScatterPlot';
 import Subsection from '../Subsection';
 
 

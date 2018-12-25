@@ -442,7 +442,11 @@ strong {
 }
 
 
-.pieChartsVis{
-  display: grid;
-  grid-template-rows: 
+
+
+
+.dropdown-selector{
+  width: 35%;
+  display: block;
+  margin: auto;
 }

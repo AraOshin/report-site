@@ -27,10 +27,13 @@ class SweepsMapImage extends Component {
     return (
       <div>
 
+
         <Select
+          className="dropdown-selector"
           value={selectedOption}
           onChange={this.handleChange}
           options={options}
+          placeholder="Select neighborhood..."
         />
 
         {selectedOption
