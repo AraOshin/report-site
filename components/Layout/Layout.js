@@ -11,6 +11,8 @@ import SweepsSection from './Campsites/SweepsSection';
 import ReportsSectionCES from './Campsites/ReportsSectionCES';
 import SweepsSectionCES from './Campsites/SweepsSectionCES';
 import SweepsTimeline from './HygieneAccess/SweepsTimeline';
+import Policing from './Policing/Policing';
+import SweepsImage from './Policing/SweepsImage';
 
 
 const Layout = () => (
@@ -22,38 +24,49 @@ const Layout = () => (
       <div className="report-container">
         <div className="tab campsites" id="campsites-section">
           <ReportsSection />
-          <div className="section-divider">
-            <div className="section-divider-line" />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
           </div>
           <UniqueSitesSection />
-          <div className="section-divider">
-            <div className="section-divider-line" />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
           </div>
           <SweepsSection />
-          <div className="section-divider">
-            <div className="section-divider-line" />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
           </div>
           <ReportsSectionCES />
-          <div className="section-divider">
-            <div className="section-divider-line" />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
           </div>
 
           <SweepsSectionCES />
 
-          <div className="section-divider">
-            <div className="section-divider-line" />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
           </div>
 
           <SweepsTimeline />
 
-          <div className="section-divider">
-            <div className="section-divider-line" />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
           </div>
 
           <SweepsSectionCES />
 
         </div>
+        <div className="section-divider" />
         <div className="tab police-action" id="police-section">
+
+          <SweepsImage />
+
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
+          </div>
+
+
+          <Policing />
+
           <PercentBanner
             bigText="47%"
             smallTextOne={(

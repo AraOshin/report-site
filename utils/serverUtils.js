@@ -171,6 +171,6 @@ module.exports = {
   uniqueSitesByWeek,
   reportsPerUniqueSiteByWeek,
   uniqueSitesByMonth,
-  policingReportsByYear
+  policingReportsByYear,
 };
 

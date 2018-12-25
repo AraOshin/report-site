@@ -36,7 +36,7 @@ const Home = ({
         <Layout />
       </DataContext.Provider>
 
-      <BarGroup data={policingReportsByYear} />
+      {/* <BarGroup data={policingReportsByYear} /> */}
 
     </div>
   );

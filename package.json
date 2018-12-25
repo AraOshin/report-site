@@ -12,6 +12,7 @@
     "prop-types": "^15.6.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
+    "react-select": "^2.1.2",
     "react-sticky": "^6.0.3",
     "victory": "^31.0.1"
   }
