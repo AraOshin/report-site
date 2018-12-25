@@ -1,9 +1,9 @@
 import React from 'react';
-import LineChart from '../../LineChart';
-import Subsection from '../Subsection';
+import LineChart from '../Visualizations/LineChart';
+import Subsection from '../Layout/Subsection';
 
 
-const UniqueSitesSection = () => (
+const UniqueSites = () => (
   <Subsection
     isRow
     vis={<LineChart dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
@@ -32,4 +32,4 @@ const UniqueSitesSection = () => (
   />
 );
 
-export default UniqueSitesSection;
+export default UniqueSites;

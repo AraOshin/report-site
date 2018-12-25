@@ -5,14 +5,14 @@ import PercentBanner from './banners/PercentBanner';
 import AboutBanner from './banners/AboutBanner';
 import Splash from './Splash';
 import IconBar from './IconBar';
-import ReportsSection from './Campsites/ReportsSection';
-import UniqueSitesSection from './Campsites/UniqueSitesSection';
-import SweepsSection from './Campsites/SweepsSection';
-import ReportsSectionCES from './Campsites/ReportsSectionCES';
-import SweepsSectionCES from './Campsites/SweepsSectionCES';
-import SweepsTimeline from './HygieneAccess/SweepsTimeline';
-import Policing from './Policing/Policing';
-import SweepsImage from './Policing/SweepsImage';
+import Reports from '../Subsections/Reports';
+import UniqueSites from '../Subsections/UniqueSites';
+import Sweeps from '../Subsections/Sweeps';
+import ReportsCES from '../Subsections/ReportsCES';
+import SweepsCES from '../Subsections/SweepsCES';
+import SweepsTimeline from '../Subsections/SweepsTimeline';
+import Policing from '../Subsections/Policing';
+import SweepsMap from '../Subsections/SweepsMap';
 
 
 const Layout = () => (
@@ -23,24 +23,24 @@ const Layout = () => (
       <IconBar />
       <div className="report-container">
         <div className="tab campsites" id="campsites-section">
-          <ReportsSection />
+          <Reports />
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
-          <UniqueSitesSection />
+          <UniqueSites />
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
-          <SweepsSection />
+          <Sweeps />
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
-          <ReportsSectionCES />
+          <ReportsCES />
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
 
-          <SweepsSectionCES />
+          <SweepsCES />
 
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
@@ -52,13 +52,13 @@ const Layout = () => (
             <div className="subsection-divider-line" />
           </div>
 
-          <SweepsSectionCES />
+          <SweepsCES />
 
         </div>
         <div className="section-divider" />
         <div className="tab police-action" id="police-section">
 
-          <SweepsImage />
+          <SweepsMap />
 
           <div className="subsection-divider">
             <div className="subsection-divider-line" />

@@ -1,28 +1,14 @@
 import React from 'react';
-import Subsection from '../Subsection';
+import BarGroup from '../Visualizations/BarGroup';
+import Subsection from '../Layout/Subsection';
 
 
-const SweepTimeline = () => (
+const Policing = () => (
   <Subsection
     isRow={false}
-    vis={
-      (
-        <div>
-          <img className="responsive-img" src="./static/police_img.png" />
-        </div>
-      )}
-    expandedVis={
-      (
-        <div>
-          <img className="responsive-img" src="./static/police_img.png" />
-          <img className="responsive-img" src="./static/police_img.png" />
-          <img className="responsive-img" src="./static/police_img.png" />
-          <img className="responsive-img" src="./static/police_img.png" />
-          <img className="responsive-img" src="./static/police_img.png" />
-        </div>
-      )}
-    headingText="Timeline of a campsite sweep in photos"
-    subHeadingText="Sweeps Cause Trauma and are Bad for the Environment"
+    vis={<BarGroup dataContext="policingReportsByYear" legendLabels={['Portland Crime Reports Filed', 'CES Crime Reports Filed']} />}
+    headingText="Policing Data"
+    subHeadingText="Portland Wide - Dispatched calls and Crime Reports (crime figures are mock) filed in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -46,4 +32,4 @@ const SweepTimeline = () => (
   />
 );
 
-export default SweepTimeline;
+export default Policing;

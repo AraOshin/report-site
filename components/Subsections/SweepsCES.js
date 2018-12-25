@@ -1,14 +1,14 @@
 import React from 'react';
-import BarGroup from '../../BarGroup';
-import Subsection from '../Subsection';
+import LineChart from '../Visualizations/LineChart';
+import Subsection from '../Layout/Subsection';
 
 
-const Policing = () => (
+const SweepsCES = () => (
   <Subsection
-    isRow={false}
-    vis={<BarGroup dataContext="policingReportsByYear" legendLabels={["Portland Crime Reports Filed", "CES Crime Reports Filed"]} />}
-    headingText="Policing Data"
-    subHeadingText="Portland Wide - Dispatched calls and Crime Reports (crime figures are mock) filed in 2016, 2017, 2018"
+    isRow
+    vis={<LineChart dataContext="targetAreaSweepsByMonth" legendLabel="Number of Sweeps" />}
+    headingText="CES - Sweeps Over Time"
+    subHeadingText="CES - City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -32,4 +32,4 @@ const Policing = () => (
   />
 );
 
-export default Policing;
+export default SweepsCES;

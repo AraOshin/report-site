@@ -1,9 +1,9 @@
 import React from 'react';
-import LineChart from '../../LineChart';
-import Subsection from '../Subsection';
+import LineChart from '../Visualizations/LineChart';
+import Subsection from '../Layout/Subsection';
 
 
-const ReportsSectionCES = () => (
+const ReportsCES = () => (
   <Subsection
     isRow
     vis={<LineChart dataContext="targetAreaReportsByMonth" legendLabel="Number of Reports Filed" />}
@@ -32,4 +32,4 @@ const ReportsSectionCES = () => (
   />
 );
 
-export default ReportsSectionCES;
+export default ReportsCES;

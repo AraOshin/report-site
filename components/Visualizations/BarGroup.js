@@ -7,7 +7,7 @@ import {
   VictoryLegend,
 } from 'victory';
 import theme from './victoryTheme';
-import { DataContext } from '../pages/index';
+import { DataContext } from '../../pages/index';
 
 const BarGroup = ({ dataContext, legendLabels }) => (
 

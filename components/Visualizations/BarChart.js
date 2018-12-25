@@ -3,7 +3,7 @@ import {
   VictoryBar, VictoryAxis, VictoryChart, VictoryLabel,
 } from 'victory';
 import theme from './victoryTheme';
-import { DataContext } from '../pages/index';
+import { DataContext } from '../../pages/index';
 
 
 const BarChart = ({ dataContext }) => (

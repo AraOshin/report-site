@@ -9,7 +9,7 @@ import {
 } from 'victory';
 import theme from './victoryTheme';
 
-import { DataContext } from '../pages/index';
+import { DataContext } from '../../pages/index';
 
 const LineChart = ({ dataContext, legendLabel }) => (
 

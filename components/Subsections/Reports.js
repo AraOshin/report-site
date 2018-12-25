@@ -1,14 +1,14 @@
 import React from 'react';
-import LineChart from '../../LineChart';
-import Subsection from '../Subsection';
+import LineChart from '../Visualizations/LineChart';
+import Subsection from '../Layout/Subsection';
 
 
-const SweepsSection = () => (
+const Reports = () => (
   <Subsection
     isRow
-    vis={<LineChart dataContext="sweepsByMonth" legendLabel="Number of Sweeps" />}
-    headingText="Sweeps Over Time"
-    subHeadingText="City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
+    vis={<LineChart dataContext="reportsByMonth" legendLabel="Number of Reports Filed" />}
+    headingText="Public Reporting of Campsites"
+    subHeadingText="People are Submitting More and More Reports"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -32,4 +32,4 @@ const SweepsSection = () => (
   />
 );
 
-export default SweepsSection;
+export default Reports;

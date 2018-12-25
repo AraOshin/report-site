@@ -1,14 +1,14 @@
 import React from 'react';
-import LineChart from '../../LineChart';
-import Subsection from '../Subsection';
+import SweepsMapImage from '../Visualizations/SweepsMapImage';
+import Subsection from '../Layout/Subsection';
 
 
-const SweepsSectionCES = () => (
+const SweepsMap = () => (
   <Subsection
     isRow
-    vis={<LineChart dataContext="targetAreaSweepsByMonth" legendLabel="Number of Sweeps" />}
-    headingText="CES - Sweeps Over Time"
-    subHeadingText="CES - City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
+    vis={<SweepsMapImage />}
+    headingText="Policing Data"
+    subHeadingText="Portland Wide - Dispatched calls and Crime Reports (crime figures are mock) filed in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -32,4 +32,4 @@ const SweepsSectionCES = () => (
   />
 );
 
-export default SweepsSectionCES;
+export default SweepsMap;
