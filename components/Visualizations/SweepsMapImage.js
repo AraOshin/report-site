@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 
 const options = [
-  { value: 'neighborhoodOne', label: 'Neighborhood One', },
+  { value: 'neighborhoodOne', label: 'Neighborhood One' },
   { value: 'neighborhoodTwo', label: 'Neighborhood Two' },
   { value: 'neighborhoodThree', label: 'Neighborhood Three' },
   { value: 'neighborhoodFour', label: 'Neighborhood Four' },
   { value: 'neighborhoodFive', label: 'Neighborhood Five' },
   { value: 'neighborhoodSix', label: 'Neighborhood Six' },
   { value: 'neighborhoodSeven', label: 'Neighborhood Seven' },
+  { value: 'PortlandSweepsMap', label: 'Portland' },
 ];
 
 class SweepsMapImage extends Component {
@@ -37,8 +38,14 @@ class SweepsMapImage extends Component {
         />
 
         {selectedOption
-          ? <img className="responsive-img" src={`./static/${selectedOption.value}.jpeg`} />
-          : <img className="responsive-img" src="./static/neighborhoodTwo.jpeg" />
+          ? <img
+            className="responsive-img"
+            src={`./static/${selectedOption.value}.png`}
+            style={{ width: 800, height: 'auto' }} />
+          : <img
+            className="responsive-img" src="./static/PortlandSweepsMap.png"
+            style={{ width: 800, height: 'auto' }}
+          />
         }
       </div>
 

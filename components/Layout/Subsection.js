@@ -89,7 +89,7 @@ class Subsection extends Component {
 
     return (
       <div
-        className={isRow ? 'report section-rows' : 'report section-columns'}
+        className={isRow ? 'report subsection-rows' : 'report subsection-columns'}
         style={expandableStyle}
       >
         <StickyContainer className="inner-section">
