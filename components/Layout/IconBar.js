@@ -74,7 +74,9 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('campsites-section')}
                 >
-                  <Tent fill={active === 'campsites-section' ? '#2FD89F' : '#4992D5'} />
+                  <Tent
+                    className="icon"
+                    fill={active === 'campsites-section' ? '#2FD89F' : '#4992D5'} />
                   {!transform && (
                     <span
                       className="icon-label"
@@ -90,7 +92,9 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('police-section')}
                 >
-                  <Police fill={active === 'police-section' ? '#2FD89F' : '#4992D5'} />
+                  <Police
+                    className="icon"
+                    fill={active === 'police-section' ? '#2FD89F' : '#4992D5'} />
                   {!transform && <span className="icon-label"> Police Action </span>}
                   <div className="icon-line" />
                 </div>
@@ -98,7 +102,9 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('hygiene-section')}
                 >
-                  <Hygine fill={active === 'hygiene-section' ? '#2FD89F' : '#4992D5'} />
+                  <Hygine
+                    className="icon"
+                    fill={active === 'hygiene-section' ? '#2FD89F' : '#4992D5'} />
                   {!transform && <span className="icon-label"> Hygiene Access </span>}
                   <div className="icon-line" />
                 </div>
@@ -106,8 +112,10 @@ class IconBar extends Component {
                   className={getIconClassName(transform)}
                   onClick={() => this.hanldleClick('waste-section')}
                 >
-                  <Waste fill={active === 'waste-section' ? '#2FD89F' : '#4992D5'} />
-                  {!transform && <span className="icon-label">Waste Disposal Access</span>}
+                  <Waste
+                    className="icon"
+                    fill={active === 'waste-section' ? '#2FD89F' : '#4992D5'} />
+                  {!transform && <span className="icon-label">Waste Disposal </span>}
                   <div className="icon-line" />
                 </div>
               </div>

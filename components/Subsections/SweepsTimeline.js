@@ -21,7 +21,7 @@ const SweepTimeline = () => (
           <img className="responsive-img" src="./static/police_img.png" />
         </div>
       )}
-    headingText="Timeline of a campsite sweep in photos"
+    headingText="Campsite Sweep in Photos"
     subHeadingText="Sweeps Cause Trauma and are Bad for the Environment"
     visableText={(
       <div className="paragraph-container">
