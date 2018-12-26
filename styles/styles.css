@@ -265,6 +265,7 @@ strong {
 
 .vis-col{
   width: 100%;
+  
 }
 
 .vis-row{
@@ -272,10 +273,10 @@ strong {
   max-height: 600px;
 }
 
-/* .report-vis{
+.report-vis{
   display: flex;
   justify-content: center;
-} see Sticky vis component */
+} 
 
 .subsection-divider{
   display:flex;
