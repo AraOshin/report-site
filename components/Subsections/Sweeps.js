@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
+const HEADING_TEXT = 'Sweeps Over Time';
 
-const Sweeps = () => (
+
+const Sweeps = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<LineChart dataContext="sweepsByMonth" legendLabel="Number of Sweeps" />}
-    headingText="Sweeps Over Time"
+    subsectionId={HEADING_TEXT}
+    headingText={HEADING_TEXT}
     subHeadingText="City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
     visableText={(
       <div className="paragraph-container">
@@ -31,5 +36,9 @@ const Sweeps = () => (
     )}
   />
 );
+
+Sweeps.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
 
 export default Sweeps;

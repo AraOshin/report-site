@@ -9,7 +9,10 @@ class Subsection extends Component {
     expanded: false,
   }
 
-  toggleExpanded = () => this.setState({ expanded: !this.state.expanded })
+  toggleExpanded = () => {
+    this.setState({ expanded: !this.state.expanded });
+    this.props.toggleExpandedSubsection();
+  }
 
   renderTextSection = () => {
     const { isRow, visableText, expandedText } = this.props;
@@ -58,9 +61,6 @@ class Subsection extends Component {
 
     return (
       <div className='vis-col'>
-
-
-
         {!expanded
           ? vis
           : (
@@ -128,6 +128,7 @@ Subsection.propTypes = {
   expandedText: PropTypes.object,
   headingText: PropTypes.string,
   subHeadingText: PropTypes.string,
+
 }
 
 export default Subsection;

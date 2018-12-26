@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SweepsMapImage from '../Visualizations/SweepsMapImage';
 import Subsection from '../Layout/Subsection';
 
 
-const SweepsMap = () => (
+const SweepsMap = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<SweepsMapImage />}
     headingText="Policing Data"
     subHeadingText="Portland Wide - Dispatched calls and Crime Reports (crime figures are mock) filed in 2016, 2017, 2018"
@@ -31,5 +33,10 @@ const SweepsMap = () => (
     )}
   />
 );
+
+SweepsMap.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
+
 
 export default SweepsMap;

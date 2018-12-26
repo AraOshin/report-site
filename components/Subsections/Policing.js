@@ -1,13 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BarGroup from '../Visualizations/BarGroup';
 import Subsection from '../Layout/Subsection';
 
+const HEADING_TEXT = 'Policing Data';
 
-const Policing = () => (
+const Policing = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<BarGroup dataContext="policingReportsByYear" legendLabels={['Portland Crime Reports Filed', 'CES Crime Reports Filed']} />}
-    headingText="Policing Data"
+    subsectionId={HEADING_TEXT}
+    headingText={HEADING_TEXT}
     subHeadingText="Portland Wide - Dispatched calls and Crime Reports (crime figures are mock) filed in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
@@ -31,5 +35,9 @@ const Policing = () => (
     )}
   />
 );
+
+Policing.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
 
 export default Policing;

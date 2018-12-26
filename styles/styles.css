@@ -36,12 +36,12 @@ strong {
 .splash-heading {
   max-width:940px;
   padding: 20px;
-  font-size: 30px;
+  font-size: 42px;
   text-transform: uppercase;
   text-align: center;
   font-family: 'Leto', sans-serif;
   line-height: 64px;
-  letter-spacing: .2px;
+  letter-spacing: 1px;
   color: white;
   font-weight: 300;
 }
@@ -373,11 +373,13 @@ strong {
   border-bottom: #2FD89F solid 3px;
   width: 45px;
   margin-top: 28px;
+  margin-bottom: 18px;
 }
 
 @media (max-width: 500px) {
   .spacer-line{
     margin-top: 18px;
+    margin-bottom: 8px;
     width: 30px;
   }
 }
@@ -385,10 +387,10 @@ strong {
 
 
 .paragraph{
-  padding-top: 28px;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   line-height: 30px;
+  margin-top: 10px;
 }
 
 

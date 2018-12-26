@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import {
-  VictoryScatter,
   VictoryAxis,
   VictoryChart,
   VictoryLine,
   VictoryLegend,
+  VictoryClipContainer,
 } from 'victory';
 import theme from './victoryTheme';
 
 import { DataContext } from '../../pages/index';
 
-const LineChart = ({ dataContext, legendLabel }) => (
+const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
 
   <DataContext.Consumer>
     {data => (
@@ -19,21 +20,26 @@ const LineChart = ({ dataContext, legendLabel }) => (
         theme={theme}
         domainPadding={{ x: [30, 10], y: [0, 5] }}
         minDomain={{ y: 0 }}
+        groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
       >
 
-        <VictoryLegend x={50}
+        <VictoryLegend
+          groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
+          x={50}
           data={[
             { name: legendLabel },
           ]}
         />
 
         <VictoryAxis
+          groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           fixLabelOverlap
           tickFormat={(label) => `${moment(label).format('YYYY')}\n${moment(label).format('MMMM')}`}
-          tickCount={(data[dataContext].length / 3)}
+          tickCount={parseInt((data[dataContext].length / 3), 10)}
         />
 
         <VictoryAxis
+          groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           dependentAxis
           crossAxis={false}
           style={{
@@ -44,6 +50,7 @@ const LineChart = ({ dataContext, legendLabel }) => (
 
 
         <VictoryLine
+          groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           interpolation="monotoneX"
           style={{
             data: { stroke: '#2FD89F' },
@@ -78,4 +85,11 @@ const LineChart = ({ dataContext, legendLabel }) => (
   </DataContext.Consumer>
 
 );
+
+LineChart.propTypes = {
+  dataContext: PropTypes.string,
+  subsectionId: PropTypes.string,
+  legendLabel: PropTypes.string,
+};
+
 export default LineChart;

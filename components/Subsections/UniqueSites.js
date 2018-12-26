@@ -1,13 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
+const HEADING_TEXT = 'Unique Campsites';
 
-const UniqueSites = () => (
+const UniqueSites = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<LineChart dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
-    headingText="Unique Campsites"
+    subsectionId={HEADING_TEXT}
+    headingText={HEADING_TEXT}
     subHeadingText="Unique Campsites Estimates Are Not Changing"
     visableText={(
       <div className="paragraph-container">
@@ -31,5 +35,10 @@ const UniqueSites = () => (
     )}
   />
 );
+
+UniqueSites.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
+
 
 export default UniqueSites;

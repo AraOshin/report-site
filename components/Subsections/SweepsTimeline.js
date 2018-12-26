@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Subsection from '../Layout/Subsection';
 
 
-const SweepTimeline = () => (
+const SweepTimeline = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={
       (
         <div>
@@ -45,5 +47,11 @@ const SweepTimeline = () => (
     )}
   />
 );
+
+
+SweepTimeline.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
+
 
 export default SweepTimeline;

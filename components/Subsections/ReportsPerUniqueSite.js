@@ -1,13 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
+const HEADING_TEXT = 'Placeholder for Reports per UniqueSite';
 
-const ReportsPerUniqueSite = () => (
+const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<LineChart dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
-    headingText="Placeholder for ReportsPerUniqueSite"
+    subsectionId={HEADING_TEXT}
+    headingText={HEADING_TEXT}
     subHeadingText="This is a Placeholder: Vis Coming Soon"
     visableText={(
       <div className="paragraph-container">
@@ -31,5 +35,9 @@ const ReportsPerUniqueSite = () => (
     )}
   />
 );
+
+ReportsPerUniqueSite.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
 
 export default ReportsPerUniqueSite;

@@ -1,60 +1,61 @@
-import React from 'react';
-import {
-  VictoryPie, VictoryContainer,
-} from 'victory';
-import theme from './victoryTheme';
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import {
+//   VictoryPie, VictoryContainer,
+// } from 'victory';
+// import theme from './victoryTheme';
 
-const PieChart = props => (
+// const PieChart = props => (
 
-  <div className="pieChartsVis">
-    <VictoryPie
-      theme={theme}
-      data={props.data}
-      innerRadius={100}
-      x={0}
-      y={1}
-    />
+//   <div className="pieChartsVis">
+//     <VictoryPie
+//       theme={theme}
+//       data={props.data}
+//       innerRadius={100}
+//       x={0}
+//       y={1}
+//     />
 
-    <VictoryPie
-      theme={theme}
-      data={props.data}
-      innerRadius={100}
-      x={0}
-      y={1}
-    />
-    <VictoryPie
-      theme={theme}
-      data={props.data}
-      innerRadius={100}
-      x={0}
-      y={1}
-    />
+//     <VictoryPie
+//       theme={theme}
+//       data={props.data}
+//       innerRadius={100}
+//       x={0}
+//       y={1}
+//     />
+//     <VictoryPie
+//       theme={theme}
+//       data={props.data}
+//       innerRadius={100}
+//       x={0}
+//       y={1}
+//     />
 
-    <VictoryPie
-      theme={theme}
-      data={props.data}
-      innerRadius={100}
-      x={0}
-      y={1}
-    />
-    <VictoryPie
-      theme={theme}
-      data={props.data}
-      innerRadius={100}
-      x={0}
-      y={1}
-    />
+//     <VictoryPie
+//       theme={theme}
+//       data={props.data}
+//       innerRadius={100}
+//       x={0}
+//       y={1}
+//     />
+//     <VictoryPie
+//       theme={theme}
+//       data={props.data}
+//       innerRadius={100}
+//       x={0}
+//       y={1}
+//     />
 
-    <VictoryPie
-      theme={theme}
-      data={props.data}
-      innerRadius={100}
-      x={0}
-      y={1}
-    />
+//     <VictoryPie
+//       theme={theme}
+//       data={props.data}
+//       innerRadius={100}
+//       x={0}
+//       y={1}
+//     />
 
 
-  </div>
+//   </div>
 
-);
-export default PieChart;
+// );
+// export default PieChart;

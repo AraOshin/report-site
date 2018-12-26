@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
 
-const ReportsCES = () => (
+const HEADING_TEXT = 'CES - Public Reporting of Campsites';
+
+const ReportsCES = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<LineChart dataContext="targetAreaReportsByMonth" legendLabel="Number of Reports Filed" />}
-    headingText="CES - Public Reporting of Campsites"
+    subsectionId={HEADING_TEXT}
+    headingText={HEADING_TEXT}
     subHeadingText="CES - People are Submitting More and More Reports"
     visableText={(
       <div className="paragraph-container">
@@ -31,5 +36,9 @@ const ReportsCES = () => (
     )}
   />
 );
+
+ReportsCES.propTypes = {
+  toggleExpandedSubsection: PropTypes.func,
+};
 
 export default ReportsCES;
