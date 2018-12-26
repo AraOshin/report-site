@@ -5,13 +5,43 @@ import PropTypes from 'prop-types';
 
 
 class Subsection extends Component {
-  state = {
-    expanded: false,
+  constructor(props) {
+    super(props);
+    this.divRef = React.createRef();
+
+    this.state = {
+      expanded: false,
+    };
   }
 
   toggleExpanded = () => {
-    this.setState({ expanded: !this.state.expanded });
-    this.props.toggleExpandedSubsection();
+    const { expanded } = this.state;
+    const { toggleExpandedSubsection } = this.props;
+
+    this.setState({ expanded: !expanded });
+    toggleExpandedSubsection();
+  }
+
+  getTop = ({ computedTop, distanceFromBottom, distanceFromTop }) => {
+    let top = computedTop;
+    let MAGIC_NUMBER = 200;
+
+    if (this.divRef.current) {
+      const heading = this.divRef.current.querySelector('.report-text.heading').offsetHeight;
+      const subHeading = this.divRef.current.querySelector('.report-text.sub-heading').offsetHeight;
+      const spacerLine = this.divRef.current.querySelector('.spacer-line').offsetHeight;
+      const spacerDiv = this.divRef.current.querySelector('.spacer-line');
+      const spacerMarginTopRaw = getComputedStyle(spacerDiv).marginTop;
+      const spacerMarginTop = Number(spacerMarginTopRaw.slice(0, spacerMarginTopRaw.length - 2));
+
+      MAGIC_NUMBER = heading + subHeading + spacerLine + spacerMarginTop;
+    }
+
+    if (distanceFromTop <= 0) top = MAGIC_NUMBER;
+
+    if (distanceFromBottom <= MAGIC_NUMBER) top = distanceFromBottom;
+
+    return top;
   }
 
   renderTextSection = () => {
@@ -41,36 +71,36 @@ class Subsection extends Component {
   }
 
   renderRowVisSection = () => {
-
-    const { isRow } = this.props
-    const { expanded } = this.state;
+    const { vis } = this.props;
 
     return (
-      <div className='vis-row'>
-        {this.props.vis}
+      <div className="vis-row">
+        {vis}
       </div>
-    )
+    );
   };
 
 
   renderColVisSection = () => {
-
-    const { isRow, vis, expandedVis } = this.props
+    const { vis, expandedVis } = this.props;
     const { expanded } = this.state;
 
-
     return (
-      <div className='vis-col'>
+      <div className="vis-col">
         {!expanded
           ? vis
           : (
             <Sticky topOffset={0}>
               {
-                ({ style, distanceFromTop }) => (
+                ({ style, distanceFromTop, distanceFromBottom }) => (
                   <div
                     style={{
                       ...style,
-                      marginTop: distanceFromTop <= 0 ? 152 : 0,
+                      top: this.getTop({
+                        distanceFromTop,
+                        distanceFromBottom,
+                        computedTop: style.top,
+                      }),
                     }
                     }
                     className="report-vis"
@@ -83,12 +113,11 @@ class Subsection extends Component {
         }
         {expanded && expandedVis}
       </div>
-    )
+    );
   };
 
 
   render() {
-
     const { expanded } = this.state;
     const { isRow, headingText, subHeadingText } = this.props;
 
@@ -98,6 +127,7 @@ class Subsection extends Component {
 
     return (
       <div
+        ref={this.divRef}
         className={isRow ? 'report subsection-rows' : 'report subsection-columns'}
         style={expandableStyle}
       >
@@ -128,7 +158,10 @@ Subsection.propTypes = {
   expandedText: PropTypes.object,
   headingText: PropTypes.string,
   subHeadingText: PropTypes.string,
+  vis: PropTypes.object,
+  expandedVis: PropTypes.object,
+  toggleExpandedSubsection: PropTypes.func,
 
-}
+};
 
 export default Subsection;

@@ -85,37 +85,36 @@ class Layout extends Component {
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <UniqueSites />
+              <UniqueSites toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <ReportsPerUniqueSite />
+              <ReportsPerUniqueSite toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <Sweeps />
+              <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <ReportsCES />
+              <ReportsCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <SweepsCES />
+              <SweepsCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <SweepsMap />
+              <SweepsMap toggleExpandedSubsection={this.handleGetPositionFromTop} />
             </div>
 
             <div className="section-divider" />
 
             <div className="tab police-action" id="police-section">
-              <Policing />
-              <div className="subsection-divider">
+              <Policing toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              {/* <div className="subsection-divider">
                 <div className="subsection-divider-line" />
-              </div>
-              <Policing />
+              </div> */}
 
 
 
@@ -165,15 +164,15 @@ class Layout extends Component {
               <div className="section-divider" />
             </div>
             <div className="tab hygiene-access" id="hygiene-section">
-              <ProblemsPlaceholder />
-              <div className="subsection-divider">
+              <ProblemsPlaceholder toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              {/* <div className="subsection-divider">
                 <div className="subsection-divider-line" />
-              </div>
-              <SweepsTimeline />
+              </div> */}
+
               <div className="section-divider" />
             </div>
             <div className="tab waste-disposal" id="waste-section">
-              <SweepsTimeline />
+              <SweepsTimeline toggleExpandedSubsection={this.handleGetPositionFromTop} />
             </div>
           </div>
         </StickyContainer>
