@@ -58,21 +58,23 @@ class Subsection extends Component {
 
     return (
       <div className='vis-col'>
-        {vis}
-        {expanded && expandedVis}
-        {/* <Sticky topOffset={0}>
+        {/* {vis} */}
+        <Sticky topOffset={0}>
           {
             ({ style, distanceFromTop }) => (
               <div
                 style={{
-
-                }}
+                  ...style,
+                  marginTop: distanceFromTop <= 0 ? 152 : 0,
+                }
+                }
                 className="report-vis"
               >
                 {this.props.vis}
               </div>
             )}
-        </Sticky> */}
+        </Sticky>
+        {expanded && expandedVis}
       </div>
     )
   };
