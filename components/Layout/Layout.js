@@ -13,6 +13,8 @@ import SweepsCES from '../Subsections/SweepsCES';
 import SweepsTimeline from '../Subsections/SweepsTimeline';
 import Policing from '../Subsections/Policing';
 import SweepsMap from '../Subsections/SweepsMap';
+import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
+import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
 
 
 const Layout = () => (
@@ -31,6 +33,10 @@ const Layout = () => (
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
+          <ReportsPerUniqueSite />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
+          </div>
           <Sweeps />
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
@@ -39,33 +45,23 @@ const Layout = () => (
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
-
           <SweepsCES />
-
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
-
-          <SweepsTimeline />
-
-          <div className="subsection-divider">
-            <div className="subsection-divider-line" />
-          </div>
-
-          <SweepsCES />
-
-        </div>
-        <div className="section-divider" />
-        <div className="tab police-action" id="police-section">
-
           <SweepsMap />
+        </div>
 
+        <div className="section-divider" />
+
+        <div className="tab police-action" id="police-section">
+          <Policing />
           <div className="subsection-divider">
             <div className="subsection-divider-line" />
           </div>
-
-
           <Policing />
+
+
 
           <PercentBanner
             bigText="47%"
@@ -110,20 +106,18 @@ const Layout = () => (
             imgOnRight={false}
           />
 
-          <div className="section-banner" />
-          <div className="report section-two" />
-          <div className="section-banner" />
+          <div className="section-divider" />
         </div>
         <div className="tab hygiene-access" id="hygiene-section">
-          <div className="report section-one"> hygiene </div>
-          <div className="section-banner" />
-          <div className="report section-two" />
-          <div className="section-banner" />
+          <ProblemsPlaceholder />
+          <div className="subsection-divider">
+            <div className="subsection-divider-line" />
+          </div>
+          <SweepsTimeline />
+          <div className="section-divider" />
         </div>
         <div className="tab waste-disposal" id="waste-section">
-          <div className="report section-one"> waste </div>
-          <div className="section-banner" />
-          <div className="report section-two" />
+          <SweepsTimeline />
         </div>
       </div>
     </StickyContainer>
