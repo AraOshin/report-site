@@ -29,7 +29,6 @@ app.prepare().then(() => {
     res.targetAreaSweepsByMonth = targetAreaSweepsByMonth;
     res.targetAreaReportsByMonth = targetAreaReportsByMonth;
     res.yearlyReports = yearlyReports;
-
     res.reportsAggressiveCount = reportsAggressiveCount;
     res.uniqueSitesData = uniqueSitesData;
     res.uniqueSitesByWeek = uniqueSitesByWeek;

@@ -39,7 +39,6 @@ class Layout extends Component {
   getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
 
 
-
   hanldleIconClick = (id) => {
     const sectionPosition = document.getElementById(id).offsetTop;
 
@@ -77,7 +76,6 @@ class Layout extends Component {
         <Head title="Home" />
         <Splash />
         <StickyContainer className="site-container">
-          {console.log(active)}
           <IconBar
             active={active}
             handleIconClick={this.hanldleIconClick}
