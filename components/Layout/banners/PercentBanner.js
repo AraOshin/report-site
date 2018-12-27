@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PercentBanner = ({
     bigText,
@@ -32,4 +33,10 @@ const PercentBanner = ({
     );
 };
 
+// PercentBanner.propTypes = {
+//     bigText:
+//     smallTextOne:
+//     smallTextTwo:
+//     imgUrl:
+// }
 export default PercentBanner;

@@ -39,7 +39,7 @@ const IconBar = ({ active, handleIconClick, handleScroll }) => (
                   style={{ color: '#2FD89F' }}
                 >
                   Campsites
-                    </span>
+                </span>
               )}
               <div className="icon-line" />
             </div>
@@ -50,7 +50,8 @@ const IconBar = ({ active, handleIconClick, handleScroll }) => (
             >
               <Police
                 className="icon"
-                fill={active === 'police-section' ? '#2FD89F' : '#4992D5'} />
+                fill={active === 'police-section' ? '#2FD89F' : '#4992D5'}
+              />
               {!transform && <span className="icon-label"> Police Action </span>}
               <div className="icon-line" />
             </div>
@@ -60,7 +61,8 @@ const IconBar = ({ active, handleIconClick, handleScroll }) => (
             >
               <Hygine
                 className="icon"
-                fill={active === 'hygiene-section' ? '#2FD89F' : '#4992D5'} />
+                fill={active === 'hygiene-section' ? '#2FD89F' : '#4992D5'}
+              />
               {!transform && <span className="icon-label"> Hygiene Access </span>}
               <div className="icon-line" />
             </div>
@@ -70,7 +72,8 @@ const IconBar = ({ active, handleIconClick, handleScroll }) => (
             >
               <Waste
                 className="icon"
-                fill={active === 'waste-section' ? '#2FD89F' : '#4992D5'} />
+                fill={active === 'waste-section' ? '#2FD89F' : '#4992D5'}
+              />
               {!transform && <span className="icon-label">Waste Disposal </span>}
               <div className="icon-line" />
             </div>

@@ -4,7 +4,7 @@ const Splash = () => (
   <div className="splash">
 
     <div className="splash-background">
-      <img className="logo" src="/static/logo.svg" />
+      <img className="logo" src="/static/logo.svg" alt="NeighborToNeighbor Logo" />
       <div className="splash-heading">
         {/* COUNTING THE WAYS CITY ACTIONS IMPACT PORTLANDERS EXPERIENCING HOUSELESSNESS */}
       </div>

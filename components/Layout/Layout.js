@@ -16,8 +16,6 @@ import SweepsMap from '../Subsections/SweepsMap';
 import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
 import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
 
-
-
 class Layout extends Component {
   state = {
     active: 'campsites',
@@ -116,8 +114,6 @@ class Layout extends Component {
                 <div className="subsection-divider-line" />
               </div> */}
 
-
-
               <PercentBanner
                 bigText="47%"
                 smallTextOne={(
@@ -134,7 +130,7 @@ class Layout extends Component {
                     <strong>actions</strong>
 
                     in 2018
-              </span>
+                  </span>
                 )}
                 imgUrl="/static/police_img.png"
               />
@@ -155,7 +151,7 @@ class Layout extends Component {
                     <strong>actions</strong>
 
                     in 2018
-              </span>
+                  </span>
                 )}
                 imgUrl="/static/police_img.png"
                 imgOnRight={false}
