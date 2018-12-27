@@ -25,15 +25,20 @@ class Layout extends Component {
     this.handleGetPositionFromTop();
   }
 
-  handleGetPositionFromTop = () => {
-    const getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
+  handleGetPositionFromTop = (isUpdate) => {
+    const valToAdd = isUpdate ? 75 : 0;
 
-    this.campsites = getPositionFromTop('campsites-section');
-    this.police = getPositionFromTop('police-section') - 1;
-    this.hygiene = getPositionFromTop('hygiene-section') - 1;
-    this.waste = getPositionFromTop('waste-section') - 1;
+
+    this.campsites = this.getPositionFromTop('campsites-section');
+    this.police = this.getPositionFromTop('police-section') - 1 + valToAdd;
+    this.hygiene = this.getPositionFromTop('hygiene-section') - 1 + valToAdd;
+    this.waste = this.getPositionFromTop('waste-section') - 1 + valToAdd;
     console.log(this.campsites, this.police, this.hygiene, this.waste);
   }
+
+  getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
+
+
 
   hanldleIconClick = (id) => {
     const sectionPosition = document.getElementById(id).offsetTop;

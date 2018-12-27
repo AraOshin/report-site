@@ -20,6 +20,7 @@ const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
         theme={theme}
         domainPadding={{ x: [30, 10], y: [0, 5] }}
         minDomain={{ y: 0 }}
+
         groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
       >
 

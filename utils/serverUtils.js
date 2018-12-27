@@ -1,6 +1,5 @@
 const moment = require('moment');
 const { sweepsData } = require('../data-store/sweeps');
-// const { reportsDataNew } = require('../data-store/campsite_reports_final');
 const { reportsData } = require('../data-store/campsiteReports');
 const { uniqueSites } = require('../data-store/uniqueSites');
 const { policingReports } = require('../data-store/policingReports');
@@ -52,22 +51,6 @@ const targetAreaReportsByMonth = getMonthlyCount(targetAreaReportsDates);
 const reportsAggressive = reportsData.features.map(feature => feature['Repeated.instances.of.overly.aggressive.behavior.from.campers']);
 
 
-// const uniqueSitesWeekSum = uniqueSites.features.reduce((acc, curr) => {
-//   const key = moment(curr.Week).format('MMM YYYY');
-//   if (acc[key]) {
-//     acc[key] = {
-//       weeks: acc[key].weeks + 1,
-//       weeksSum: acc[key].weeksSum + curr.EstimatedSites,
-//     };
-//   } else {
-//     acc[key] = {
-//       weeks: 1,
-//       weeksSum: curr.EstimatedSites,
-//     };
-//   }
-//   return acc;
-// }, {});
-
 const uniqueSitesData = uniqueSites.features
   .map(feature => ({
     Week: moment(feature.Date).format('MM/DD/YY'),
@@ -102,6 +85,20 @@ const uniqueSitesAndReportsWeekSum = uniqueSitesData.reduce((acc, curr) => {
   return acc;
 }, {});
 
+
+const uniqueSitesByWeek = uniqueSitesData
+  .sort(
+    (a, b) => (
+      moment(a.Week)
+        .isAfter(b.Week)
+        ? 1
+        : -1
+    ),
+  )
+  .map(weekData => ([
+    moment(weekData.Week).format('MM/DD/YY'), Number(weekData.estimatedSites),
+  ]));
+
 const uniqueSitesByMonth = Object.entries(uniqueSitesAndReportsWeekSum)
   .reduce((acc, curr) => {
     const val = (curr[1].weeksSumSites / curr[1].weeks);
@@ -128,7 +125,6 @@ const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
 
 const policingReportsByYear = policingReports.features;
 
-console.log(reportsAggressiveCount);
 
 module.exports = {
   sweepsByMonth,
@@ -139,4 +135,5 @@ module.exports = {
   uniqueSitesByMonth,
   policingReportsByYear,
   avgReportsPerUniqueSitesByMonth,
+  uniqueSitesByWeek,
 };

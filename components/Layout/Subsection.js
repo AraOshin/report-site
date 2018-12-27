@@ -19,7 +19,7 @@ class Subsection extends Component {
     const { toggleExpandedSubsection } = this.props;
 
     this.setState({ expanded: !expanded });
-    toggleExpandedSubsection();
+    toggleExpandedSubsection(true);
   }
 
   getTop = ({ computedTop, distanceFromBottom, distanceFromTop }) => {

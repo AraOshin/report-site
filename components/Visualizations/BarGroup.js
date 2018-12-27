@@ -17,7 +17,6 @@ const BarGroup = ({ dataContext, legendLabels, subsectionId }) => (
     {data => (
       <VictoryChart
         theme={theme}
-        width={400}
         domainPadding={{ x: [50, 50], y: [0, 5] }}
         minDomain={{ y: 0 }}
         groupComponent={<VictoryClipContainer clipId={`barGroup${subsectionId}`} />}
