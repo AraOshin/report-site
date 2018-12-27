@@ -14,10 +14,11 @@ const Home = ({
   reportsAggressiveCount,
   uniqueSitesByMonth,
   policingReportsByYear,
+  avgReportsPerUniqueSitesByMonth,
 }) => (
     <div>
       <Head title="Home" />
-      {console.log(policingReportsByYear)}
+      {console.log(avgReportsPerUniqueSitesByMonth)}
 
       <DataContext.Provider
         value={{
@@ -28,6 +29,8 @@ const Home = ({
           targetAreaSweepsByMonth: Object.entries(targetAreaSweepsByMonth),
           reportsAggressiveCount: Object.entries(reportsAggressiveCount),
           policingReportsByYear,
+          avgReportsPerUniqueSitesByMonth: Object.entries(avgReportsPerUniqueSitesByMonth),
+
 
         }}
       >
@@ -47,6 +50,7 @@ Home.getInitialProps = ({ res }) => (
     // reportsPerUniqueSiteByWeek: res.reportsPerUniqueSiteByWeek,
     uniqueSitesByMonth: res.uniqueSitesByMonth,
     policingReportsByYear: res.policingReportsByYear,
+    avgReportsPerUniqueSitesByMonth: res.avgReportsPerUniqueSitesByMonth,
   });
 
 Home.propTypes = {
@@ -57,7 +61,7 @@ Home.propTypes = {
   reportsAggressiveCount: PropTypes.object,
   uniqueSitesByMonth: PropTypes.object,
   policingReportsByYear: PropTypes.array,
-
+  avgReportsPerUniqueSitesByMonth: PropTypes.object,
 
 };
 

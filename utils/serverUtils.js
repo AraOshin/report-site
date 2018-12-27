@@ -31,60 +31,11 @@ const reportsDates = getDatesJson(reportsData.features, 'Date.Created.New');
 
 const targetAreaReportsDates = getDatesJson(targetAreaReportsData, 'Date.Created.New');
 
-const uniqueSitesData = uniqueSites.features
-  .map(feature => ({
-    Week: moment(feature.Date).format('MM/DD/YY'),
-    estimatedSites: feature.EstimatedSites,
-    totalReports: feature.TotalReports,
-  }))
-  .sort(
-    (a, b) => (moment(a.Week)
-      .isAfter(moment(b.Week))
-      ? 1
-      : -1
-    ),
-  );
-
-
-const uniqueSitesByWeek = uniqueSites.features
-  .sort(
-    (a, b) => (
-      moment(a.Date)
-        .isAfter(b.Date)
-        ? 1
-        : -1
-    ),
-  )
-  .map(feature => ([
-    moment(feature.Date).format('MM/DD/YY'), Number(feature.EstimatedSites),
-  ]));
-
-
-const reportsPerUniqueSiteByWeek = uniqueSites.features
-  .sort(
-    (a, b) => (
-      moment(a.Date)
-        .isAfter(b.Date)
-        ? 1
-        : -1
-    ),
-  )
-  .map(feature => ([
-    moment(feature.Date).format('MM/DD/YY'), Number(feature.TotalReports) / Number(feature.EstimatedSites),
-  ]));
-
-
 // returns object keyed by month (format: Jan 18) with  value of total sweeps for that month
 
 const getMonthlyCount = someArray => someArray.reduce((acc, curr) => {
   const key = moment(curr).format('MMM YYYY');
-  if (acc[key]) acc[key]++;
-  else acc[key] = 1;
-  return acc;
-}, {});
-
-const yearlyReports = reportsDates.reduce((acc, curr) => {
-  const key = moment(curr).format('YY');
+  if (key === 'Nov 2018') return acc;
   if (acc[key]) acc[key]++;
   else acc[key] = 1;
   return acc;
@@ -117,26 +68,39 @@ const reportsAggressive = reportsData.features.map(feature => feature['Repeated.
 //   return acc;
 // }, {});
 
+const uniqueSitesData = uniqueSites.features
+  .map(feature => ({
+    Week: moment(feature.Date).format('MM/DD/YY'),
+    estimatedSites: feature.EstimatedSites,
+    totalReports: feature.Count_AllReports,
+  }))
+  .sort(
+    (a, b) => (moment(a.Week)
+      .isAfter(moment(b.Week))
+      ? 1
+      : -1
+    ),
+  );
 
-const uniqueSitesAndReportsWeekSum = uniqueSites.features.reduce((acc, curr) => {
+
+const uniqueSitesAndReportsWeekSum = uniqueSitesData.reduce((acc, curr) => {
   const key = moment(curr.Week).format('MMM YYYY');
+  if (key === 'Nov 2018') return acc;
   if (acc[key]) {
     acc[key] = {
       weeks: acc[key].weeks + 1,
-      weeksSumReports: acc[key].weeksSumReports + curr.Count_AllReports,
-      weeksSumSites: acc[key].weeksSumSites + curr.EstimatedSites,
+      weeksSumReports: acc[key].weeksSumReports + curr.totalReports,
+      weeksSumSites: acc[key].weeksSumSites + curr.estimatedSites,
     };
   } else {
     acc[key] = {
       weeks: 1,
-      weeksSumReports: curr.Count_AllReports,
-      weeksSumSites: curr.EstimatedSites,
+      weeksSumReports: curr.totalReports,
+      weeksSumSites: curr.estimatedSites,
     };
   }
   return acc;
 }, {});
-
-
 
 const uniqueSitesByMonth = Object.entries(uniqueSitesAndReportsWeekSum)
   .reduce((acc, curr) => {
@@ -146,7 +110,13 @@ const uniqueSitesByMonth = Object.entries(uniqueSitesAndReportsWeekSum)
     return acc;
   }, {});
 
-
+const avgReportsPerUniqueSitesByMonth = Object.entries(uniqueSitesAndReportsWeekSum)
+  .reduce((acc, curr) => {
+    const val = (curr[1].weeksSumReports / curr[1].weeksSumSites);
+    const key = curr[0];
+    acc[key] = val;
+    return acc;
+  }, {});
 
 const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
   const key = curr;
@@ -166,11 +136,7 @@ module.exports = {
   targetAreaSweepsByMonth,
   targetAreaReportsByMonth,
   reportsAggressiveCount,
-  yearlyReports,
-  uniqueSitesData,
-  uniqueSitesByWeek,
-  reportsPerUniqueSiteByWeek,
   uniqueSitesByMonth,
   policingReportsByYear,
+  avgReportsPerUniqueSitesByMonth,
 };
-

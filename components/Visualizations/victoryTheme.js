@@ -46,14 +46,6 @@ const strokeLinejoin = 'round';
 
 // Put it all together...
 const theme = {
-  area: Object.assign({
-    style: {
-      data: {
-        fill: lightBlue,
-      },
-      labels: centeredLabelStyles,
-    },
-  }, baseProps),
   axis: Object.assign({
     style: {
       axis: {
@@ -89,34 +81,6 @@ const theme = {
       labels: baseLabelStyles,
     },
   }, baseProps),
-  boxplot: Object.assign({
-    style: {
-      max: { padding: 8, stroke: lightBlue, strokeWidth: 1 },
-      maxLabels: baseLabelStyles,
-      median: { padding: 8, stroke: lightBlue, strokeWidth: 1 },
-      medianLabels: baseLabelStyles,
-      min: { padding: 8, stroke: lightBlue, strokeWidth: 1 },
-      minLabels: baseLabelStyles,
-      q1: { padding: 8, fill: darkBlue },
-      q1Labels: baseLabelStyles,
-      q3: { padding: 8, fill: darkBlue },
-      q3Labels: baseLabelStyles,
-    },
-    boxWidth: 20,
-  }, baseProps),
-  candlestick: Object.assign({
-    style: {
-      data: {
-        stroke: lightGreen,
-        strokeWidth: 1,
-      },
-      labels: centeredLabelStyles,
-    },
-    candleColors: {
-      positive: '#ffffff',
-      negative: lightBlue,
-    },
-  }, baseProps),
   chart: baseProps,
   errorbar: Object.assign({
     borderWidth: 8,
@@ -138,7 +102,6 @@ const theme = {
     colorScale: colors,
     gutter: 0,
     orientation: 'horizontal',
-
     style: {
       data: {
         type: 'circle',
@@ -181,9 +144,6 @@ const theme = {
       labels: centeredLabelStyles,
     },
   }, baseProps),
-  stack: Object.assign({
-    colorScale: colors,
-  }, baseProps),
   tooltip: {
     style: Object.assign({}, centeredLabelStyles, { padding: 5, pointerEvents: 'none' }),
     flyoutStyle: {
@@ -195,22 +155,6 @@ const theme = {
     cornerRadius: 5,
     pointerLength: 10,
   },
-  voronoi: Object.assign({
-    style: {
-      data: {
-        fill: 'transparent',
-        stroke: 'transparent',
-        strokeWidth: 0,
-      },
-      labels: Object.assign({}, centeredLabelStyles, { padding: 5, pointerEvents: 'none' }),
-      flyout: {
-        stroke: lightBlue,
-        strokeWidth: 1,
-        fill: '#f0f0f0',
-        pointerEvents: 'none',
-      },
-    },
-  }, baseProps),
 };
 
 

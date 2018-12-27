@@ -26,6 +26,7 @@ const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
         <VictoryLegend
           groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           x={50}
+          y={10}
           data={[
             { name: legendLabel },
           ]}
@@ -34,8 +35,7 @@ const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
         <VictoryAxis
           groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           fixLabelOverlap
-          tickFormat={(label) => `${moment(label).format('YYYY')}\n${moment(label).format('MMMM')}`}
-          tickCount={parseInt((data[dataContext].length / 3), 10)}
+          tickFormat={(label) => `${moment(label).format('YYYY')}\n${moment(label).format('MMM')}`}
         />
 
         <VictoryAxis
@@ -93,3 +93,7 @@ LineChart.propTypes = {
 };
 
 export default LineChart;
+
+
+
+// tickCount={parseInt((data[dataContext].length / 3), 10)}

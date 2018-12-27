@@ -9,7 +9,7 @@ const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
+    vis={<LineChart dataContext="avgReportsPerUniqueSitesByMonth" legendLabel="Avgerage Reports per estimated campsite per month" />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="This is a Placeholder: Vis Coming Soon"

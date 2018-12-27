@@ -259,7 +259,7 @@ strong {
 
 .report-columns{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 48.5% 48.5%;
   grid-column-gap: 3%; 
 }
 
@@ -280,7 +280,7 @@ strong {
 }
 
 .vis-col{
-  width: 100%;
+  width: 106%;
   
 }
 

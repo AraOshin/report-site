@@ -15,33 +15,40 @@ const BarChart = ({ dataContext, subsectionId }) => (
         domainPadding={3}
         theme={theme}
         groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
+        standalone={false}
       >
-        <VictoryAxis
-          groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
-          crossAxis
-          label="Date"
-          fixLabelOverlap
-          tickLabelComponent={(
-            <VictoryLabel
-              angle={30}
-              textAnchor="start"
-              verticalAnchor="end"
-            />
-          )}
-        />
-        <VictoryAxis
-          groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
-          dependentAxis
-          crossAxis
-          label="Number of Sites Swept"
-        />
 
-        <VictoryBar
-          groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
-          data={data[dataContext]}
-          x={0}
-          y={1}
-        />
+        <svg width={450} height={300}>
+
+
+          <VictoryAxis
+            groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
+            crossAxis
+            label="Date"
+            fixLabelOverlap
+            tickLabelComponent={(
+              <VictoryLabel
+                angle={30}
+                textAnchor="start"
+                verticalAnchor="end"
+              />
+            )}
+          />
+          <VictoryAxis
+            groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
+            dependentAxis
+            crossAxis
+            label="Number of Sites Swept"
+          />
+
+          <VictoryBar
+            groupComponent={<VictoryClipContainer clipId={`barChart${subsectionId}`} />}
+            data={data[dataContext]}
+            x={0}
+            y={1}
+          />
+
+        </svg>
 
       </VictoryChart>
     )}
