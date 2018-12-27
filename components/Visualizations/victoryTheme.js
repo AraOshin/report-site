@@ -24,7 +24,7 @@ const fontSize = 9;
 
 // Layout
 const baseProps = {
-  width: 600,
+  width: 550,
   height: 300,
   colorScale: colors,
 };

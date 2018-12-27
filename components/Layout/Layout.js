@@ -18,7 +18,7 @@ import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
 
 class Layout extends Component {
   state = {
-    active: 'campsites',
+    active: 'campsites-section',
   }
 
   componentDidMount = () => {
@@ -72,6 +72,7 @@ class Layout extends Component {
         <Head title="Home" />
         <Splash />
         <StickyContainer className="site-container">
+          {console.log(active)}
           <IconBar
             active={active}
             handleIconClick={this.hanldleIconClick}

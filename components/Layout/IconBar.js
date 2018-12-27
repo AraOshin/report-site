@@ -17,6 +17,8 @@ const IconBar = ({ active, handleIconClick, handleScroll }) => (
     {({ style, distanceFromTop }) => {
       const transform = shouldTransform(distanceFromTop);
       const distanceFromTopValue = distanceFromTop;
+      if (distanceFromTop) handleScroll(distanceFromTopValue);
+
       return (
         <div
           style={style}
@@ -27,7 +29,6 @@ const IconBar = ({ active, handleIconClick, handleScroll }) => (
             <div
               className={getIconClassName(transform)}
               onClick={() => handleIconClick('campsites-section')}
-              onScroll={() => handleScroll(distanceFromTopValue)}
             >
               <Tent
                 className="icon"

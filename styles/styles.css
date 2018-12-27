@@ -230,6 +230,20 @@ strong {
   padding-bottom: 68px;
 }
 
+@media (max-width: 800px) {
+  .report{
+    padding-left: 3.75%;
+    padding-right: 3.75%;
+  }
+}
+
+@media (max-width: 500px) {
+  .report{
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
 .inner-section {
   width: 95%;
   max-width: 1200px;
@@ -254,6 +268,8 @@ strong {
   grid-template-rows: auto auto;
   grid-row-gap: 4%; 
 }
+
+
 
 .text-col{
   width: 100%
@@ -338,6 +354,7 @@ strong {
   font-family: 'Leto', sans-serif;
   color: #2FD89F;
   font-weight: 300;
+  margin-top: 4px;
   padding-bottom: 43px;
 }
 
@@ -396,7 +413,10 @@ strong {
 
 @media (max-width: 500px) {
   .paragraph{
-    padding-top: 18px;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 24px;
+
   }
 }
 
@@ -480,6 +500,7 @@ strong {
 
 .dropdown-selector{
   width: 35%;
+  min-width: 250px;
   display: block;
   margin: auto;
 }
