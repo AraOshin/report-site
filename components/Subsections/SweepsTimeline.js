@@ -7,6 +7,7 @@ const SweepTimeline = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
+    disableSticky
     vis={
       (
         <div>

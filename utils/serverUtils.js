@@ -3,6 +3,8 @@ const { sweepsData } = require('../data-store/sweeps');
 const { reportsData } = require('../data-store/campsiteReports');
 const { uniqueSites } = require('../data-store/uniqueSites');
 const { policingReports } = require('../data-store/policingReports');
+// const { sweepsISOData } = require('../data-store/sweepsISO');
+
 
 const targetNeighborhoods = ['KERNS', 'BUCKMAN', 'HOSFORD-ABERNETHY'];
 
@@ -21,7 +23,7 @@ const getDatesJson = (someArray, dateKey) => someArray
   .map(feature => feature[dateKey])
   .sort((a, b) => (moment(a).isAfter(moment(b)) ? 1 : -1));
 
-// returns array with date value of each sweep feature in dataset, sorted by date
+// // returns array with date value of each sweep feature in dataset, sorted by date
 const sweepsDates = getDates(sweepsData.features, 'ReportDate');
 
 const targetAreaSweepsDates = getDates(targetAreaSweepsData, 'ReportDate');
@@ -33,8 +35,8 @@ const targetAreaReportsDates = getDatesJson(targetAreaReportsData, 'Date.Created
 // returns object keyed by month (format: Jan 18) with  value of total sweeps for that month
 
 const getMonthlyCount = someArray => someArray.reduce((acc, curr) => {
-  const key = moment(curr).format('MMM YYYY');
-  if (key === 'Nov 2018') return acc;
+  const key = moment(curr).format('YYYY MMM');
+  if (key === '2018 Nov') return acc;
   if (acc[key]) acc[key]++;
   else acc[key] = 1;
   return acc;
@@ -67,7 +69,7 @@ const uniqueSitesData = uniqueSites.features
 
 
 const uniqueSitesAndReportsWeekSum = uniqueSitesData.reduce((acc, curr) => {
-  const key = moment(curr.Week).format('MMM YYYY');
+  const key = moment(curr.Week).format('YYYY MMM');
   if (key === 'Nov 2018') return acc;
   if (acc[key]) {
     acc[key] = {

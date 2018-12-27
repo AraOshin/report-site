@@ -11,7 +11,7 @@ import {
 import theme from './victoryTheme';
 import { DataContext } from '../../pages/index';
 
-const BarGroup = ({ dataContext, legendLabels, subsectionId }) => (
+const BarGroup = ({ dataContext, legendLabels, subsectionId, yVals }) => (
 
   <DataContext.Consumer>
     {data => (
@@ -57,14 +57,14 @@ const BarGroup = ({ dataContext, legendLabels, subsectionId }) => (
             groupComponent={<VictoryClipContainer clipId={`barGroup${subsectionId}`} />}
             data={data.policingReportsByYear}
             x="year"
-            y="targetAreaDispatchedCalls"
+            y={yVals[0]}
           />
 
           <VictoryBar
             groupComponent={<VictoryClipContainer clipId={`barGroup${subsectionId}`} />}
             data={data.policingReportsByYear}
             x="year"
-            y="targetAreaTotalReports"
+            y={yVals[1]}
           />
 
 
@@ -79,5 +79,6 @@ BarGroup.propTypes = {
   dataContext: PropTypes.string,
   subsectionId: PropTypes.string,
   legendLabels: PropTypes.array,
+  yVals: PropTypes.array,
 };
 export default BarGroup;

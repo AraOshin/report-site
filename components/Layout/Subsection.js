@@ -20,6 +20,7 @@ class Subsection extends Component {
 
     this.setState({ expanded: !expanded });
     toggleExpandedSubsection(true);
+    console.log('toggleExpandedSubsectionCalled');
   }
 
   getTop = ({ computedTop, distanceFromBottom, distanceFromTop }) => {
@@ -56,16 +57,13 @@ class Subsection extends Component {
 
         {expanded && expandedText}
 
-        {!expanded
-          && (
-            <div
-              className="read-more-button"
-              onClick={this.toggleExpanded}
-            >
-              Read More
-            </div>
-          )
-        }
+
+        <div
+          className="read-more-button"
+          onClick={this.toggleExpanded}
+        >
+          {expanded ? 'Read Less' : 'Read More'}
+        </div>
       </div>
     );
   }
@@ -82,12 +80,12 @@ class Subsection extends Component {
 
 
   renderColVisSection = () => {
-    const { vis, expandedVis } = this.props;
+    const { vis, expandedVis, disableSticky } = this.props;
     const { expanded } = this.state;
 
     return (
       <div className="vis-col">
-        {!expanded
+        {(!expanded || disableSticky)
           ? vis
           : (
             <Sticky topOffset={0}>
@@ -161,6 +159,7 @@ Subsection.propTypes = {
   vis: PropTypes.object,
   expandedVis: PropTypes.object,
   toggleExpandedSubsection: PropTypes.func,
+  disableSticky: PropTypes.bool,
 
 };
 

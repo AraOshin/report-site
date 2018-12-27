@@ -263,6 +263,16 @@ strong {
   grid-column-gap: 3%; 
 }
 
+@media (max-width: 600px) {
+  .report-columns{
+    grid-template-rows: auto auto;
+    grid-row-gap: 4%;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0%; 
+
+  }
+}
+
 .report-rows{
   display: grid;
   grid-template-rows: auto auto;
@@ -315,7 +325,7 @@ strong {
 
 
 .footer {
-  height: 338px;
+  height: 400px;
   background: #0B2B40;
 }
 
@@ -335,13 +345,14 @@ strong {
 
 
 .responsive-img { 
-  width: 10%;
+  max-width: 400px;
+  width: 80%;
   height: auto;
   display: block;
   margin: auto;
   padding: 25px;
-
 }
+
 
 .report-text{
   text-align: left;

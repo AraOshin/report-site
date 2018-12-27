@@ -19,6 +19,7 @@ const Home = ({
 }) => (
     <div>
       <Head title="Home" />
+      {console.log(sweepsByMonth)}
 
       <DataContext.Provider
         value={{

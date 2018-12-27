@@ -3,16 +3,22 @@ import PropTypes from 'prop-types';
 import BarGroup from '../Visualizations/BarGroup';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Policing Data';
+const HEADING_TEXT = 'Portland Wide Dispatched Calls and Crime Reports Filed';
 
 const Policing = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<BarGroup dataContext="policingReportsByYear" legendLabels={['Portland Crime Reports Filed', 'CES Crime Reports Filed']} />}
+    vis={(
+      <BarGroup
+        dataContext="policingReportsByYear"
+        yVals={['totalReports', 'dispatchedCalls']}
+        legendLabels={['Portland Crime Reports Filed (mock)', 'Portland Dispatched Calls']}
+      />
+    )}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
-    subHeadingText="Portland Wide - Dispatched calls and Crime Reports (crime figures are mock) filed in 2016, 2017, 2018"
+    subHeadingText="Policing Data (crime figures are mock) in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">

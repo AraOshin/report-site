@@ -1,16 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SweepsMapImage from '../Visualizations/SweepsMapImage';
+import BarGroup from '../Visualizations/BarGroup';
 import Subsection from '../Layout/Subsection';
 
+const HEADING_TEXT = 'CES Dispatched Calls and Crime Reports Filed';
 
-const SweepsMap = ({ toggleExpandedSubsection }) => (
+const PolicingCES = ({ toggleExpandedSubsection }) => (
   <Subsection
-    isRow
+    isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<SweepsMapImage />}
-    headingText="Sweeps in Static 3d Maps"
-    subHeadingText="Portland Wide with Option to Select Neighborhood"
+    vis={(
+      <BarGroup
+        dataContext="policingReportsByYear"
+        yVals={['targetAreaTotalReports', 'targetAreaDispatchedCalls']}
+        legendLabels={['CES Crime Reports Filed', 'CES Dispatched Calls']}
+      />
+    )}
+    subsectionId={HEADING_TEXT}
+    headingText={HEADING_TEXT}
+    subHeadingText="Policing Data for CES in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -34,9 +42,8 @@ const SweepsMap = ({ toggleExpandedSubsection }) => (
   />
 );
 
-SweepsMap.propTypes = {
+PolicingCES.propTypes = {
   toggleExpandedSubsection: PropTypes.func,
 };
 
-
-export default SweepsMap;
+export default PolicingCES;

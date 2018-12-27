@@ -12,6 +12,7 @@ import ReportsCES from '../Subsections/ReportsCES';
 import SweepsCES from '../Subsections/SweepsCES';
 import SweepsTimeline from '../Subsections/SweepsTimeline';
 import Policing from '../Subsections/Policing';
+import PolicingCES from '../Subsections/PolicingCES';
 import SweepsMap from '../Subsections/SweepsMap';
 import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
 import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
@@ -26,7 +27,8 @@ class Layout extends Component {
   }
 
   handleGetPositionFromTop = (isUpdate) => {
-    const valToAdd = isUpdate ? 75 : 0;
+    const valToAdd = isUpdate ? 0 : 0;
+    console.log('valtoAdd:', valToAdd);
 
 
     this.campsites = this.getPositionFromTop('campsites-section');
@@ -34,6 +36,7 @@ class Layout extends Component {
     this.hygiene = this.getPositionFromTop('hygiene-section') - 1 + valToAdd;
     this.waste = this.getPositionFromTop('waste-section') - 1 + valToAdd;
     console.log(this.campsites, this.police, this.hygiene, this.waste);
+
   }
 
   getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
@@ -96,9 +99,23 @@ class Layout extends Component {
                 <div className="subsection-divider-line" />
               </div>
               <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
+              <PercentBanner
+                bigText="47%"
+                smallTextOne={(
+                  <span>
+                    <strong>increase</strong>
+                    {' '} in {' '}
+                    <strong>police</strong>
+                  </span>
+                )}
+                smallTextTwo={(
+                  <span>
+                    <strong>actions</strong>
+                    {' '}in{' '}2018
+                  </span>
+                )}
+                imgUrl="/static/police_img.png"
+              />
               <ReportsCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
@@ -114,30 +131,12 @@ class Layout extends Component {
 
             <div className="tab police-action" id="police-section">
               <Policing toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              {/* <div className="subsection-divider">
+              <div className="subsection-divider">
                 <div className="subsection-divider-line" />
-              </div> */}
+              </div>
 
-              <PercentBanner
-                bigText="47%"
-                smallTextOne={(
-                  <span>
-                    <strong>increase</strong>
+              <PolicingCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-                    in
-
-                <strong>police</strong>
-                  </span>
-                )}
-                smallTextTwo={(
-                  <span>
-                    <strong>actions</strong>
-
-                    in 2018
-                  </span>
-                )}
-                imgUrl="/static/police_img.png"
-              />
 
               <PercentBanner
                 bigText="47%"

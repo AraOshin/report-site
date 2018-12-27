@@ -37,7 +37,7 @@ class SweepsMapImage extends Component {
           placeholder="Select neighborhood..."
         />
 
-        {/* {selectedOption
+        {selectedOption
           ? <img
             className="responsive-img"
             src={`./static/${selectedOption.value}.png`}
@@ -46,7 +46,7 @@ class SweepsMapImage extends Component {
             className="responsive-img" src="./static/PortlandSweepsMap.png"
             style={{ width: 800, height: 'auto' }}
           />
-        } */}
+        }
       </div>
 
     );
