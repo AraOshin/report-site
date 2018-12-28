@@ -3,8 +3,29 @@ const { sweepsData } = require('../data-store/sweeps');
 const { reportsData } = require('../data-store/campsiteReports');
 const { uniqueSites } = require('../data-store/uniqueSites');
 const { policingReports } = require('../data-store/policingReports');
-// const { sweepsISOData } = require('../data-store/sweepsISO');
 
+const { sweepsWeekly } = require('../data-store/sweepsWeekly');
+const { reportsWeekly } = require('../data-store/reportsWeekly');
+
+const sweepsWeeklyData = sweepsWeekly.features
+  .map(feature => (
+    [moment(feature.Week).format('YYYY MMM DD'), feature.Count]
+  ))
+  .sort((a, b) => (moment(a[0]).isAfter(moment(b[0])) ? 1 : -1));
+
+
+const reportsWeeklyData = reportsWeekly.features
+  .map(feature => (
+    [moment(feature.Week).format('YYYY MMM DD'), feature.Count]
+  ))
+  .sort((a, b) => (moment(a[0]).isAfter(moment(b[0])) ? 1 : -1));
+
+
+const uniqueSitesWeeklyData = uniqueSites.features
+  .map(feature => (
+    [moment(feature.Week).format('YYYY MMM DD'), feature.EstimatedSites]
+  ))
+  .sort((a, b) => (moment(a[0]).isAfter(moment(b[0])) ? 1 : -1));
 
 const targetNeighborhoods = ['KERNS', 'BUCKMAN', 'HOSFORD-ABERNETHY'];
 
@@ -138,4 +159,7 @@ module.exports = {
   policingReportsByYear,
   avgReportsPerUniqueSitesByMonth,
   uniqueSitesByWeek,
+  sweepsWeeklyData,
+  reportsWeeklyData,
+  uniqueSitesWeeklyData,
 };

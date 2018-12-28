@@ -16,6 +16,7 @@ import PolicingCES from '../Subsections/PolicingCES';
 import SweepsMap from '../Subsections/SweepsMap';
 import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
 import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
+import TakeAction from './banners/TakeActionBanner';
 
 class Layout extends Component {
   state = {
@@ -178,6 +179,38 @@ class Layout extends Component {
 
 
         <AboutBanner />
+        <div className="section-divider" />
+        <TakeAction />
+
+        <div className="sources" />
+        <div className="inner-section">
+          <div className="sources-layout">
+            <div>
+
+              <img
+                src="http://via.placeholder.com/300x300"
+                style={{ width: "30%", height: 'auto' }}
+              />
+
+              <img
+                src="http://via.placeholder.com/300x300"
+                style={{ width: "30%", height: 'auto' }}
+              />
+
+              <img
+                src="http://via.placeholder.com/300x300"
+                style={{ width: "30%", height: 'auto' }}
+              />
+
+            </div>
+            <div>one </div>
+            <div>one </div>
+
+          </div>
+
+
+        </div>
+
         <div className="footer" />
 
 

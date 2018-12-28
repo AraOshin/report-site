@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {
   VictoryAxis,
   VictoryChart,
@@ -12,7 +11,7 @@ import theme from './victoryTheme';
 
 import { DataContext } from '../../pages/index';
 
-const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
+const LineChart = ({ dataContext, legendLabel, subsectionId, yMax, twoLineVis }) => (
 
   <DataContext.Consumer>
     {data => (
@@ -20,6 +19,9 @@ const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
         theme={theme}
         domainPadding={{ x: [30, 10], y: [0, 5] }}
         minDomain={{ y: 0 }}
+
+        maxDomain={yMax > 0 ? { y: yMax } : null}
+
 
         groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
       >
@@ -36,8 +38,8 @@ const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
         <VictoryAxis
           groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           fixLabelOverlap
-          tickFormat={(label) => `${label.split(' ')[0]}\n${label.split(' ')[1].toUpperCase()}`}
-          tickCount={parseInt((data[dataContext].length / 3), 10)}
+          tickFormat={label => `${label.split(' ')[0]}\n${label.split(' ')[1].toUpperCase()}`}
+          tickCount={10}
         />
 
         <VictoryAxis
@@ -62,24 +64,18 @@ const LineChart = ({ dataContext, legendLabel, subsectionId }) => (
           y={1}
         />
 
-        {/* <VictoryLine
-          interpolation="linear"
-          style={{
-            data: { stroke: 'red', strokeWidth: 1, },
-            parent: { border: '1px solid #ccc' },
-          }}
-          data={data[dataContext]}
-          x={0}
-          y={1}
-        /> */}
-
-        {/* <VictoryScatter
-      size={1}
-      data={data}
-      x={0}
-      y={1}
-    /> */}
-
+    {twoLineVis && (
+      <VictoryLine
+              groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
+              style={{
+                data: { stroke: '#2FD89F' },
+                parent: { border: '1px solid #ccc' },
+              }}
+              data={data.uniqueSitesWeeklyData}
+              x={0}
+              y={1}
+            />
+            )}
       </VictoryChart>
 
     )}
@@ -91,10 +87,7 @@ LineChart.propTypes = {
   dataContext: PropTypes.string,
   subsectionId: PropTypes.string,
   legendLabel: PropTypes.string,
+  yMax: PropTypes.number,
 };
 
 export default LineChart;
-
-
-
-// tickCount={parseInt((data[dataContext].length / 3), 10)}

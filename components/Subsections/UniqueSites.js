@@ -9,7 +9,8 @@ const UniqueSites = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="uniqueSitesByMonth" legendLabel="Estimated Unique Campsites" />}
+    vis={<LineChart dataContext="uniqueSitesWeeklyData" legendLabel="Estimated Unique Campsites" yMax={200} />}
+
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="Unique Campsites Estimates Are Not Changing"

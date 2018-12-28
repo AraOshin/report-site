@@ -325,7 +325,7 @@ strong {
 
 
 .footer {
-  height: 400px;
+  height: 250px;
   background: #0B2B40;
 }
 
@@ -514,4 +514,16 @@ strong {
   min-width: 250px;
   display: block;
   margin: auto;
+}
+
+
+.sources{
+  background: white;
+  height: auto;
+}
+
+.sources-layout{
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr;
+  grid-row-gap: 4%;
 }

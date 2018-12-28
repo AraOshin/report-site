@@ -8,7 +8,7 @@ const PercentBanner = ({
     imgOnRight = true,
     imgUrl,
 }) => {
-    const image = <div className="percent-banner-img" style={{ background: `url(${imgUrl})` }} />;
+    const image = <div className="percent-banner-img" style={{ backgroundImage: `url(${imgUrl})` }} />;
 
     return (
         <div className="section-banner">

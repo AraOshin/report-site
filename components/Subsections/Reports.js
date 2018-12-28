@@ -7,9 +7,9 @@ const HEADING_TEXT = 'Public Reporting of Campsites';
 
 const Reports = ({ toggleExpandedSubsection }) => (
   <Subsection
-    isRow={false}
+    isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="reportsByMonth" legendLabel="Number of Reports Filed" />}
+    vis={<LineChart dataContext="reportsWeeklyData" legendLabel="Number of Reports Filed" />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="People are Submitting More and More Reports"
