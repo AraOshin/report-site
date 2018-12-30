@@ -1,61 +1,117 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import {
-//   VictoryPie, VictoryContainer,
-// } from 'victory';
-// import theme from './victoryTheme';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  VictoryPie, VictoryContainer, VictoryChart, VictoryLabel,
+} from 'victory';
+import theme from './victoryTheme';
 
-// const PieChart = props => (
+const PieChart = () => (
+  <div className="pie-vis-layout">
 
-//   <div className="pieChartsVis">
-//     <VictoryPie
-//       theme={theme}
-//       data={props.data}
-//       innerRadius={100}
-//       x={0}
-//       y={1}
-//     />
-
-//     <VictoryPie
-//       theme={theme}
-//       data={props.data}
-//       innerRadius={100}
-//       x={0}
-//       y={1}
-//     />
-//     <VictoryPie
-//       theme={theme}
-//       data={props.data}
-//       innerRadius={100}
-//       x={0}
-//       y={1}
-//     />
-
-//     <VictoryPie
-//       theme={theme}
-//       data={props.data}
-//       innerRadius={100}
-//       x={0}
-//       y={1}
-//     />
-//     <VictoryPie
-//       theme={theme}
-//       data={props.data}
-//       innerRadius={100}
-//       x={0}
-//       y={1}
-//     />
-
-//     <VictoryPie
-//       theme={theme}
-//       data={props.data}
-//       innerRadius={100}
-//       x={0}
-//       y={1}
-//     />
+    <div className="pie-vis-row-2">
+      <div className="report-vis-pie">
 
 
-//   </div>
+        <div className='pie-title-text'>
+          Public Perception of Trash/Biohazards
+        </div>
 
-// );
-// export default PieChart;
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+
+      </div>
+
+      <div className="report-vis-pie">
+
+        <VictoryLabel text='title' />
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+
+      </div>
+
+    </div>
+
+    <div className="pie-vis-row-2">
+      <div className="report-vis-pie">
+
+        <VictoryLabel text='title' />
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+
+      </div>
+
+      <div className="report-vis-pie">
+
+        <VictoryLabel text='title' />
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+
+      </div>
+    </div>
+    <div className="pie-vis-row-3">
+      <div className="report-vis-pie">
+
+        <VictoryLabel text='title' />
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+      </div>
+
+      <div className="report-vis-pie">
+
+        <VictoryLabel text='title' />
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+      </div>
+
+      <div className="report-vis-pie">
+
+        <VictoryLabel
+          text='Public Perception of Aggressive Behavior'
+          textAnchor='middle'
+          padding={0}
+        />
+        <VictoryPie
+          theme={theme}
+          data={['false', '25%']}
+          x={0}
+          y={1}
+          innerRadius={100}
+        />
+      </div>
+
+    </div>
+
+  </div>
+
+);
+export default PieChart;

@@ -7,18 +7,11 @@ import '../styles/styles.css';
 export const DataContext = React.createContext({});
 
 const Home = ({
-  targetAreaSweepsByMonth,
-  sweepsByMonth,
-  reportsByMonth,
-  targetAreaReportsByMonth,
-  reportsAggressiveCount,
-  uniqueSitesByMonth,
+
   policingReportsByYear,
-  avgReportsPerUniqueSitesByMonth,
-  uniqueSitesByWeek,
   sweepsWeeklyData,
   reportsWeeklyData,
-  uniqueSitesWeeklyData
+  uniqueSitesWeeklyData,
 }) => (
     <div>
       <Head title="Home" />
@@ -26,20 +19,12 @@ const Home = ({
 
       <DataContext.Provider
         value={{
-          reportsByMonth: Object.entries(reportsByMonth),
-          sweepsByMonth: Object.entries(sweepsByMonth),
-          targetAreaSweepsByMonth: Object.entries(targetAreaSweepsByMonth),
-          reportsAggressiveCount: Object.entries(reportsAggressiveCount),
           policingReportsByYear,
-          avgReportsPerUniqueSitesByMonth: Object.entries(avgReportsPerUniqueSitesByMonth),
-          uniqueSitesByWeek,
-          targetAreaReportsByMonth: Object.entries(targetAreaReportsByMonth),
-          uniqueSitesByMonth: Object.entries(uniqueSitesByMonth),
-          sweepsWeeklyData: sweepsWeeklyData,
-          reportsWeeklyData: reportsWeeklyData,
-          uniqueSitesWeeklyData
+          sweepsWeeklyData,
+          reportsWeeklyData,
+          uniqueSitesWeeklyData,
         }}
-      >`
+      >
         <Layout />
       </DataContext.Provider>
     </div>
@@ -48,30 +33,19 @@ const Home = ({
 
 Home.getInitialProps = ({ res }) => (
   {
-    sweepsByMonth: res.sweepsByMonth,
-    reportsByMonth: res.reportsByMonth,
-    targetAreaSweepsByMonth: res.targetAreaSweepsByMonth,
-    targetAreaReportsByMonth: res.targetAreaReportsByMonth,
-    reportsAggressiveCount: res.reportsAggressiveCount,
-    // reportsPerUniqueSiteByWeek: res.reportsPerUniqueSiteByWeek,
-    uniqueSitesByMonth: res.uniqueSitesByMonth,
     policingReportsByYear: res.policingReportsByYear,
-    avgReportsPerUniqueSitesByMonth: res.avgReportsPerUniqueSitesByMonth,
-    uniqueSitesByWeek: res.uniqueSitesByWeek,
     sweepsWeeklyData: res.sweepsWeeklyData,
     reportsWeeklyData: res.reportsWeeklyData,
-    uniqueSitesWeeklyData: res.uniqueSitesWeeklyData
+    uniqueSitesWeeklyData: res.uniqueSitesWeeklyData,
   });
 
 Home.propTypes = {
-  sweepsByMonth: PropTypes.object,
-  reportsByMonth: PropTypes.object,
-  targetAreaSweepsByMonth: PropTypes.object,
-  targetAreaReportsByMonth: PropTypes.object,
-  reportsAggressiveCount: PropTypes.object,
-  uniqueSitesByMonth: PropTypes.object,
+
   policingReportsByYear: PropTypes.array,
-  avgReportsPerUniqueSitesByMonth: PropTypes.object,
+  sweepsWeeklyData: PropTypes.array,
+  reportsWeeklyData: PropTypes.array,
+  uniqueSitesWeeklyData: PropTypes.array,
+
 
 };
 

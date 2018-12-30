@@ -3,18 +3,18 @@ const { createServer } = require('http');
 const next = require('next');
 
 const {
-  sweepsByMonth,
-  reportsByMonth,
-  targetAreaSweepsByMonth,
-  targetAreaReportsByMonth,
-  reportsAggressiveCount,
-  yearlyReports,
-  uniqueSitesData,
-  uniqueSitesByWeek,
-  reportsPerUniqueSiteByWeek,
-  uniqueSitesByMonth,
+  // sweepsByMonth,
+  // reportsByMonth,
+  // targetAreaSweepsByMonth,
+  // targetAreaReportsByMonth,
+  // reportsAggressiveCount,
+  // yearlyReports,
+  // uniqueSitesData,
+  // uniqueSitesByWeek,
+  // reportsPerUniqueSiteByWeek,
+  // uniqueSitesByMonth,
+  // avgReportsPerUniqueSitesByMonth,
   policingReportsByYear,
-  avgReportsPerUniqueSitesByMonth,
   sweepsWeeklyData,
   reportsWeeklyData,
   uniqueSitesWeeklyData,
@@ -27,18 +27,18 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    res.sweepsByMonth = sweepsByMonth;
-    res.reportsByMonth = reportsByMonth;
-    res.targetAreaSweepsByMonth = targetAreaSweepsByMonth;
-    res.targetAreaReportsByMonth = targetAreaReportsByMonth;
-    res.yearlyReports = yearlyReports;
-    res.reportsAggressiveCount = reportsAggressiveCount;
-    res.uniqueSitesData = uniqueSitesData;
-    res.uniqueSitesByWeek = uniqueSitesByWeek;
-    res.reportsPerUniqueSiteByWeek = reportsPerUniqueSiteByWeek;
-    res.uniqueSitesByMonth = uniqueSitesByMonth;
+    // res.sweepsByMonth = sweepsByMonth;
+    // res.reportsByMonth = reportsByMonth;
+    // res.targetAreaSweepsByMonth = targetAreaSweepsByMonth;
+    // res.targetAreaReportsByMonth = targetAreaReportsByMonth;
+    // res.yearlyReports = yearlyReports;
+    // res.reportsAggressiveCount = reportsAggressiveCount;
+    // res.uniqueSitesData = uniqueSitesData;
+    // res.uniqueSitesByWeek = uniqueSitesByWeek;
+    // res.reportsPerUniqueSiteByWeek = reportsPerUniqueSiteByWeek;
+    // res.uniqueSitesByMonth = uniqueSitesByMonth;
+    // res.avgReportsPerUniqueSitesByMonth = avgReportsPerUniqueSitesByMonth;
     res.policingReportsByYear = policingReportsByYear;
-    res.avgReportsPerUniqueSitesByMonth = avgReportsPerUniqueSitesByMonth;
     res.sweepsWeeklyData = sweepsWeeklyData;
     res.reportsWeeklyData = reportsWeeklyData;
     res.uniqueSitesWeeklyData = uniqueSitesWeeklyData;

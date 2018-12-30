@@ -9,7 +9,7 @@ const ProblemsPlaceholder = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="sweepsByMonth" legendLabel="Number of Sweeps" />}
+    vis={<LineChart dataContext="sweepsWeeklyData" legendLabel="Number of Sweeps" />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="Placeholder"

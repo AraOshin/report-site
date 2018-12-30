@@ -17,6 +17,8 @@ import SweepsMap from '../Subsections/SweepsMap';
 import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
 import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
 import TakeAction from './banners/TakeActionBanner';
+import Sources from './Sources';
+import PieVis from '../Subsections/PieVis';
 
 class Layout extends Component {
   state = {
@@ -101,18 +103,9 @@ class Layout extends Component {
               </div>
               <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
-                bigText="47%"
                 smallTextOne={(
                   <span>
-                    <strong>increase</strong>
-                    {' '} in {' '}
-                    <strong>police</strong>
-                  </span>
-                )}
-                smallTextTwo={(
-                  <span>
-                    <strong>actions</strong>
-                    {' '}in{' '}2018
+                    The City of Portland is spending an estimated additional 3.5 million on managing a crisis in the houseless community that it is much exacerbated by its 1.2 million dollar camp eviction program.
                   </span>
                 )}
                 imgUrl="/static/police_img.png"
@@ -165,9 +158,10 @@ class Layout extends Component {
             </div>
             <div className="tab hygiene-access" id="hygiene-section">
               <ProblemsPlaceholder toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              {/* <div className="subsection-divider">
+              <div className="subsection-divider">
                 <div className="subsection-divider-line" />
-              </div> */}
+              </div>
+              <PieVis />
 
               <div className="section-divider" />
             </div>
@@ -181,41 +175,9 @@ class Layout extends Component {
         <AboutBanner />
         <div className="section-divider" />
         <TakeAction />
-
-        <div className="sources" />
-        <div className="inner-section">
-          <div className="sources-layout">
-            <div>
-
-              <img
-                src="http://via.placeholder.com/300x300"
-                style={{ width: "30%", height: 'auto' }}
-              />
-
-              <img
-                src="http://via.placeholder.com/300x300"
-                style={{ width: "30%", height: 'auto' }}
-              />
-
-              <img
-                src="http://via.placeholder.com/300x300"
-                style={{ width: "30%", height: 'auto' }}
-              />
-
-            </div>
-            <div>one </div>
-            <div>one </div>
-
-          </div>
-
-
-        </div>
-
+        <Sources />
         <div className="footer" />
-
-
       </div>
-
 
     );
   }

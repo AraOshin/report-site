@@ -224,7 +224,7 @@ strong {
 .report {
   padding-left: 6%;
   padding-right: 6%;
-  display: flex;
+  display: grid;
   justify-content: center;
   padding-top: 68px;
   padding-bottom: 68px;
@@ -245,7 +245,6 @@ strong {
 }
 
 .inner-section {
-  width: 95%;
   max-width: 1200px;
 }
 
@@ -296,7 +295,7 @@ strong {
 
 .vis-row{
   max-width: 1200px;
-  max-height: 600px;
+  /* max-height: 600px; */
 }
 
 .report-vis{
@@ -330,10 +329,16 @@ strong {
 }
 
 .section-banner {
-  height: 26vw;
+  height: 375px;
   background: #0B2B40;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 375px) {
+  .section-banner{
+    height: 250px;
+  }
 }
 
 .about-banner {
@@ -454,9 +459,18 @@ strong {
   grid-template-columns: 1fr 1fr;
 }
 
+
+@media (max-width: 375px) {
+  .banner{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
 .percent-banner-img {
   background-position: left;
   background-size: cover;
+  height: 375px
 }
 
 .percent-banner-text {
@@ -465,14 +479,32 @@ strong {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Leto', sans-serif;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .percent-banner-percent {
-  font-size: 50px;
+  font-size: 86px;
+  font-weight: 300;
 }
 
-.percent-banner-descripxion-block {
+
+.percent-banner-description-block {
   text-align: center;
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1200px) {
+  .percent-banner-description-block {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    letter-spacing: .5px;
+  }
+  
 }
 
 
@@ -516,14 +548,52 @@ strong {
   margin: auto;
 }
 
-
 .sources{
-  background: white;
   height: auto;
+  width: 100%
 }
 
 .sources-layout{
   display: grid;
-  grid-template-rows: 1fr 3fr 2fr;
-  grid-row-gap: 4%;
+  grid-template-rows: 300px auto 300px auto 300px;
+  background: white;
+}
+
+.sources-column-row{
+  display: flex;
+  flex-flow: column;
+  align-content: space-around;
+}
+
+.sources-row-row{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.pie-vis-layout{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.pie-vis-row-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr 
+}
+.pie-vis-row-3{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
+}
+.report-vis-pie{
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+}
+
+
+.pie-title-text{
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 30px;
 }

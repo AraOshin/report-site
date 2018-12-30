@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LineChart from '../Visualizations/LineChart';
+import PieChart from '../Visualizations/PieChart';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'CES - Sweeps Over Time';
+const HEADING_TEXT = 'Pie';
 
-const SweepsCES = ({ toggleExpandedSubsection }) => (
+
+const PieVis = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="sweepsWeeklyData" legendLabel="Number of Sweeps" />}
+    vis={<PieChart />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
-    subHeadingText="CES - City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
+    subHeadingText="City Continues Doing PieVis Even Though They Don't Work and Cause Harm"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -36,9 +37,8 @@ const SweepsCES = ({ toggleExpandedSubsection }) => (
   />
 );
 
-SweepsCES.propTypes = {
+PieVis.propTypes = {
   toggleExpandedSubsection: PropTypes.func,
 };
 
-
-export default SweepsCES;
+export default PieVis;

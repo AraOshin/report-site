@@ -6,6 +6,8 @@ import {
   VictoryLine,
   VictoryLegend,
   VictoryClipContainer,
+  VictoryCursorContainer,
+  VictoryVoronoiContainer,
 } from 'victory';
 import theme from './victoryTheme';
 
@@ -21,9 +23,8 @@ const LineChart = ({ dataContext, legendLabel, subsectionId, yMax, twoLineVis })
         minDomain={{ y: 0 }}
 
         maxDomain={yMax > 0 ? { y: yMax } : null}
-
-
         groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
+
       >
 
         <VictoryLegend
@@ -35,11 +36,21 @@ const LineChart = ({ dataContext, legendLabel, subsectionId, yMax, twoLineVis })
           ]}
         />
 
+        <VictoryLegend
+          eventKey='legendKey'
+          groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
+          x={325}
+          y={25}
+          data={[
+            { name: '  ' },
+          ]}
+        />
+
         <VictoryAxis
           groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
-          fixLabelOverlap
-          tickFormat={label => `${label.split(' ')[0]}\n${label.split(' ')[1].toUpperCase()}`}
-          tickCount={10}
+          tickFormat={["2015 Nov", "2018 Oct"]}
+          tickValues={['2016 Oct 10', 1, 2, 3]}
+
         />
 
         <VictoryAxis
@@ -54,6 +65,7 @@ const LineChart = ({ dataContext, legendLabel, subsectionId, yMax, twoLineVis })
 
 
         <VictoryLine
+          name="line-vis"
           groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
           style={{
             data: { stroke: '#2FD89F' },
@@ -64,8 +76,9 @@ const LineChart = ({ dataContext, legendLabel, subsectionId, yMax, twoLineVis })
           y={1}
         />
 
-    {twoLineVis && (
-      <VictoryLine
+        {
+          twoLineVis && (
+            <VictoryLine
               groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
               style={{
                 data: { stroke: '#2FD89F' },
@@ -75,7 +88,8 @@ const LineChart = ({ dataContext, legendLabel, subsectionId, yMax, twoLineVis })
               x={0}
               y={1}
             />
-            )}
+          )
+        }
       </VictoryChart>
 
     )}

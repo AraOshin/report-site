@@ -10,7 +10,7 @@ const ReportsCES = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="targetAreaReportsByMonth" legendLabel="Number of Reports Filed" />}
+    vis={<LineChart dataContext="reportsWeeklyData" legendLabel="Number of Reports Filed" />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="CES - People are Submitting More and More Reports"
