@@ -17,6 +17,9 @@ const Home = ({
     <div>
       <Head title="Home" />
       {console.log('sweeps weekly', sweepsWeeklyData)}
+      {console.log('reports weekly', reportsWeeklyData)}
+      {console.log('unique sites weekly', uniqueSitesWeeklyData)}
+      {console.log('sweeps target area weekly', sweepsWeeklyTargetAreaData)}
 
       <DataContext.Provider
         value={{
