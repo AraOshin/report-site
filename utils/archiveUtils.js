@@ -1,6 +1,7 @@
 // const { sweepsData } = require('../data-store/sweeps');
 // const { reportsData } = require('../data-store/campsiteReports');
 // const moment = require('moment');
+// const { policingReports } = require('../data-store/policingReports');
 
 
 // const targetNeighborhoods = ['KERNS', 'BUCKMAN', 'HOSFORD-ABERNETHY'];
@@ -49,13 +50,14 @@
 // const reportsAggressive = reportsData.features.map(feature => feature['Repeated.instances.of.overly.aggressive.behavior.from.campers']);
 
 
-
 // const reportsAggressiveCount = reportsAggressive.reduce((acc, curr) => {
 //   const key = curr;
 //   if (acc[key]) acc[key]++;
 //   else acc[key] = 1;
 //   return acc;
 // }, {});
+
+// const policingReportsByYear = policingReports.features;
 
 
 // module.exports = {
@@ -64,4 +66,5 @@
 //   targetAreaSweepsByMonth,
 //   targetAreaReportsByMonth,
 //   reportsAggressiveCount,
+// policingReportsByYear,
 // };
