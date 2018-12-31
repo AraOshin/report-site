@@ -12,7 +12,7 @@ import ReportsCES from '../Subsections/ReportsCES';
 import SweepsCES from '../Subsections/SweepsCES';
 import SweepsTimeline from '../Subsections/SweepsTimeline';
 import Policing from '../Subsections/Policing';
-import PolicingCES from '../Subsections/PolicingCES';
+import PolicingCEID from '../Subsections/PolicingCEID';
 import SweepsMap from '../Subsections/SweepsMap';
 import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
 import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
@@ -39,7 +39,6 @@ class Layout extends Component {
     this.hygiene = this.getPositionFromTop('hygiene-section') - 1 + valToAdd;
     this.waste = this.getPositionFromTop('waste-section') - 1 + valToAdd;
     console.log(this.campsites, this.police, this.hygiene, this.waste);
-
   }
 
   getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
@@ -129,7 +128,7 @@ class Layout extends Component {
                 <div className="subsection-divider-line" />
               </div>
 
-              <PolicingCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <PolicingCEID toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
 
               <PercentBanner

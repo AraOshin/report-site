@@ -9,7 +9,7 @@ const SweepsCES = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="sweepsWeeklyData" legendLabel="Number of Sweeps" />}
+    vis={<LineChart dataContext="sweepsWeeklyTargetAreaData" legendLabel="Number of Sweeps" />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="CES - City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"

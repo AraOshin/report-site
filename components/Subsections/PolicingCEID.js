@@ -1,24 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BarGroup from '../Visualizations/BarGroup';
+import { SSL_OP_NO_TLSv1_1 } from 'constants';
+import PercentVis from '../Visualizations/PercentVis';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'CES Dispatched Calls and Crime Reports Filed';
+const HEADING_TEXT = 'Policing CEID';
 
-const PolicingCES = ({ toggleExpandedSubsection }) => (
+const PolicingCEID = ({ toggleExpandedSubsection }) => (
   <Subsection
-    isRow={false}
+    isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
     vis={(
-      <BarGroup
-        dataContext="policingReportsByYear"
-        yVals={['targetAreaTotalReports', 'targetAreaDispatchedCalls']}
-        legendLabels={['CES Crime Reports Filed', 'CES Dispatched Calls']}
-      />
+      <div className="percent-vis-row">
+        <PercentVis
+          title="total crime reports filed "
+          percentages={
+            [
+              {
+                percent: -1.6,
+                years: '2016-2017',
+                months: 'Jan - Oct',
+              },
+              {
+                percent: 6.2,
+                years: '2017-2018',
+                months: 'Oct - Aug',
+              },
+            ]
+          }
+        />
+
+        <PercentVis
+          title="total personal/ prop crime reports"
+          percentages={
+            [
+              {
+                percent: -1.1,
+                years: '2016-2017',
+                months: 'Jan - Oct',
+              },
+              {
+                percent: 5.7,
+                years: '2017-2018',
+                months: 'Oct - Aug',
+              },
+            ]
+          }
+        />
+      </div>
     )}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
-    subHeadingText="Policing Data for CES in 2016, 2017, 2018"
+    subHeadingText="Policing Data (crime figures are mock) in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -42,8 +75,8 @@ const PolicingCES = ({ toggleExpandedSubsection }) => (
   />
 );
 
-PolicingCES.propTypes = {
+PolicingCEID.propTypes = {
   toggleExpandedSubsection: PropTypes.func,
 };
 
-export default PolicingCES;
+export default PolicingCEID;

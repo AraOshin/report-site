@@ -1,20 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BarGroup from '../Visualizations/BarGroup';
+import PercentVis from '../Visualizations/PercentVis';
 import Subsection from '../Layout/Subsection';
 
 const HEADING_TEXT = 'Portland Wide Dispatched Calls and Crime Reports Filed';
 
 const Policing = ({ toggleExpandedSubsection }) => (
   <Subsection
-    isRow={false}
+    isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
     vis={(
-      <BarGroup
-        dataContext="policingReportsByYear"
-        yVals={['totalReports', 'dispatchedCalls']}
-        legendLabels={['Portland Crime Reports Filed (mock)', 'Portland Dispatched Calls']}
-      />
+      <div className="percent-vis-row">
+        <PercentVis
+          title="total crime reports"
+          percentages={
+            [
+              {
+                percent: 7,
+                years: '2016-2017',
+                months: 'Jan - Oct',
+              },
+              {
+                percent: 3.5,
+                years: '2017-2018',
+                months: 'Jan - Oct',
+              },
+            ]
+          }
+        />
+
+        <PercentVis
+          title="dispatched calls"
+          percentages={
+            [
+              {
+                percent: 1,
+                years: '2016-2017',
+                months: 'Jan - Oct',
+              },
+              {
+                percent: -2.3,
+                years: '2017-2018',
+                months: 'Jan - Oct',
+              },
+            ]
+          }
+        />
+      </div>
     )}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}

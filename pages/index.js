@@ -12,6 +12,7 @@ const Home = ({
   sweepsWeeklyData,
   reportsWeeklyData,
   uniqueSitesWeeklyData,
+  sweepsWeeklyTargetAreaData,
 }) => (
     <div>
       <Head title="Home" />
@@ -23,12 +24,13 @@ const Home = ({
           sweepsWeeklyData,
           reportsWeeklyData,
           uniqueSitesWeeklyData,
+          sweepsWeeklyTargetAreaData,
         }}
       >
         <Layout />
       </DataContext.Provider>
     </div>
-  );
+);
 
 
 Home.getInitialProps = ({ res }) => (
@@ -37,6 +39,7 @@ Home.getInitialProps = ({ res }) => (
     sweepsWeeklyData: res.sweepsWeeklyData,
     reportsWeeklyData: res.reportsWeeklyData,
     uniqueSitesWeeklyData: res.uniqueSitesWeeklyData,
+    sweepsWeeklyTargetAreaData: res.sweepsWeeklyTargetAreaData,
   });
 
 Home.propTypes = {
@@ -45,6 +48,7 @@ Home.propTypes = {
   sweepsWeeklyData: PropTypes.array,
   reportsWeeklyData: PropTypes.array,
   uniqueSitesWeeklyData: PropTypes.array,
+  sweepsWeeklyTargetAreaData: PropTypes.array,
 
 
 };

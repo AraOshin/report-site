@@ -13,18 +13,21 @@ const PieChart = () => (
       <div className="report-vis-pie">
 
         <div className="pie-title-text">
-          Public Perception of Trash/Biohazards
+          <div>Public Perception of</div>
+          <div>Trash/Biohazards</div>
         </div>
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 57], ['no', 43]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
+
         />
       </div>
 
@@ -39,32 +42,39 @@ const PieChart = () => (
           theme={theme}
 
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 43], ['no', 57]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
+
         />
       </div>
 
       <div className="report-vis-pie">
 
         <div className="pie-title-text">
-          Percieved Presence of Structures/Tents
+          {/* Percieved Presence of Structures/Tents */}
+          <div>Public Perception of</div>
+          <div>Structures/Tents Present </div>
         </div>
+
 
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 39], ['no', 61]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
+
         />
       </div>
 
@@ -73,19 +83,23 @@ const PieChart = () => (
     <div className="pie-vis-row-4">
       <div className="report-vis-pie">
         <div className="pie-title-text">
-          Public Perception of Trash/Biohazards
+          {/* Percieved Right-of-Way Obstruction */}
+          <div>Public Perception of</div>
+          <div>Right-of-Way Obstruction </div>
         </div>
 
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 31], ['no', 69]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
+
         />
 
       </div>
@@ -93,56 +107,63 @@ const PieChart = () => (
       <div className="report-vis-pie">
 
         <div className="pie-title-text">
-          Percieved Presence Of Structures/Tents
+          <div>Public Perception of</div>
+          <div>Environmental Damage</div>
         </div>
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 27], ['no', 73]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
+
         />
 
       </div>
       <div className="report-vis-pie">
 
         <div className="pie-title-text">
-          Percieved Presence Of Structures/Tents
+          Public Perception of Intoxication/Drug Use
         </div>
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 23], ['no', 77]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
+
         />
       </div>
 
       <div className="report-vis-pie">
 
         <div className="pie-title-text">
-          Percieved Right-of-Way Obstruction
+          <div>Public Perception of</div>
+          <div>Aggressive Behavior</div>
         </div>
 
 
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 25], ['no', 75]]}
+          data={[['yes', 19], ['no', 81]]}
           x={0}
           y={1}
+          labelRadius={95}
+          innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
           style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
-          innerRadius={100}
         />
       </div>
 

@@ -3,19 +3,9 @@ const { createServer } = require('http');
 const next = require('next');
 
 const {
-  // sweepsByMonth,
-  // reportsByMonth,
-  // targetAreaSweepsByMonth,
-  // targetAreaReportsByMonth,
-  // reportsAggressiveCount,
-  // yearlyReports,
-  // uniqueSitesData,
-  // uniqueSitesByWeek,
-  // reportsPerUniqueSiteByWeek,
-  // uniqueSitesByMonth,
-  // avgReportsPerUniqueSitesByMonth,
   policingReportsByYear,
   sweepsWeeklyData,
+  sweepsWeeklyTargetAreaData,
   reportsWeeklyData,
   uniqueSitesWeeklyData,
 } = require('./utils/serverUtils');
@@ -27,19 +17,9 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    // res.sweepsByMonth = sweepsByMonth;
-    // res.reportsByMonth = reportsByMonth;
-    // res.targetAreaSweepsByMonth = targetAreaSweepsByMonth;
-    // res.targetAreaReportsByMonth = targetAreaReportsByMonth;
-    // res.yearlyReports = yearlyReports;
-    // res.reportsAggressiveCount = reportsAggressiveCount;
-    // res.uniqueSitesData = uniqueSitesData;
-    // res.uniqueSitesByWeek = uniqueSitesByWeek;
-    // res.reportsPerUniqueSiteByWeek = reportsPerUniqueSiteByWeek;
-    // res.uniqueSitesByMonth = uniqueSitesByMonth;
-    // res.avgReportsPerUniqueSitesByMonth = avgReportsPerUniqueSitesByMonth;
     res.policingReportsByYear = policingReportsByYear;
     res.sweepsWeeklyData = sweepsWeeklyData;
+    res.sweepsWeeklyTargetAreaData = sweepsWeeklyTargetAreaData;
     res.reportsWeeklyData = reportsWeeklyData;
     res.uniqueSitesWeeklyData = uniqueSitesWeeklyData;
     handle(req, res);
