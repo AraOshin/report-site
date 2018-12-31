@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import {
   VictoryAxis,
@@ -13,6 +14,11 @@ import {
 import theme from './victoryTheme';
 
 import { DataContext } from '../../pages/index';
+
+const makeTickFormat = (label) => {
+  console.log(moment(label).format('YYYY MMM'));
+  return `${moment(label).format('YYYY')}\n${moment(label).format('MMM')}`;
+};
 
 const LineChart = ({
   dataContext, legendLabel, subsectionId, yMax, twoLineVis,
@@ -36,15 +42,16 @@ const LineChart = ({
             x={50}
             y={10}
             data={[
-              { name: 'legendLabel legendLabel legendLabel Label' },
+              { name: legendLabel },
             ]}
           />
 
 
           <VictoryAxis
             groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
-            tickFormat={['2015 Nov', '2018 Oct']}
-            tickValues={['2016 Oct 10', 1, 2, 3]}
+
+            fixLabelOverlap
+            tickFormat={makeTickFormat}
 
           />
 

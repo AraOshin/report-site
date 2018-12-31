@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Subsection from '../Layout/Subsection';
 
+export const TIMELINE_HEADING_TEXT = 'Campsite Sweep in Photos';
 
 const SweepTimeline = ({ toggleExpandedSubsection }) => (
   <Subsection
@@ -33,7 +34,7 @@ const SweepTimeline = ({ toggleExpandedSubsection }) => (
           <img className="responsive-img" src="./static/18_timeline_15.png" alt="Sweeps Timeline" />
         </div>
       )}
-    headingText="Campsite Sweep in Photos"
+    headingText={TIMELINE_HEADING_TEXT}
     subHeadingText="Sweeps Cause Trauma and are Bad for the Environment"
     visableText={(
       <div className="paragraph-container">

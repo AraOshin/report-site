@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import PropTypes from 'prop-types';
+import { TIMELINE_HEADING_TEXT } from '../Subsections/SweepsTimeline';
 
 
 class Subsection extends Component {
@@ -122,6 +123,17 @@ class Subsection extends Component {
     const expandableStyle = expanded
       ? { height: 'auto' }
       : {};
+    console.log(headingText);
+    console.log(TIMELINE_HEADING_TEXT);
+    let reportSectionClassName;
+    if (isRow) {
+      reportSectionClassName = 'report-rows';
+    } else if (headingText === TIMELINE_HEADING_TEXT) {
+      reportSectionClassName = 'report-columns-always';
+    } else {
+      reportSectionClassName = 'report-columns';
+    }
+
 
     return (
       <div
@@ -137,7 +149,7 @@ class Subsection extends Component {
             {subHeadingText}
           </div>
           <div className="spacer-line" />
-          <div className={isRow ? 'report-rows' : 'report-columns'}>
+          <div className={reportSectionClassName}>
             {this.renderTextSection()}
             {isRow
               ? this.renderRowVisSection()
