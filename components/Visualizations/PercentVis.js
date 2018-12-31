@@ -12,8 +12,8 @@ const PercentVis = ({
       </div>
       <div className="percent-vis-percentages-container">
         {
-          percentages.map(percent => (
-            <div className="percent-vis-percent">
+          percentages.map((percent, i) => (
+            <div className="percent-vis-percent" key={`${i}${percent.percent}`}>
               <div className={`percent-number-and-change ${isPositive(percent.percent)
                 ? 'percent-positive'
                 : 'percent-negative'}`}
@@ -41,5 +41,5 @@ const PercentVis = ({
         }
       </div>
     </div>
-  );
+);
 export default PercentVis;

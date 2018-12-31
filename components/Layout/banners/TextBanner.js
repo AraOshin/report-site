@@ -18,6 +18,6 @@ const TextBanner = ({ text }) => (
 );
 
 TextBanner.propTypes = {
-  text: PropTypes.string,
+  text: PropTypes.node,
 };
 export default TextBanner;
