@@ -246,6 +246,7 @@ strong {
 
 .inner-section {
   max-width: 1200px;
+  width: 100%;
 }
 
 .subsection-rows {
@@ -550,6 +551,7 @@ strong {
 
 .sources{
   height: auto;
+  display: flex;
   width: 100%
 }
 
@@ -574,16 +576,21 @@ strong {
 .pie-vis-layout{
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr .66fr;
 }
 
-.pie-vis-row-2{
+.pie-vis-row-4{
   display: grid;
-  grid-template-columns: 1fr 1fr 
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 20px;
 }
 .pie-vis-row-3{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 13px;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  margin-bottom: 5%
 }
 .report-vis-pie{
   display: flex;
@@ -593,7 +600,17 @@ strong {
 
 
 .pie-title-text{
-  font-size: 22px;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 30px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: center  ;
+  color: #0B2B40;
+}
+
+@media (max-width: 860px) {
+  .pie-title-text {
+    font-size: 12px;
+  }
+  
 }
