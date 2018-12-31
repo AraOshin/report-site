@@ -351,12 +351,12 @@ strong {
 
 
 .responsive-img { 
-  max-width: 400px;
+  max-width: 375px;
   width: 80%;
   height: auto;
   display: block;
   margin: auto;
-  padding: 25px;
+  padding: 5%;
 }
 
 
@@ -613,4 +613,81 @@ strong {
     font-size: 12px;
   }
   
+}
+
+.percent-vis-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 700px) {
+  .percent-vis-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.percent-vis {
+  font-family: 'Lato';
+  color: #4992D5;
+  text-align: center;
+  height: auto;
+  width: 375px;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.percent-vis-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.percent-vis-percentages-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 860px) {
+  .percent-vis-percentages-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.percent-vis-percent {
+  display: grid;
+  grid-template-rows: 1fr .6fr;
+}
+
+.percent-positive {
+  color: lightgreen;
+}
+
+.percent-negative {
+  color: lightcoral;
+}
+
+.percent-number-and-change {
+  display: grid;
+  grid-template-rows: 1fr .5fr;
+  
+}
+
+.percent-vis-percent-number {
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.percent-vis-change {
+  font-size: 20px;
+}
+
+.percent-vis-time {
+  font-size: 22px;
 }

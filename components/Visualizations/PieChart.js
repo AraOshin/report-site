@@ -53,8 +53,6 @@ const PieChart = () => (
 
         <div className="pie-title-text">
           Percieved Presence of Structures/Tents
-          {/* <div>Public Perception of</div>
-          <div>Structures/Tents Present </div> */}
         </div>
 
         <VictoryPie
@@ -132,8 +130,6 @@ const PieChart = () => (
 
         <div className="pie-title-text">
           Percieved Right-of-Way Obstruction
-          {/* <div>Public Perception of</div>
-          <div>Right-of-Way Obstruction </div> */}
         </div>
 
 

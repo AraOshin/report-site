@@ -11,17 +11,17 @@ const SweepTimeline = ({ toggleExpandedSubsection }) => (
     vis={
       (
         <div>
-          <img className="responsive-img" src="./static/police_img.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/picture.png" alt="Sweeps Timeline" />
         </div>
       )}
     expandedVis={
       (
         <div>
-          <img className="responsive-img" src="./static/police_img.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/police_img.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/police_img.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/police_img.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/police_img.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/picture.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/picture.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/picture.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/picture.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/picture.png" alt="Sweeps Timeline" />
         </div>
       )}
     headingText="Campsite Sweep in Photos"
