@@ -36,7 +36,7 @@ const LineChart = ({
             x={50}
             y={10}
             data={[
-              { name: legendLabel },
+              { name: 'legendLabel legendLabel legendLabel Label' },
             ]}
           />
 
@@ -96,7 +96,7 @@ const LineChart = ({
       )}
     </DataContext.Consumer>
 
-  );
+);
 
 LineChart.propTypes = {
   dataContext: PropTypes.string,

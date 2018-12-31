@@ -2,23 +2,30 @@ import React, { Component } from 'react';
 import { StickyContainer } from 'react-sticky';
 import Head from '../head';
 import PercentBanner from './banners/PercentBanner';
+import TextBanner from './banners/TextBanner';
 import AboutBanner from './banners/AboutBanner';
+import WhatWeCanDoBanner from './banners/WhatWeCanDoBanner';
 import Splash from './Splash';
 import IconBar from './IconBar';
-import Reports from '../Subsections/Reports';
-import UniqueSites from '../Subsections/UniqueSites';
+
+import Intro from '../Subsections/Intro';
+import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
 import Sweeps from '../Subsections/Sweeps';
-import ReportsCES from '../Subsections/ReportsCES';
-import SweepsCES from '../Subsections/SweepsCES';
 import SweepsTimeline from '../Subsections/SweepsTimeline';
+import SweepsMap from '../Subsections/SweepsMap';
+import SweepsCES from '../Subsections/SweepsCES';
+
 import Policing from '../Subsections/Policing';
 import PolicingCEID from '../Subsections/PolicingCEID';
-import SweepsMap from '../Subsections/SweepsMap';
-import ReportsPerUniqueSite from '../Subsections/ReportsPerUniqueSite';
-import ProblemsPlaceholder from '../Subsections/ProblemsPlaceholder';
+import PolicingCES from '../Subsections/PolicingCES';
+
+import WasteAccess from '../Subsections/WasteAccess';
+import PieVis from '../Subsections/PieVis';
+
 import TakeAction from './banners/TakeActionBanner';
 import Sources from './Sources';
-import PieVis from '../Subsections/PieVis';
+import WaterAccess from '../Subsections/WaterAccess';
+
 
 class Layout extends Component {
   state = {
@@ -88,94 +95,135 @@ class Layout extends Component {
           />
           <div className="report-container">
             <div className="tab campsites" id="campsites-section">
-              <Reports toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
-              <UniqueSites toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
-              <ReportsPerUniqueSite toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
-              <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <Intro toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
                 smallTextOne={(
                   <span>
                     The City of Portland is spending an estimated additional 3.5 million on managing a crisis in the houseless community that it is much exacerbated by its 1.2 million dollar camp eviction program.
                   </span>
                 )}
-                imgUrl="/static/police_img.png"
+                imgUrl="/static/01_navybar_01.png"
               />
-              <ReportsCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <ReportsPerUniqueSite toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <PercentBanner
+                smallTextOne={(
+                  <span>
+                    In 2018, for every unique campsite estimated by the city the public generated approximately 6 reports.
+                  </span>
+                )}
+                imgUrl="/static/02_navybar_02.png"
+              />
+
+              <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <PercentBanner
+                smallTextOne={(
+                  <span>
+                    174 people, over 10% of the unsheltered houseless population, are evicted from their homes on a weekly basis.
+                  </span>
+                )}
+                imgUrl="/static/03_navybar_03.png"
+              />
+
+
+              <SweepsTimeline toggleExpandedSubsection={this.handleGetPositionFromTop} />
+
+              <TextBanner
+                text={(
+                  <span>
+                    Sweep-evictions ironically lead to more trash, trauma, & higher barriers to entering stable housing
+                  </span>
+                )}
+              />
+
+              <SweepsMap toggleExpandedSubsection={this.handleGetPositionFromTop} />
+
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
               <SweepsCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
-              <SweepsMap toggleExpandedSubsection={this.handleGetPositionFromTop} />
+
+
+              <div className="section-divider" />
             </div>
-
-            <div className="section-divider" />
-
             <div className="tab police-action" id="police-section">
               <Policing toggleExpandedSubsection={this.handleGetPositionFromTop} />
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
+
+
+              <TextBanner
+                text={(
+                  <span>
+                    Violent Crime likelihood 2wice for housed as unhoused
+                  </span>
+                )}
+              />
 
               <PolicingCEID toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-
-              <PercentBanner
-                bigText="47%"
-                smallTextOne={(
-                  <span>
-                    <strong>increase</strong>
-
-                    in
-
-                <strong>police</strong>
-                  </span>
-                )}
-                smallTextTwo={(
-                  <span>
-                    <strong>actions</strong>
-
-                    in 2018
-                  </span>
-                )}
-                imgUrl="/static/police_img.png"
-                imgOnRight={false}
-              />
-
-              <div className="section-divider" />
-            </div>
-            <div className="tab hygiene-access" id="hygiene-section">
-              <ProblemsPlaceholder toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <div className="subsection-divider">
                 <div className="subsection-divider-line" />
               </div>
-              <PieVis />
 
-              <div className="section-divider" />
+
+              <PolicingCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
+
+              <TextBanner
+                text={(
+                  <span>
+                    Rebecca’s stats on  Crime
+                  </span>
+                )}
+              />
+
+            </div>
+            <div className="tab hygiene-access" id="hygiene-section">
+              <WaterAccess toggleExpandedSubsection={this.handleGetPositionFromTop} />
+
+
+              <TextBanner
+                text={(
+                  <span>
+                    <div>
+                      Did you know there are a total of 7 public bathrooms
+                    </div>
+                    <div>
+                      open 24/7 in all of Portland ?
+                    </div>
+
+                  </span>
+                )}
+              />
             </div>
             <div className="tab waste-disposal" id="waste-section">
-              <SweepsTimeline toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <WasteAccess toggleExpandedSubsection={this.handleGetPositionFromTop} />
+
+              <div className="subsection-divider">
+                <div className="subsection-divider-line" />
+              </div>
+
+              <PieVis toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <PercentBanner
+                smallTextOne={(
+                  <span>
+                    Taylor Cass - Metro - 78% of all trash left on the streets is from housed people
+                  </span>
+                )}
+                imgUrl="/static/19_navybar_08.png"
+              />
             </div>
+
           </div>
         </StickyContainer>
 
 
-        <AboutBanner />
-        <div className="section-divider" />
-        <TakeAction />
+        <WhatWeCanDoBanner />
+
         <Sources />
-        <div className="footer" />
+
+
+        <AboutBanner />
+        <div className="footer">
+          <img className="logo" src="/static/logo.svg" alt="NeighborToNeighbor Logo" />
+        </div>
       </div>
 
     );

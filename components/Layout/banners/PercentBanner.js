@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PercentBanner = ({
-    bigText,
-    smallTextOne,
-    smallTextTwo,
-    imgOnRight = true,
-    imgUrl,
+  bigText,
+  smallTextOne,
+  smallTextTwo,
+  imgOnRight = true,
+  imgUrl,
 }) => {
-    const image = <div className="percent-banner-img" style={{ backgroundImage: `url(${imgUrl})` }} />;
+  const image = <div className="percent-banner-img" style={{ backgroundImage: `url(${imgUrl})` }} />;
 
-    return (
+  return (
         <div className="section-banner">
             <div className="inner-section banner">
                 {!imgOnRight && image}
@@ -30,7 +30,7 @@ const PercentBanner = ({
                 {imgOnRight && image}
             </div>
         </div>
-    );
+  );
 };
 
 // PercentBanner.propTypes = {

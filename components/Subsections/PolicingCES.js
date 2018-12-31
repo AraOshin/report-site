@@ -1,18 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LineChart from '../Visualizations/LineChart';
+import PercentVis from '../Visualizations/PercentVis';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Public Reporting of Campsites';
+const HEADING_TEXT = 'Policing CES';
 
-const Reports = ({ toggleExpandedSubsection }) => (
+const PolicingCES = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="reportsWeeklyData" legendLabel="Number of Reports Filed" />}
+    vis={(
+      <div className="percent-vis-row">
+        <PercentVis
+          title="total crime reports filed "
+          percentages={
+            [
+              {
+                percent: -1.6,
+                years: '2016-2017',
+                months: 'Jan - Oct',
+              },
+              {
+                percent: 6.2,
+                years: '2017-2018',
+                months: 'Oct - Aug',
+              },
+            ]
+          }
+        />
+
+        <PercentVis
+          title="total dispatched calls"
+          percentages={
+            [
+              {
+                percent: -1.1,
+                years: '2016-2017',
+                months: 'Jan - Oct',
+              },
+              {
+                percent: 5.7,
+                years: '2017-2018',
+                months: 'Oct - Aug',
+              },
+            ]
+          }
+        />
+      </div>
+    )}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
-    subHeadingText="People are Submitting More and More Reports"
+    subHeadingText="Policing Data (crime figures are mock) in 2016, 2017, 2018"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -36,8 +74,8 @@ const Reports = ({ toggleExpandedSubsection }) => (
   />
 );
 
-Reports.propTypes = {
+PolicingCES.propTypes = {
   toggleExpandedSubsection: PropTypes.func,
 };
 
-export default Reports;
+export default PolicingCES;

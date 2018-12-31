@@ -19,14 +19,18 @@ const PieChart = () => (
         <VictoryPie
           theme={theme}
 
-          data={[['yes', 57], ['no', 43]]}
+          data={[['yes', 43], ['no', 57]]}
           x={0}
           y={1}
           labelRadius={95}
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
+            }
+          }}
 
         />
       </div>
@@ -49,7 +53,11 @@ const PieChart = () => (
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
+            }
+          }}
 
         />
       </div>
@@ -73,7 +81,11 @@ const PieChart = () => (
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
+            }
+          }}
 
         />
       </div>
@@ -98,7 +110,11 @@ const PieChart = () => (
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
+            }
+          }}
 
         />
 
@@ -120,7 +136,11 @@ const PieChart = () => (
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
+            }
+          }}
 
         />
 
@@ -140,7 +160,11 @@ const PieChart = () => (
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
+            }
+          }}
 
         />
       </div>
@@ -163,7 +187,11 @@ const PieChart = () => (
           innerRadius={80}
           labels={d => `${d[1]}% \n ${d[0]}`}
           colorScale={['#2FD89F', '#4992D5']}
-          style={{ labels: { fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'" } }}
+          style={{
+            labels: {
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
+          }}
         />
       </div>
 

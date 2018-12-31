@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Placeholder for Content Regarding Reported Qualitative ‘Problems’ with Campsites.';
 
-const ProblemsPlaceholder = ({ toggleExpandedSubsection }) => (
+const Intro = ({ toggleExpandedSubsection }) => (
   <Subsection
-    isRow
+    isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="sweepsWeeklyData" legendLabel="Number of Sweeps" />}
-    subsectionId={HEADING_TEXT}
-    headingText={HEADING_TEXT}
-    subHeadingText="Placeholder"
+    disableSticky
+    vis={
+      (
+        <div>
+          <img className="responsive-img" src="./static/01_navybar_01.png" alt="Sweeps Timeline" />
+        </div>
+      )}
+    headingText="Intro Section Heading Intro Section Heading Intro Section Heading"
+    subHeadingText="Intro Section SubHeading Intro Section SubHeading Intro Section SubHeading Intro Section SubHeading"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -36,8 +39,10 @@ const ProblemsPlaceholder = ({ toggleExpandedSubsection }) => (
   />
 );
 
-ProblemsPlaceholder.propTypes = {
+
+Intro.propTypes = {
   toggleExpandedSubsection: PropTypes.func,
 };
 
-export default ProblemsPlaceholder;
+
+export default Intro;

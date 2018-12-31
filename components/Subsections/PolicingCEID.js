@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SSL_OP_NO_TLSv1_1 } from 'constants';
 import PercentVis from '../Visualizations/PercentVis';
 import Subsection from '../Layout/Subsection';
 

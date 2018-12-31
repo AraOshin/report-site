@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Placeholder for Reports per UniqueSite';
+const HEADING_TEXT = 'Reports and UniqueSites';
 
 const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
   <Subsection
@@ -17,7 +17,7 @@ const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
       />)}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
-    subHeadingText="This is a Placeholder: Vis Coming Soon"
+    subHeadingText="Reports and Unique Sites"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
