@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {
@@ -10,18 +10,56 @@ import {
   VictoryCursorContainer,
   VictoryVoronoiContainer,
   VictoryLabel,
+  VictoryTooltip,
+  LineSegment,
+  VictoryContainer,
+  Flyout,
+  Box,
 } from 'victory';
 import theme from './victoryTheme';
 
 import { DataContext } from '../../pages/index';
 
-const makeTickFormat = (label) => {
-  console.log(moment(label).format('YYYY MMM'));
-  return `${moment(label).format('YYYY')}\n${moment(label).format('MMM')}`;
-};
+const CustomFlyout = ({
+  x, y, lineColor, datum, toolTipLabel,
+}) => (
+
+    <g>
+
+      <LineSegment
+        x1={x}
+        x2={x}
+        y1={50}
+        y2={250}
+        style={{ stroke: '#D8D8D8', strokeWidth: 2 }}
+      />
+
+      <rect
+        x={55}
+        y={66}
+        width={175}
+        height={20}
+        fill="white"
+        style={{ opacity: 0.8 }}
+      />
+
+      <text
+        x={65}
+        y={80}
+        fill={lineColor}
+        style={{ fontSize: 10, fontFamily: 'Open Sans' }}
+      >
+        {`Week of\n${moment(datum[0]).format('MMM DD, YYYY')}:\n ${datum[1]} ${toolTipLabel}`}
+
+      </text>
+
+
+    </g>
+  );
+
 
 const LineChart = ({
-  dataContext, legendLabel, subsectionId, yMax, twoLineVis,
+  dataContext, legendLabel, subsectionId, yMax, twoLineVis, lineColor, toolTipLabel,
 }) => (
 
     <DataContext.Consumer>
@@ -30,10 +68,23 @@ const LineChart = ({
           theme={theme}
           domainPadding={{ x: [30, 10], y: [0, 5] }}
           minDomain={{ y: 0 }}
-
           maxDomain={yMax > 0 ? { y: yMax } : null}
           groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
+          containerComponent={(
+            <VictoryVoronoiContainer
+              style={{
+                labels: { fontSize: 100 },
+              }}
+              labels={d => ''}
+              labelComponent={(
+                <VictoryTooltip
+                  flyoutComponent={<CustomFlyout lineColor={lineColor} toolTipLabel={toolTipLabel} />}
+                />
 
+
+              )}
+            />
+          )}
 
         >
 
@@ -41,9 +92,15 @@ const LineChart = ({
             groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
             x={50}
             y={10}
-            data={[
-              { name: legendLabel },
-            ]}
+            data={twoLineVis
+              ? [
+                { name: legendLabel[0] },
+                { name: legendLabel[1] },
+              ]
+
+              : [{ name: legendLabel }]}
+
+            colorScale={[lineColor, ' #4992D5']}
           />
 
 
@@ -51,7 +108,8 @@ const LineChart = ({
             groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
 
             fixLabelOverlap
-            tickFormat={makeTickFormat}
+            tickFormat={label => `${moment(label).format('YYYY')}\n${moment(label).format('MMM')}`}
+            tickCount={parseInt((data[dataContext].length / 13), 10)}
 
           />
 
@@ -65,18 +123,12 @@ const LineChart = ({
             }}
           />
 
-          {/* <VictoryLabel
-            text="text label:"
-            data={data[dataContext]}
-            x={325}
-            y={25}
-          /> */}
 
           <VictoryLine
             name="line-vis"
             groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
             style={{
-              data: { stroke: '#2FD89F' },
+              data: { stroke: lineColor },
               parent: { border: '1px solid #ccc' },
             }}
             data={data[dataContext]}
@@ -84,12 +136,13 @@ const LineChart = ({
             y={1}
           />
 
+
           {
             twoLineVis && (
               <VictoryLine
                 groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
                 style={{
-                  data: { stroke: '#2FD89F' },
+                  data: { stroke: '#4992D5' },
                   parent: { border: '1px solid #ccc' },
                 }}
                 data={data.uniqueSitesWeeklyData}
@@ -103,13 +156,14 @@ const LineChart = ({
       )}
     </DataContext.Consumer>
 
-);
+  );
 
 LineChart.propTypes = {
   dataContext: PropTypes.string,
   subsectionId: PropTypes.string,
   legendLabel: PropTypes.string,
   yMax: PropTypes.number,
+  lineColor: PropTypes.string,
 };
 
 export default LineChart;

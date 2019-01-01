@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Subsection from '../Layout/Subsection';
 
-export const TIMELINE_HEADING_TEXT = 'Campsite Sweep in Photos';
+export const TIMELINE_HEADING_TEXT = 'WHAT ARE THE HUMAN COSTS OF SWEEPS?';
 
 const SweepTimeline = ({ toggleExpandedSubsection }) => (
   <Subsection

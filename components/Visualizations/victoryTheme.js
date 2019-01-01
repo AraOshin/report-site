@@ -100,6 +100,9 @@ const theme = {
     title: 'LEGEND',
     titleOrientation: 'left',
     colorScale: colors,
+    fontSize: 20,
+
+
     gutter: 0,
     orientation: 'horizontal',
     style: {
@@ -150,7 +153,7 @@ const theme = {
     flyoutStyle: {
       stroke: lightBlue,
       strokeWidth: 1,
-      fill: '#f0f0f0',
+      fill: 'red',
       pointerEvents: 'none',
     },
     cornerRadius: 5,

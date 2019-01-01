@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Subsection from '../Layout/Subsection';
+import IntroPie from '../Visualizations/IntroPie';
 
 
 const Intro = ({ toggleExpandedSubsection }) => (
@@ -8,12 +9,14 @@ const Intro = ({ toggleExpandedSubsection }) => (
     isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
     disableSticky
-    vis={
-      (
-        <div>
-          <img className="responsive-img" src="./static/01_navybar_01.png" alt="Sweeps Timeline" />
-        </div>
-      )}
+    vis={(
+      <div>
+        <img className="responsive-img" src="./static/01_navybar_01.png" alt="Sweeps Timeline" />
+      </div>
+    )
+
+
+    }
     headingText="Intro Section Heading Intro Section Heading Intro Section Heading"
     subHeadingText="Intro Section SubHeading Intro Section SubHeading Intro Section SubHeading Intro Section SubHeading"
     visableText={(

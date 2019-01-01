@@ -5,7 +5,7 @@ import {
 } from 'victory';
 import theme from './victoryTheme';
 
-const PieChart = () => (
+const IntroPie = () => (
   <div className="pie-vis-layout">
 
 
@@ -28,8 +28,8 @@ const PieChart = () => (
           colorScale={['#2FD89F', '#4992D5']}
           style={{
             labels: {
-              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
-            }
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
           }}
 
         />
@@ -55,8 +55,8 @@ const PieChart = () => (
           colorScale={['#2FD89F', '#4992D5']}
           style={{
             labels: {
-              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
-            }
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
           }}
 
         />
@@ -83,8 +83,8 @@ const PieChart = () => (
           colorScale={['#2FD89F', '#4992D5']}
           style={{
             labels: {
-              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
-            }
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
           }}
 
         />
@@ -112,8 +112,8 @@ const PieChart = () => (
           colorScale={['#2FD89F', '#4992D5']}
           style={{
             labels: {
-              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
-            }
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
           }}
 
         />
@@ -138,8 +138,8 @@ const PieChart = () => (
           colorScale={['#2FD89F', '#4992D5']}
           style={{
             labels: {
-              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
-            }
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
           }}
 
         />
@@ -162,8 +162,8 @@ const PieChart = () => (
           colorScale={['#2FD89F', '#4992D5']}
           style={{
             labels: {
-              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700'
-            }
+              fill: '#0B2B40', fontSize: 20, fontFamily: "'Lato', 'sans-serif'", fontWeight: '700',
+            },
           }}
 
         />
@@ -202,4 +202,4 @@ const PieChart = () => (
   </div>
 
 );
-export default PieChart;
+export default IntroPie;

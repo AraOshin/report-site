@@ -9,7 +9,7 @@ const SweepsMap = ({ toggleExpandedSubsection }) => (
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<SweepsMapImage />}
-    headingText="Sweeps in Static 3d Maps"
+    headingText="WHAT IS THE CITY-WIDE IMPACT OF SWEEPS?"
     subHeadingText="Portland Wide with Option to Select Neighborhood"
     visableText={(
       <div className="paragraph-container">

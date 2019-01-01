@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LineChart from '../Visualizations/LineChart';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Reports and UniqueSites';
+const HEADING_TEXT = 'PUBLIC REPORTING OF CAMPSITES';
 
 const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
   <Subsection
@@ -13,7 +13,9 @@ const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
       <LineChart
         dataContext="reportsWeeklyData"
         twoLineVis
-        legendLabel="Avgerage Reports per estimated campsite per month"
+        legendLabel={['Avgerage Reports per estimated campsite per month', 'second label']}
+        lineColor="#2FD89F"
+        toolTipLabel="Reports Filed"
       />)}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}

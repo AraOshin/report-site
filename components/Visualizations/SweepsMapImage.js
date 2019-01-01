@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 
 const options = [
-  { value: 'neighborhoodOne', label: 'Neighborhood One' },
-  { value: 'neighborhoodTwo', label: 'Neighborhood Two' },
-  { value: 'neighborhoodThree', label: 'Neighborhood Three' },
-  { value: 'neighborhoodFour', label: 'Neighborhood Four' },
-  { value: 'neighborhoodFive', label: 'Neighborhood Five' },
-  { value: 'neighborhoodSix', label: 'Neighborhood Six' },
-  { value: 'neighborhoodSeven', label: 'Neighborhood Seven' },
-  { value: 'PortlandSweepsMap', label: 'Portland' },
+  { value: 'EastSide', label: 'Central Eastside' },
+  { value: 'Portland', label: 'Portland Wide' },
 ];
 
 class SweepsMapImage extends Component {
@@ -37,16 +31,20 @@ class SweepsMapImage extends Component {
           placeholder="Select neighborhood..."
         />
 
-        {/* {selectedOption
-          ? <img
-            className="responsive-img"
-            src={`./static/${selectedOption.value}.png`}
-            style={{ width: 800, height: 'auto' }} />
-          : <img
-            className="responsive-img" src="./static/PortlandSweepsMap.png"
-            style={{ width: 800, height: 'auto' }}
-          />
-        } */}
+        {selectedOption
+          ? (
+            <img
+              className="responsive-map-img"
+              src={`./static/${selectedOption.value}.png`}
+            />
+          )
+          : (
+            <img
+              className="responsive-map-img"
+              src="./static/Portland.png"
+            />
+          )
+        }
       </div>
 
     );

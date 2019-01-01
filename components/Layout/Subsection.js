@@ -123,8 +123,6 @@ class Subsection extends Component {
     const expandableStyle = expanded
       ? { height: 'auto' }
       : {};
-    console.log(headingText);
-    console.log(TIMELINE_HEADING_TEXT);
     let reportSectionClassName;
     if (isRow) {
       reportSectionClassName = 'report-rows';

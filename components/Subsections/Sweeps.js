@@ -8,9 +8,20 @@ const HEADING_TEXT = 'Sweeps Over Time';
 
 const Sweeps = ({ toggleExpandedSubsection }) => (
   <Subsection
-    isRow
+    isRow={false}
     toggleExpandedSubsection={toggleExpandedSubsection}
-    vis={<LineChart dataContext="sweepsWeeklyData" legendLabel="Number of Sweeps" />}
+    vis={(
+
+      <LineChart
+        dataContext="sweepsWeeklyData"
+        legendLabel="Number of Sweeps"
+        lineColor="#E36639"
+        yMax={80}
+        toolTipLabel="Sweeps"
+      />
+
+
+    )}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
     subHeadingText="City Continues Doing Sweeps Even Though They Don't Work and Cause Harm"
