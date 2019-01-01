@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
-  VictoryPie, VictoryContainer, VictoryChart, VictoryLabel,
+  VictoryPie,
 } from 'victory';
 import theme from './victoryTheme';
 
-const IntroPie = () => (
+const PieChart = () => (
   <div className="pie-vis-layout">
 
 
@@ -202,4 +201,4 @@ const IntroPie = () => (
   </div>
 
 );
-export default IntroPie;
+export default PieChart;

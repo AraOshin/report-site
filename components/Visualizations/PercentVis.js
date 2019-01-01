@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const isPositive = percent => percent >= 0;
 
@@ -42,4 +43,9 @@ const PercentVis = ({
       </div>
     </div>
 );
+
+PercentVis.propTypes = {
+  title: PropTypes.string,
+  percentages: PropTypes.string,
+};
 export default PercentVis;

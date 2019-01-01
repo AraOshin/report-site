@@ -20,7 +20,7 @@ const lightGrey = colors[4];
 const sansSerif = 'sans-serif';
 const openSans = 'Open Sans';
 const letterSpacing = 'normal';
-const fontSize = 9;
+const fontSize = 12;
 
 // Layout
 const baseProps = {
@@ -130,13 +130,13 @@ const theme = {
         stroke: 'transparent',
         strokeWidth: 1,
       },
-      labels: Object.assign({}, baseLabelStyles, { padding: 20 }),
+      labels: Object.assign({}, baseLabelStyles, { padding: 10 }),
     },
     colorScale: ['#0B2B40',
       '#02B67A'],
-    width: 400,
-    height: 400,
-    padding: 50,
+    width: 350,
+    height: 350,
+    padding: 25,
   },
   scatter: Object.assign({
     style: {

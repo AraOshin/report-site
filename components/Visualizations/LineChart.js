@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {
@@ -7,25 +7,21 @@ import {
   VictoryLine,
   VictoryLegend,
   VictoryClipContainer,
-  VictoryCursorContainer,
   VictoryVoronoiContainer,
-  VictoryLabel,
   VictoryTooltip,
   LineSegment,
-  VictoryContainer,
-  Flyout,
-  Box,
 } from 'victory';
 import theme from './victoryTheme';
 
 import { DataContext } from '../../pages/index';
 
 const CustomFlyout = ({
-  x, y, lineColor, datum, toolTipLabel,
+  x,
+  lineColor,
+  datum,
+  toolTipLabel,
 }) => (
-
     <g>
-
       <LineSegment
         x1={x}
         x2={x}
@@ -33,7 +29,6 @@ const CustomFlyout = ({
         y2={250}
         style={{ stroke: '#D8D8D8', strokeWidth: 2 }}
       />
-
       <rect
         x={55}
         y={66}
@@ -50,12 +45,16 @@ const CustomFlyout = ({
         style={{ fontSize: 10, fontFamily: 'Open Sans' }}
       >
         {`Week of\n${moment(datum[0]).format('MMM DD, YYYY')}:\n ${datum[1]} ${toolTipLabel}`}
-
       </text>
-
-
     </g>
   );
+
+CustomFlyout.propTypes = {
+  x: PropTypes.number,
+  lineColor: PropTypes.string,
+  datum: PropTypes.object,
+  toolTipLabel: PropTypes.string,
+};
 
 
 const LineChart = ({
@@ -75,7 +74,7 @@ const LineChart = ({
               style={{
                 labels: { fontSize: 100 },
               }}
-              labels={d => ''}
+              labels={d => ''} // eslint-disable-line
               labelComponent={(
                 <VictoryTooltip
                   flyoutComponent={<CustomFlyout lineColor={lineColor} toolTipLabel={toolTipLabel} />}
@@ -91,7 +90,7 @@ const LineChart = ({
           <VictoryLegend
             groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
             x={50}
-            y={10}
+            y={twoLineVis ? 0 : 15}
             data={twoLineVis
               ? [
                 { name: legendLabel[0] },
@@ -101,6 +100,11 @@ const LineChart = ({
               : [{ name: legendLabel }]}
 
             colorScale={[lineColor, ' #4992D5']}
+            orientation={twoLineVis
+              ? 'virtical'
+              : 'horizontal'}
+
+
           />
 
 
@@ -161,9 +165,11 @@ const LineChart = ({
 LineChart.propTypes = {
   dataContext: PropTypes.string,
   subsectionId: PropTypes.string,
-  legendLabel: PropTypes.string,
+  legendLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   yMax: PropTypes.number,
   lineColor: PropTypes.string,
+  twoLineVis: PropTypes.bool,
+  toolTipLabel: PropTypes.string,
 };
 
 export default LineChart;

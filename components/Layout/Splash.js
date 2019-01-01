@@ -4,18 +4,22 @@ const Splash = () => (
   <div className="splash">
 
     <div className="splash-background">
-      <img className="logo" src="/static/logo.svg" alt="NeighborToNeighbor Logo" />
-      <div className="splash-heading">
-        COUNTING THE WAYS CITY ACTIONS IMPACT PORTLANDERS EXPERIENCING HOUSELESSNESS
+      <div className="splash-top">
+        <img className="logo" src="/static/logo.svg" alt="NeighborToNeighbor Logo" />
+        <div className="splash-heading">
+          Counting the Ways City Policies Impact Portlanders Experiencing Houselessness
+
+        </div>
+        <div className="splash-heading-title">
+          JAN. 6, 2018 REPORT
+        </div>
       </div>
+
 
       <div className="splash-curve">
         <div className="splash-sub-heading">
-          <div className="splash-sub-heading-title">
-            JAN. 6, 2018 REPORT
-          </div>
           <div className="splash-sub-heading-paragraph">
-            Report about requests for services (9-1-1 and non-emergency police, public reports of campsites, crime reports) compared with patterns of city campsite sweeping/clean-up, comparing August-November 2017 to August-November 2018 to look for increases in requests in the Central Eastside.
+            In this data and documentary analysis of Portland’s response to houselessness, we examine how our public complaint-driven system has lead to counter-productive sweep-evictions, over-policing and unequal access to hygiene and waste services that harm all. Revealing how punitive policies increase trauma, waste, and barriers to stable housing, we suggest how alternate, evidence-proven programs might fix rather than paper-over our current problems.
           </div>
         </div>
 

@@ -11,9 +11,9 @@ const SweepTimeline = ({ toggleExpandedSubsection }) => (
     disableSticky
     vis={
       (
-        <div>
-          <img className="responsive-img" src="./static/04_timeline_01.png" alt="Sweeps Timeline" />
-        </div>
+
+        <img className="responsive-img" src="./static/04_timeline_01.png" alt="Sweeps Timeline" />
+
       )}
     expandedVis={
       (

@@ -16,7 +16,7 @@ const Police = ({ fill }) => (
 );
 
 Police.propTypes = {
-    fill: PropTypes.string,
+  fill: PropTypes.string,
 };
 
 export default Police;

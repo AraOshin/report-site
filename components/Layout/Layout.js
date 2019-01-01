@@ -22,7 +22,6 @@ import PolicingCES from '../Subsections/PolicingCES';
 import WasteAccess from '../Subsections/WasteAccess';
 import PieVis from '../Subsections/PieVis';
 
-import TakeAction from './banners/TakeActionBanner';
 import Sources from './Sources';
 import WaterAccess from '../Subsections/WaterAccess';
 

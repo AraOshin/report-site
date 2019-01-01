@@ -168,7 +168,7 @@ Subsection.propTypes = {
   subHeadingText: PropTypes.string,
   vis: PropTypes.object,
   expandedVis: PropTypes.object,
-  toggleExpandedSubsection: PropTypes.func,
+  // toggleExpandedSubsection: PropTypes.func,
   disableSticky: PropTypes.bool,
 
 };

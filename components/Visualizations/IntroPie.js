@@ -10,10 +10,10 @@ const IntroPie = () => (
 
   <div className="report-vis-pie">
 
-    <div className="pie-title-text">
+    <div className="intro-pie-title-text">
 
-      <div>Total Estimated Costs </div>
-      <div>of Sweep-Evictions</div>
+      <div>Total Estimated Costs of Sweep-Evictions</div>
+      <div>Data by Evans & Lindsay 2018</div>
     </div>
 
     <div>
@@ -21,17 +21,21 @@ const IntroPie = () => (
         groupComponent={<VictoryClipContainer clipId="IntroPie" />}
         x={50}
         y={0}
-        height={20}
+        height={85}
+        title="LEGEND"
+        orientation="virtical"
+        colorScale={['#2FD89F', '#4992D5']}
         data={[
-          { name: 'test' },
+          { name: 'Annual City Spending on Sweeps/Evictions' },
+          { name: 'Annual City Spending on Reallocated Personnel Costs' },
         ]}
       />
 
 
       <VictoryPie
         theme={theme}
-
-
+        width={400}
+        height={350}
         data={[['($1,238,868)', 25], ['($3,579,438)', 74]]}
         x={0}
         y={1}
