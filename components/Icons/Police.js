@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Police = ({ fill }) => (
-    <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1">
+    <svg width="48" height="48px" viewBox="0 0 48 48" version="1.1">
+
         <title>police</title>
         <desc>Created with Sketch.</desc>
         <g id="Symbols" stroke="none" strokeWidth="1" fill={fill} fillRule="evenodd">
@@ -13,6 +14,8 @@ const Police = ({ fill }) => (
             </g>
         </g>
     </svg>
+
+
 );
 
 Police.propTypes = {

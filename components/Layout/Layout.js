@@ -33,18 +33,31 @@ class Layout extends Component {
 
   componentDidMount = () => {
     this.handleGetPositionFromTop();
+    window.addEventListener('resize', this.handleResize);
   }
+
+  componentDidUpdate = (nextProps, nextState) => {
+    if (this.state.counter !== nextState.counter) {
+      this.handleGetPositionFromTop();
+    }
+  }
+
+  handleResize = () => {
+    this.incrementCounter();
+    this.handleGetPositionFromTop();
+    this.handleScroll();
+  }
+
+  incrementCounter = () => this.setState({ counter: this.state.counter + 1 })
 
   handleGetPositionFromTop = (isUpdate) => {
     const valToAdd = isUpdate ? 0 : 0;
-    console.log('valtoAdd:', valToAdd);
 
 
     this.campsites = this.getPositionFromTop('campsites-section');
     this.police = this.getPositionFromTop('police-section') - 1 + valToAdd;
     this.hygiene = this.getPositionFromTop('hygiene-section') - 1 + valToAdd;
     this.waste = this.getPositionFromTop('waste-section') - 1 + valToAdd;
-    console.log(this.campsites, this.police, this.hygiene, this.waste);
   }
 
   getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
@@ -83,7 +96,7 @@ class Layout extends Component {
     const { active } = this.state;
 
     return (
-      <div>
+      <div onClick={this.incrementCounter}>
         <Head title="Home" />
         <Splash />
         <StickyContainer className="site-container">
