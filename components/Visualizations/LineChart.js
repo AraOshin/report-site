@@ -47,7 +47,7 @@ const CustomFlyout = ({
         {`Week of\n${moment(datum[0]).format('MMM DD, YYYY')}:\n ${datum[1]} ${toolTipLabel}`}
       </text>
     </g>
-  );
+);
 
 CustomFlyout.propTypes = {
   x: PropTypes.number,
@@ -160,7 +160,7 @@ const LineChart = ({
       )}
     </DataContext.Consumer>
 
-  );
+);
 
 LineChart.propTypes = {
   dataContext: PropTypes.string,

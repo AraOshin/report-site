@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProgressiveImage from 'react-progressive-image';
 import Subsection from '../Layout/Subsection';
 
 export const TIMELINE_HEADING_TEXT = 'WHAT ARE THE HUMAN COSTS OF SWEEPS?';
@@ -18,7 +19,10 @@ const SweepTimeline = ({ toggleExpandedSubsection }) => (
     expandedVis={
       (
         <div>
-          <img className="responsive-img" src="./static/05_timeline_02.jpg" alt="Sweeps Timeline" />
+          <ProgressiveImage src="./static/05_timeline_02.jpg" placeholder="">
+            {(src, loading) => (loading ? <div className="white-img-loader" />
+              : <img className="responsive-img" src={src} alt="timeline" />)}
+          </ProgressiveImage>
           <img className="responsive-img" src="./static/06_timeline_03.jpg" alt="Sweeps Timeline" />
           <img className="responsive-img" src="./static/07_timeline_04.jpg" alt="Sweeps Timeline" />
           <img className="responsive-img" src="./static/08_timeline_05.jpg" alt="Sweeps Timeline" />

@@ -24,6 +24,10 @@ const Head = props => (
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+    {/* <link rel="preload" href="./static/05_timeline_02.jpg" /> */}
 
 
     <meta property="og:url" content={props.url || defaultOGURL} />

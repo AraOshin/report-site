@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { TIMELINE_HEADING_TEXT } from '../Subsections/SweepsTimeline';
 import { WindowSizeContext } from '../../pages/index';
 
-const STICKY_BREAKPOINT = 1000;
+const STICKY_BREAKPOINT = 1020;
 
 class Subsection extends Component {
   constructor(props) {
@@ -23,7 +23,6 @@ class Subsection extends Component {
 
     this.setState({ expanded: !expanded });
     toggleExpandedSubsection(true);
-    console.log('toggleExpandedSubsectionCalled');
   }
 
   getTop = ({ computedTop, distanceFromBottom, distanceFromTop }) => {

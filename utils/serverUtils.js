@@ -9,7 +9,7 @@ const getWeeklyData = (someArray, dataProperty) => someArray
   .filter(weeklyData => moment(weeklyData.Week).format('YYYY MMM') !== '2018 Nov')
   .sort((a, b) => (moment(a.Week).isAfter(moment(b.Week)) ? 1 : -1))
   .map(feature => (
-    [moment(feature.Week).format('YYYY MMM DD'), feature[dataProperty]]
+    [moment(feature.Week).format('YYYY-MM-DD'), feature[dataProperty]]
   ));
 
 

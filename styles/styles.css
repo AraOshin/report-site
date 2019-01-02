@@ -2,6 +2,7 @@ body, html, #__next, .site {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   width: 100vw;
+  background: #0B2B40;
   max-width:100%;
   overflow-x: hidden;
 }
@@ -371,6 +372,7 @@ strong {
   justify-items: center;
   padding-top: 68px;
   padding-bottom: 68px;
+  background: white;
 }
 
 @media (max-width: 800px) {
@@ -812,10 +814,9 @@ strong {
 
 }
 .report-vis-pie{
-
-
-  display: grid;
+    display: grid;
     justify-content: center;
+    align-items: start;
 }
 
 
@@ -931,7 +932,6 @@ strong {
 .logo-img { 
   max-width: 150px;
   width: 30%;
-  height: 30%;
 }
 
 /* 
@@ -939,3 +939,9 @@ strong {
   overflow: scroll;
 } */
 
+
+.white-img-loader{
+  background: white;
+  width: auto;
+  height: 400px;
+}

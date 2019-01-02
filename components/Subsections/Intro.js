@@ -7,8 +7,8 @@ import IntroPie from '../Visualizations/IntroPie';
 const Intro = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow={false}
-    toggleExpandedSubsection={toggleExpandedSubsection}
     disableSticky
+    toggleExpandedSubsection={toggleExpandedSubsection}
     vis={(
       <IntroPie />
     )
