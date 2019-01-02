@@ -32,7 +32,7 @@ strong {
 
 .splash-background {
   height: 100%;
-  background-image: url('/static/background.png'); 
+  background-image: url('/static/background.jpg'); 
   background-size: cover; 
   background-position: top center;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ strong {
 
 @media (max-width: 760px) {
   .splash-background {
-    background-image: url('/static/background_mobile.png'); 
+    background-image: url('/static/background_mobile.jpg'); 
   }
 }
 
@@ -231,6 +231,8 @@ strong {
   align-items: center
 }
 
+
+
 .splash-footer-icons{
   display: flex;
   height: 100%;
@@ -241,7 +243,7 @@ strong {
   transition-property: font-size, align-items;
   transition-duration: .2s;
   transition-timing-function: linear;
-  padding-bottom: 1%;
+  padding-bottom: 11px;
 }
 
 @media (max-width: 800px) {
@@ -249,13 +251,13 @@ strong {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
+    padding-bottom: 1%
   }
 }
 
 
 .scrolled-splash-footer-icons{
   align-items: center;
-  padding-bottom: 0%;
 }
 
 .splash-footer-icon{
@@ -290,9 +292,15 @@ strong {
   justify-content: center;
   align-items: center;
   height: 75px; 
-  overflow: hidden;
+  overflow: visible;
 }
 
+@media (max-width: 585px) {
+  .scrolled-splash-footer-icon {
+    height: 50px;
+    width: 50px;
+}
+}
 
 
 
@@ -435,7 +443,6 @@ strong {
 
 .vis-col{
   width: 100%;
-  display: grid;
   justify-items: center;
   align-items: start;
 }
@@ -523,6 +530,7 @@ strong {
   margin: auto;
   padding: 5%;
 }
+
 
 .report-text{
   text-align: left;
@@ -682,13 +690,13 @@ strong {
 
 
 .about-banner-img {
-  background: url('/static/about-img.png');
+  background: url('/static/about-img.jpg');
   background-position: center;
   background-size: cover;
   min-height: 438px;
 }
 .blue-banner-img {
-  background: url('/static/20_bluebar_01.png');
+  background: url('/static/20_bluebar_01.jpg');
   background-position: right;
   background-size: cover;
 }
@@ -758,8 +766,16 @@ strong {
   height: 100%;
   display: grid;
   grid-template-rows: .66fr .66fr;
+
 }
 
+@media (max-width: 750px) {
+  .pie-vis-layout {
+    grid-template-rows: 1fr;
+    padding-bottom: 10%
+  }
+
+}
 
 
 .pie-vis-row-4{

@@ -12,26 +12,26 @@ const SweepTimeline = ({ toggleExpandedSubsection }) => (
     vis={
       (
 
-        <img className="responsive-img" src="./static/04_timeline_01.png" alt="Sweeps Timeline" />
+        <img className="responsive-img" src="./static/04_timeline_01.jpg" alt="Sweeps Timeline" />
 
       )}
     expandedVis={
       (
         <div>
-          <img className="responsive-img" src="./static/05_timeline_02.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/06_timeline_03.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/07_timeline_04.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/08_timeline_05.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/09_timeline_06.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/10_timeline_07.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/11_timeline_08.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/12_timeline_09.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/13_timeline_10.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/14_timeline_11.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/15_timeline_12.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/16_timeline_13.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/17_timeline_14.png" alt="Sweeps Timeline" />
-          <img className="responsive-img" src="./static/18_timeline_15.png" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/05_timeline_02.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/06_timeline_03.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/07_timeline_04.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/08_timeline_05.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/09_timeline_06.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/10_timeline_07.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/11_timeline_08.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/12_timeline_09.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/13_timeline_10.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/14_timeline_11.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/15_timeline_12.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/16_timeline_13.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/17_timeline_14.jpg" alt="Sweeps Timeline" />
+          <img className="responsive-img" src="./static/18_timeline_15.jpg" alt="Sweeps Timeline" />
         </div>
       )}
     headingText={TIMELINE_HEADING_TEXT}

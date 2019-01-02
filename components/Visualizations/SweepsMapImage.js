@@ -2,8 +2,24 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 
 const options = [
-  { value: 'EastSide', label: 'Central Eastside' },
-  { value: 'Portland', label: 'Portland Wide' },
+  { value: 'Ardenwald', label: 'Ardenwald' },
+  { value: 'Argay', label: 'Argay' },
+  { value: 'Brentwood', label: 'Brentwood' },
+  { value: 'Cully', label: 'Cully' },
+  { value: 'East_Columbia', label: 'East Columbia' },
+  { value: 'Eastmoreland', label: 'Eastmoreland' },
+  { value: 'eastsidewithborder', label: 'Central Eastside' },
+  { value: 'Foster_Powell', label: 'Foster Powell' },
+  { value: 'Hazelwood', label: 'Hazelwood' },
+  { value: 'Hollywood', label: 'Hollywood' },
+  { value: 'Humboldt', label: 'Humboldt' },
+  { value: 'Kenton', label: 'Kenton' },
+  { value: 'Lents', label: 'Lents' },
+  { value: 'Madison_South', label: 'Madison South' },
+  { value: 'Montavilla', label: 'Montavilla' },
+  { value: 'Mount-Scott', label: 'Mount Scott' },
+  { value: 'Overlook', label: 'Overlook' },
+  { value: 'ParkRose', label: 'Park Rose' },
 ];
 
 class SweepsMapImage extends Component {
@@ -33,19 +49,23 @@ class SweepsMapImage extends Component {
 
         {selectedOption
           ? (
+
             <img
               className="responsive-map-img"
-              src={`./static/${selectedOption.value}.png`}
+              src={`./static/maps/${selectedOption.value}.jpg`}
             />
+
+
           )
           : (
             <img
               className="responsive-map-img"
-              src="./static/Portland.png"
+              src="./static/maps/Portland.jpg"
             />
           )
         }
       </div>
+
 
     );
   }

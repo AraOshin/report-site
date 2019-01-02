@@ -114,7 +114,7 @@ class Layout extends Component {
                     The City of Portland is spending an estimated additional 3.5 million on managing a crisis in the houseless community that it is much exacerbated by its 1.2 million dollar camp eviction program.
                   </span>
                 )}
-                imgUrl="/static/01_navybar_01.png"
+                imgUrl="/static/01_navybar_01.jpg"
               />
               <ReportsPerUniqueSite toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
@@ -123,7 +123,7 @@ class Layout extends Component {
                     In 2018, for every unique campsite estimated by the city the public generated approximately 6 reports.
                   </span>
                 )}
-                imgUrl="/static/02_navybar_02.png"
+                imgUrl="/static/02_navybar_02.jpg"
               />
 
               <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
@@ -133,7 +133,7 @@ class Layout extends Component {
                     174 people, over 10% of the unsheltered houseless population, are evicted from their homes on a weekly basis.
                   </span>
                 )}
-                imgUrl="/static/03_navybar_03.png"
+                imgUrl="/static/03_navybar_03.jpg"
               />
 
 
@@ -219,7 +219,7 @@ class Layout extends Component {
                     Taylor Cass - Metro - 78% of all trash left on the streets is from housed people
                   </span>
                 )}
-                imgUrl="/static/19_navybar_08.png"
+                imgUrl="/static/19_navybar_08.jpg"
               />
             </div>
 
