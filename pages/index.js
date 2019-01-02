@@ -5,55 +5,63 @@ import Layout from '../components/Layout/Layout';
 import '../styles/styles.css';
 
 export const DataContext = React.createContext({});
+export const WindowSizeContext = React.createContext(0);
 
-const Home = ({
+export default class Home extends React.Component {
+  static getInitialProps = ({ res }) => (
+    {
+      policingReportsByYear: res.policingReportsByYear,
+      sweepsWeeklyData: res.sweepsWeeklyData,
+      reportsWeeklyData: res.reportsWeeklyData,
+      uniqueSitesWeeklyData: res.uniqueSitesWeeklyData,
+      sweepsWeeklyTargetAreaData: res.sweepsWeeklyTargetAreaData,
+    });
 
-  policingReportsByYear,
-  sweepsWeeklyData,
-  reportsWeeklyData,
-  uniqueSitesWeeklyData,
-  sweepsWeeklyTargetAreaData,
-}) => (
-    <div>
-      <Head title="Home" />
-      {console.log('sweeps weekly', sweepsWeeklyData)}
-      {console.log('reports weekly', reportsWeeklyData)}
-      {console.log('unique sites weekly', uniqueSitesWeeklyData)}
-      {console.log('sweeps target area weekly', sweepsWeeklyTargetAreaData)}
+  static propTypes = {
+    policingReportsByYear: PropTypes.array,
+    sweepsWeeklyData: PropTypes.array,
+    reportsWeeklyData: PropTypes.array,
+    uniqueSitesWeeklyData: PropTypes.array,
+    sweepsWeeklyTargetAreaData: PropTypes.array,
+  };
 
-      <DataContext.Provider
-        value={{
-          policingReportsByYear,
-          sweepsWeeklyData,
-          reportsWeeklyData,
-          uniqueSitesWeeklyData,
-          sweepsWeeklyTargetAreaData,
-        }}
-      >
-        <Layout />
-      </DataContext.Provider>
-    </div>
-);
+  state = { windowSize: 0 }
 
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
 
-Home.getInitialProps = ({ res }) => (
-  {
-    policingReportsByYear: res.policingReportsByYear,
-    sweepsWeeklyData: res.sweepsWeeklyData,
-    reportsWeeklyData: res.reportsWeeklyData,
-    uniqueSitesWeeklyData: res.uniqueSitesWeeklyData,
-    sweepsWeeklyTargetAreaData: res.sweepsWeeklyTargetAreaData,
-  });
+  handleResize = () => this.setState({ windowSize: window.innerWidth })
 
-Home.propTypes = {
+  render() {
+    const {
+      policingReportsByYear,
+      sweepsWeeklyData,
+      reportsWeeklyData,
+      uniqueSitesWeeklyData,
+      sweepsWeeklyTargetAreaData,
+    } = this.props;
 
-  policingReportsByYear: PropTypes.array,
-  sweepsWeeklyData: PropTypes.array,
-  reportsWeeklyData: PropTypes.array,
-  uniqueSitesWeeklyData: PropTypes.array,
-  sweepsWeeklyTargetAreaData: PropTypes.array,
+    const { windowSize } = this.state;
 
-
-};
-
-export default Home;
+    return (
+      <div>
+        <Head title="Home" />
+        <WindowSizeContext.Provider value={windowSize}>
+          <DataContext.Provider
+            value={{
+              policingReportsByYear,
+              sweepsWeeklyData,
+              reportsWeeklyData,
+              uniqueSitesWeeklyData,
+              sweepsWeeklyTargetAreaData,
+            }}
+          >
+            <Layout />
+          </DataContext.Provider>
+        </WindowSizeContext.Provider>
+      </div>
+    );
+  }
+}

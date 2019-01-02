@@ -34,7 +34,7 @@ const IntroPie = () => (
 
       <VictoryPie
         theme={theme}
-        width={400}
+        width={350}
         height={350}
         data={[['($1,238,868)', 25], ['($3,579,438)', 74]]}
         x={0}

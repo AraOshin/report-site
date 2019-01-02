@@ -1,7 +1,6 @@
 body, html, #__next, .site { 
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: white;
   width: 100vw;
   max-width:100%;
   overflow-x: hidden;
@@ -251,13 +250,13 @@ strong {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 1%
+    padding-bottom: 0%
   }
 }
 
 
 .scrolled-splash-footer-icons{
-  align-items: center;
+  align-items: flex-start;
 }
 
 .splash-footer-icon{
@@ -278,8 +277,8 @@ strong {
 
 @media (max-width: 585px) {
   .splash-footer-icon {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     padding-top: 4%;
 }
 }
@@ -813,9 +812,10 @@ strong {
 
 }
 .report-vis-pie{
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: column;
+
+
+  display: grid;
+    justify-content: center;
 }
 
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Sticky } from 'react-sticky';
-import Tent from '../Icons/NewTent';
+import Tent from '../Icons/Tent';
 import Police from '../Icons/Police';
 import Hygine from '../Icons/Hygine';
 import Waste from '../Icons/Waste';

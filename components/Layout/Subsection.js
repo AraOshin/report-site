@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import PropTypes from 'prop-types';
 import { TIMELINE_HEADING_TEXT } from '../Subsections/SweepsTimeline';
+import { WindowSizeContext } from '../../pages/index';
 
+const STICKY_BREAKPOINT = 1000;
 
 class Subsection extends Component {
   constructor(props) {
@@ -85,33 +87,38 @@ class Subsection extends Component {
     const { expanded } = this.state;
 
     return (
-      <div className="vis-col">
-        {(!expanded || disableSticky)
-          ? vis
-          : (
-            <Sticky topOffset={0}>
-              {
-                ({ style, distanceFromTop, distanceFromBottom }) => (
-                  <div
-                    style={{
-                      ...style,
-                      top: this.getTop({
-                        distanceFromTop,
-                        distanceFromBottom,
-                        computedTop: style.top,
-                      }),
-                    }
-                    }
-                    className="report-vis"
-                  >
-                    {vis}
-                  </div>
-                )}
-            </Sticky>
-          )
-        }
-        {expanded && expandedVis}
-      </div>
+      <WindowSizeContext.Consumer>
+        {
+          windowSize => (
+            <div className="vis-col">
+              {(!expanded || disableSticky || windowSize < STICKY_BREAKPOINT)
+                ? vis
+                : (
+                  <Sticky topOffset={0}>
+                    {
+                      ({ style, distanceFromTop, distanceFromBottom }) => (
+                        <div
+                          style={{
+                            ...style,
+                            top: this.getTop({
+                              distanceFromTop,
+                              distanceFromBottom,
+                              computedTop: style.top,
+                            }),
+                          }
+                          }
+                          className="report-vis"
+                        >
+                          {vis}
+                        </div>
+                      )}
+                  </Sticky>
+                )
+              }
+              {expanded && expandedVis}
+            </div>
+          )}
+      </WindowSizeContext.Consumer>
     );
   };
 
