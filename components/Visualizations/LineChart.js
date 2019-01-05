@@ -101,7 +101,7 @@ const LineChart = ({
 
             colorScale={[lineColor, ' #4992D5']}
             orientation={twoLineVis
-              ? 'virtical'
+              ? 'vertical'
               : 'horizontal'}
 
 

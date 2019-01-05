@@ -23,7 +23,7 @@ const IntroPie = () => (
         y={0}
         height={85}
         title="LEGEND"
-        orientation="virtical"
+        orientation="vertical"
         colorScale={['#2FD89F', '#4992D5']}
         data={[
           { name: 'Annual City Spending on Sweeps/Evictions' },

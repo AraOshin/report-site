@@ -20,7 +20,7 @@ import PolicingCEID from '../Subsections/PolicingCEID';
 import PolicingCES from '../Subsections/PolicingCES';
 
 import WasteAccess from '../Subsections/WasteAccess';
-import PieVis from '../Subsections/PieVis';
+import ReporterConcerns from '../Subsections/ReporterConcerns';
 
 import Sources from './Sources';
 import WaterAccess from '../Subsections/WaterAccess';
@@ -215,7 +215,7 @@ class Layout extends Component {
 
               <SubsectionDiver />
 
-              <PieVis toggleExpandedSubsection={this.handleGetPositionFromTop} />
+              <ReporterConcerns toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
                 bigText={<span>78%</span>}
                 smallTextOne={(

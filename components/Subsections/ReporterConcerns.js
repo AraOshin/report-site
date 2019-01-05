@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import PieChart from '../Visualizations/PieChart';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Pie';
+const HEADING_TEXT = 'What Are The Reporting  Public’s Main Concerns?';
 
 
-const PieVis = ({ toggleExpandedSubsection }) => (
+const ReporterConcerns = ({ toggleExpandedSubsection }) => (
   <Subsection
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<PieChart />}
     subsectionId={HEADING_TEXT}
     headingText={HEADING_TEXT}
-    subHeadingText="City Continues Doing PieVis Even Though They Don't Work and Cause Harm"
+    subHeadingText="One Point of Contact: Public Reporting on Camp Issues"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
@@ -40,8 +40,8 @@ const PieVis = ({ toggleExpandedSubsection }) => (
   />
 );
 
-PieVis.propTypes = {
+ReporterConcerns.propTypes = {
   toggleExpandedSubsection: PropTypes.func,
 };
 
-export default PieVis;
+export default ReporterConcerns;

@@ -610,6 +610,11 @@ strong {
   color:#4D8AC2;
 }
 
+.timeline{
+  font-size: 26px;
+  line-height: 50px;
+}
+
 
 @media (max-width: 500px) {
   .paragraph{
@@ -718,7 +723,7 @@ strong {
 
 
 .about-banner-text-container {
-  color: white;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -727,9 +732,8 @@ strong {
 }
 
 .about-banner-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  color: white;
+  font-family: 'Lato', sans-serif;
   width: 80%;
   height: 60%;
 }
@@ -738,9 +742,8 @@ strong {
   font-size: 30px;
 }
 
-.about-us-descripxion {
-  line-height: 25px;
-  letter-spacing: 1px;
+.about-us-description {
+  color: white
 }
 
 
