@@ -12,6 +12,7 @@ body, html, #__next, .site {
 }
 
 strong {
+  font-family: 'Lato', sans-serif;
   font-weight: 900
 }
 
@@ -464,14 +465,18 @@ strong {
 } 
 
 .subsection-divider{
-  display:flex;
-  justify-content: center;
+ 
+    padding-left: 6%;
+    padding-right: 6%;
+    display: grid;
+    justify-items: center;
+    background: white;
+
 }
 
 .subsection-divider-line{
   border-bottom: #355061 solid 6px;
   margin-top: 10px;
-  width: 100%;
   max-width: 1200px;
 }
 
@@ -480,7 +485,6 @@ strong {
   height: 100px;
   background-color: #355061;
 }
-
 
 
 .footer {
@@ -595,9 +599,15 @@ strong {
 
 .paragraph{
   font-size: 16px;
+  color:#0B2B40;
   font-family: 'Open Sans', sans-serif;
   line-height: 30px;
   margin-top: 10px;
+}
+
+
+.paragraph a{
+  color:#4D8AC2;
 }
 
 
@@ -624,6 +634,7 @@ strong {
   font-family: 'Lato', sans-serif;
   letter-spacing: .6px;
   cursor: pointer;
+  margin-bottom: 8px;
 
 }
 
@@ -642,7 +653,8 @@ strong {
 
 .text-banner {
   width: 100%;
-  height: 375px;
+  min-height: 375px;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -667,14 +679,15 @@ strong {
 
 
 .percent-banner-percent {
-  font-size: 86px;
+  font-size: 50px;
   font-weight: 100;
+  line-height: 75px;
 }
 
 
 .percent-banner-description-block {
   text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 48px;
   letter-spacing: 1px;
 }
@@ -691,14 +704,14 @@ strong {
 
 
 .about-banner-img {
-  background: url('/static/about-img.jpg');
+  background: url('/static/AboutUs.jpg');
   background-position: center;
   background-size: cover;
   min-height: 438px;
 }
 .blue-banner-img {
   background: url('/static/20_bluebar_01.jpg');
-  background-position: right;
+  background-position: left;
   background-size: cover;
 }
 

@@ -8,7 +8,7 @@ const AboutBanner = () => (
                 <div className="about-banner-text">
                     <div className="about-us">About Us</div>
                     <div className="about-us-description">
-                        About us text goes here. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+                        We are a data collective of academics, analysts, and developers who want to make a difference at a hyper-local level, bringing information to neighbors and engaging in a transparent process with public agencies who contribute to policy decisions around houselessness.
 
                     </div>
                 </div>

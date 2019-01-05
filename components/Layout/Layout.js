@@ -24,6 +24,7 @@ import PieVis from '../Subsections/PieVis';
 
 import Sources from './Sources';
 import WaterAccess from '../Subsections/WaterAccess';
+import SubsectionDiver from './SubsectionDivider';
 
 
 class Layout extends Component {
@@ -109,18 +110,21 @@ class Layout extends Component {
             <div className="tab campsites" id="campsites-section">
               <Intro toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
+                bigText={<span>$3.5 million</span>}
                 smallTextOne={(
                   <span>
-                    The City of Portland is spending an estimated additional 3.5 million on managing a crisis in the houseless community that it is much exacerbated by its 1.2 million dollar camp eviction program.
+                    estimated in reallocated personnel costs for the City to manage the fallout from sweep-evictions
                   </span>
                 )}
                 imgUrl="/static/01_navybar_01.jpg"
               />
               <ReportsPerUniqueSite toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
+                bigText={<span>5:1</span>}
                 smallTextOne={(
                   <span>
-                    In 2018, for every unique campsite estimated by the city the public generated approximately 6 reports.
+                    ratio of public reports generated for every unique campsite in Jan-Nov 2018
+
                   </span>
                 )}
                 imgUrl="/static/02_navybar_02.jpg"
@@ -128,9 +132,11 @@ class Layout extends Component {
 
               <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
+                bigText={<span>174 people</span>}
                 smallTextOne={(
                   <span>
-                    174 people, over 10% of the unsheltered houseless population, are evicted from their homes on a weekly basis.
+                    greater than 10% of the unsheltered houseless population are affected by street evictions on a weekly basis  (*estimated)
+
                   </span>
                 )}
                 imgUrl="/static/03_navybar_03.jpg"
@@ -142,20 +148,19 @@ class Layout extends Component {
               <TextBanner
                 text={(
                   <span>
-                    Sweep-evictions ironically lead to more trash, trauma, & higher barriers to entering stable housing
+                    Sweeps ironically lead to more trash, trauma, and higher barriers to entering stable housing. They destroy the small modicum of peace and home that people strive to make for themselves.
                   </span>
                 )}
               />
 
               <SweepsMap toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
+              <SubsectionDiver />
               <SweepsCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
 
               <div className="section-divider" />
+
             </div>
             <div className="tab police-action" id="police-section">
               <Policing toggleExpandedSubsection={this.handleGetPositionFromTop} />
@@ -164,16 +169,15 @@ class Layout extends Component {
               <TextBanner
                 text={(
                   <span>
-                    Violent Crime likelihood 2wice for housed as unhoused
+                    52% of arrests in Portland in 2017 were of houseless neighbors -- mostly for procedural and low-level crimes. They represent just 3% of the population  (Woolington, 6/13/2018).
+
                   </span>
                 )}
               />
 
               <PolicingCEID toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
+              <SubsectionDiver />
 
 
               <PolicingCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
@@ -181,7 +185,7 @@ class Layout extends Component {
               <TextBanner
                 text={(
                   <span>
-                    Rebecca’s stats on  Crime
+                    Housed residents accounted for more than twice the arrests for violent crimes in Portland in 2017; yet unsheltered residents account for 52% or all arrests mostly for low-level and procedural crimes related to trespass (camping) or procedural issues (failure to appear in court) (Lewis & Woolington, 06/29/2018).
                   </span>
                 )}
               />
@@ -196,27 +200,27 @@ class Layout extends Component {
                   <span>
                     <div>
                       Did you know there are a total of 7 public bathrooms
+
                     </div>
                     <div>
-                      open 24/7 in all of Portland ?
+                      open 24/7 in all of Portland?
                     </div>
-
                   </span>
+
                 )}
               />
             </div>
             <div className="tab waste-disposal" id="waste-section">
               <WasteAccess toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-              <div className="subsection-divider">
-                <div className="subsection-divider-line" />
-              </div>
+              <SubsectionDiver />
 
               <PieVis toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
+                bigText={<span>78%</span>}
                 smallTextOne={(
                   <span>
-                    Taylor Cass - Metro - 78% of all trash left on the streets is from housed people
+                    of all street waste collected by Metro is dumped by  housed residents (Taylor Cass, Metro).
                   </span>
                 )}
                 imgUrl="/static/19_navybar_08.jpg"
@@ -225,6 +229,7 @@ class Layout extends Component {
 
           </div>
         </StickyContainer>
+        <div className="section-divider" />
 
 
         <WhatWeCanDoBanner />

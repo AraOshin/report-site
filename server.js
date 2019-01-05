@@ -3,12 +3,13 @@ const { createServer } = require('http');
 const next = require('next');
 
 const {
-  policingReportsByYear,
   sweepsWeeklyData,
   sweepsWeeklyTargetAreaData,
   reportsWeeklyData,
   uniqueSitesWeeklyData,
 } = require('./utils/serverUtils');
+
+let loads = 0;
 
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -17,7 +18,7 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    res.policingReportsByYear = policingReportsByYear;
+    if (req.url === '/') console.log('loads:', loads++);
     res.sweepsWeeklyData = sweepsWeeklyData;
     res.sweepsWeeklyTargetAreaData = sweepsWeeklyTargetAreaData;
     res.reportsWeeklyData = reportsWeeklyData;

@@ -48,7 +48,9 @@ class Subsection extends Component {
   }
 
   renderTextSection = () => {
-    const { isRow, visableText, expandedText } = this.props;
+    const {
+      isRow, visableText, expandedText, disableReadMore,
+    } = this.props;
     const { expanded } = this.state;
 
 
@@ -59,13 +61,18 @@ class Subsection extends Component {
 
         {expanded && expandedText}
 
+        {!disableReadMore
+          && (
+            <div
+              className="read-more-button"
+              onClick={this.toggleExpanded}
+            >
+              {expanded ? 'Read Less' : 'Read More'}
+            </div>
+          )
+        }
 
-        <div
-          className="read-more-button"
-          onClick={this.toggleExpanded}
-        >
-          {expanded ? 'Read Less' : 'Read More'}
-        </div>
+
       </div>
     );
   }
