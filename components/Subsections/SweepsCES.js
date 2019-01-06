@@ -25,11 +25,7 @@ const SweepsCES = ({ toggleExpandedSubsection }) => (
     subHeadingText="Reporting Sweep-Evictions on the Central Eastside In Response to the Enhanced Service District"
     visableText={(
       <div className="paragraph-container">
-        <div className="paragraph">
-          To understand sweep-evictions at a neighborhood scale we zoom in to examine how they affect our unsheltered neighbors on a block by block basis. This represents all of the sites within the boundaries of Hosford-Abernethy, Buckman, and Kerns that have been swept, but many of the same sights have been swept repeatedly, week after week (see the map above for a visual idea of the density of campsite sweeps over time). If the 77-block area of the Central Eastside Industrial Council gets its "Enhanced Service District" approved on January 17th we expect the number of calls to the City for sweeps will go up, as has happened in so many other of these districts (
-<a href="https://poseidon01.ssrn.com/delivery.php?ID=170124119105002025099118124001079077122024024079020086078021123005121121108105121081017021040022038009060126027100094112000025055090056092048081112096001099027111029086011066083096023072107086095117025100004080015111105001098067116000105122117066123&EXT=pdf">Selben, 2018</a>
-          ).
-        </div>
+        <div className="paragraph">To understand sweep-evictions at a neighborhood scale we subset the sweep-evictions to within the boundaries of Hosford-Abernethy, Buckman, and Kerns. These are the neighborhoods that contain the 77-block area of the Central Eastside Industrial District, several areas of which are swept on a regular basis, as part of a City-described "maintenance project" that refers to sweeps that regularly occur in a single location. The Central Eastside Industrial Council is proposing a self-imposed tax to create an "Enhanced Service District" that they are requesting approval for on January 17th.</div>
       </div>
     )}
     expandedText={(

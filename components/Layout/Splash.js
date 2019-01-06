@@ -11,7 +11,7 @@ const Splash = () => (
 
         </div>
         <div className="splash-heading-title">
-          JAN. 6, 2018 REPORT
+          JAN. 6, 2019 REPORT
         </div>
       </div>
 
@@ -19,7 +19,7 @@ const Splash = () => (
       <div className="splash-curve">
         <div className="splash-sub-heading">
           <div className="splash-sub-heading-paragraph">
-            In this data and documentary analysis of Portland’s response to houselessness, we examine how our public complaint-driven system has lead to counter-productive sweep-evictions, over-policing and unequal access to hygiene and waste services that harm all. Revealing how punitive policies increase trauma, waste, and barriers to stable housing, we suggest how alternate, evidence-proven programs might fix rather than paper-over our current problems.
+            In this combined data and documentary analysis of Portland’s response to houselessness, we examine how our public complaint-driven reporting system informs street evictions, or ‘sweeps’, which cause repeated harm and trauma to those who are evicted and displaced.  Our analysis looks at how policies and inflation of crime statistics affect trauma, waste, and barriers to stable housing.  We suggest alternative, evidence-proven programs.
           </div>
         </div>
 

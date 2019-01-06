@@ -22,7 +22,7 @@ import PolicingCES from '../Subsections/PolicingCES';
 import WasteAccess from '../Subsections/WasteAccess';
 import ReporterConcerns from '../Subsections/ReporterConcerns';
 
-import Sources from './Sources';
+import Sources from './SourcesFlex';
 import WaterAccess from '../Subsections/WaterAccess';
 import SubsectionDiver from './SubsectionDivider';
 
@@ -51,14 +51,14 @@ class Layout extends Component {
 
   incrementCounter = () => this.setState({ counter: this.state.counter + 1 })
 
-  handleGetPositionFromTop = (isUpdate) => {
-    const valToAdd = isUpdate ? 0 : 0;
+  handleGetPositionFromTop = () => {
+    // const valToAdd = isUpdate ? 0 : 0;
 
 
     this.campsites = this.getPositionFromTop('campsites-section');
-    this.police = this.getPositionFromTop('police-section') - 1 + valToAdd;
-    this.hygiene = this.getPositionFromTop('hygiene-section') - 1 + valToAdd;
-    this.waste = this.getPositionFromTop('waste-section') - 1 + valToAdd;
+    this.police = this.getPositionFromTop('police-section') - 1;
+    this.hygiene = this.getPositionFromTop('hygiene-section') - 1;
+    this.waste = this.getPositionFromTop('waste-section') - 1;
   }
 
   getPositionFromTop = id => Math.abs(Math.round(document.getElementById(id).offsetTop));
@@ -71,6 +71,8 @@ class Layout extends Component {
       top: sectionPosition - 75,
       behavior: 'smooth',
     });
+
+    this.setState({ active: id });
   }
 
   handleScroll = (distanceFromTop) => {
@@ -88,6 +90,7 @@ class Layout extends Component {
     } else {
       activeSection = 'campsites-section';
     }
+
 
     if (active !== activeSection) this.setState({ active: activeSection });
   }
