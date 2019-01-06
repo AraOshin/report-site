@@ -89,7 +89,7 @@ const LineChart = ({
 
           <VictoryLegend
             groupComponent={<VictoryClipContainer clipId={`lineChart${subsectionId}`} />}
-            x={50}
+            x={10}
             y={twoLineVis ? 0 : 15}
             data={twoLineVis
               ? [

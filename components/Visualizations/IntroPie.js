@@ -27,7 +27,7 @@ const IntroPie = () => (
         colorScale={['#2FD89F', '#4992D5']}
         data={[
           { name: 'Annual City Spending on Sweeps/Evictions' },
-          { name: 'Annual City Spending on Reallocated Personnel Costs' },
+          { name: 'Estimated Annual City Spending on Reallocated Personnel Costs' },
         ]}
       />
 

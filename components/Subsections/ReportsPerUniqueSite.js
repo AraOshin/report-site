@@ -13,7 +13,7 @@ const ReportsPerUniqueSite = ({ toggleExpandedSubsection }) => (
       <LineChart
         dataContext="reportsWeeklyData"
         twoLineVis
-        legendLabel={['Avgerage Reports per estimated campsite per month', 'second label']}
+        legendLabel={['Number of Public Campsite Reports Per Week (One Point of Contact)', 'Number of Unique Campsites Reported Per Week (Estimated by the City)']}
         lineColor="#2FD89F"
         toolTipLabel="Reports Filed"
       />)}

@@ -132,7 +132,7 @@ class Layout extends Component {
 
               <Sweeps toggleExpandedSubsection={this.handleGetPositionFromTop} />
               <PercentBanner
-                bigText={<span>174 people</span>}
+                bigText={<span>168 people</span>}
                 smallTextOne={(
                   <span>
                     greater than 10% of the unsheltered houseless population are affected by street evictions on a weekly basis  (*estimated)
@@ -145,13 +145,16 @@ class Layout extends Component {
 
               <SweepsTimeline toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-              <TextBanner
-                text={(
+
+              <PercentBanner
+                smallTextOne={(
                   <span>
                     Sweeps ironically lead to more trash, trauma, and higher barriers to entering stable housing. They destroy the small modicum of peace and home that people strive to make for themselves.
                   </span>
                 )}
+                imgUrl="./static/18_timeline_15.jpg"
               />
+
 
               <SweepsMap toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
@@ -165,15 +168,16 @@ class Layout extends Component {
             <div className="tab police-action" id="police-section">
               <Policing toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
+              <SubsectionDiver />
 
-              <TextBanner
+              {/* <TextBanner
                 text={(
                   <span>
                     52% of arrests in Portland in 2017 were of houseless neighbors -- mostly for procedural and low-level crimes. They represent just 3% of the population  (Woolington, 6/13/2018).
 
                   </span>
                 )}
-              />
+              /> */}
 
               <PolicingCEID toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
@@ -220,7 +224,7 @@ class Layout extends Component {
                 bigText={<span>78%</span>}
                 smallTextOne={(
                   <span>
-                    of all street waste collected by Metro is dumped by  housed residents (Taylor Cass, Metro).
+                    of all street waste collected by Metro is dumped by  housed residents (Dooris, 2018).
                   </span>
                 )}
                 imgUrl="/static/19_navybar_08.jpg"

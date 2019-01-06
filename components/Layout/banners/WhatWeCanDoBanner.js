@@ -9,7 +9,10 @@ const WhatWeCanDoBanner = () => (
                     <div className="about-us">What We Can Do</div>
                     <div className="paragraph">
                         <div className="about-us-description">
-                            What we can do text goes here. We are a data collective of academics, analysts, and developers who want to make a difference at a hyper-local level, bringing information to neighbors and engaging in a transparent process with public agencies who contribute to policy decisions around houselessness.
+                            We are currently organizing to create a Compassionate Change District with a  peer-run safe sleep encampment, a peer-run hygiene and bathroom access program, a safe parking program, and a peer-run waste management and pick-up program. To sign the petition of support and learn more go to
+{' '}
+                            <a href="www.ccdpdx.org">ccdpdx.org</a>
+                            .
 
                         </div>
                     </div>

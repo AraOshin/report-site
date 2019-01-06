@@ -14,7 +14,7 @@ const SweepsCES = ({ toggleExpandedSubsection }) => (
 
       <LineChart
         dataContext="sweepsWeeklyTargetAreaData"
-        legendLabel="Number of Sweeps"
+        legendLabel="Number of Campsite Sweeps Per Week for Central Eastside (OPC Weekly Reports)"
         lineColor="#E0C545"
         toolTipLabel="Sweeps"
       />

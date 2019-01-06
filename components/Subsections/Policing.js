@@ -12,7 +12,7 @@ const Policing = ({ toggleExpandedSubsection }) => (
     vis={(
       <div className="percent-vis-row">
         <PercentVis
-          title="total crime reports"
+          title="Filed Crime Reports, City of Portland (Change in Raw Counts)"
           percentages={
             [
               {
@@ -30,16 +30,16 @@ const Policing = ({ toggleExpandedSubsection }) => (
         />
 
         <PercentVis
-          title="dispatched calls"
+          title="Dispatched Calls to Police, City of Portland (Change in Raw Counts)"
           percentages={
             [
               {
-                percent: 1,
+                percent: 6.8,
                 years: '2016-2017',
                 months: 'Jan - Oct',
               },
               {
-                percent: -2.3,
+                percent: 1.0,
                 years: '2017-2018',
                 months: 'Jan - Oct',
               },
@@ -126,7 +126,7 @@ const Policing = ({ toggleExpandedSubsection }) => (
 {' '}
           <em>(</em>
           <a href="https://www.oregonlive.com/expo/news/erry-2018/06/79b61635fd4450/portland_homeless_arrests_data.html"><em>Lewis & Woolington, 6/29/2018</em></a>
-          ). Finally, most of the increase in Police calls and costly responses were for &lsquo;unwanted/suspicious' persons or welfare checks, many of those likely the result of anti-homeless calls (
+          ). Finally, most of the increase in Police calls and costly responses were for "unwanted/suspicious" persons or welfare checks, many of those likely the result of anti-homeless calls (
 <a href="https://www.portlandoregon.gov/cbo/article/675829"><em>Shifley, 03/06/2018</em></a>
           ).
         </div>

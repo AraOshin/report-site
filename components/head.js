@@ -11,14 +11,17 @@ const Head = props => (
 
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{props.title || ''}</title>
+    <title>Neighbor2Neighbor: Counting the Ways City Policies Impact Portlanders Experiencing Houselessness, Jan 6 2019</title>
     <meta
       name="description"
       content={props.description || defaultDescription}
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
-    <link rel="icon" href="/static/favicon.ico" />
+    {/* <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
+    <link rel="icon" href="/static/favicon.ico" /> */}
+    <link rel="icon" type="image/png" href="./static/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./static/favicon-16x16.png" sizes="16x16" />
+
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossOrigin="anonymous" />
 

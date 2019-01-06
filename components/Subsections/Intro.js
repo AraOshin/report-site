@@ -15,7 +15,7 @@ const Intro = ({ toggleExpandedSubsection }) => (
 
 
     }
-    headingText="The High Cost of  Punitive City Policies towards Our Neighbors Who Live on the Streets "
+    headingText="THE HIGH COST OF PUNITIVE CITY POLICIES"
     subHeadingText="How Our Public Complaint-Driven System Leads to Serial Street Evictions, Arrests, Fines, and Raises the Barriers to Re-entering Stable Housing"
     visableText={(
       <div className="paragraph-container">

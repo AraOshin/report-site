@@ -12,7 +12,7 @@ const PolicingCEID = ({ toggleExpandedSubsection }) => (
     vis={(
       <div className="percent-vis-row">
         <PercentVis
-          title="total crime reports filed "
+          title="Filed Crime Reports, CEID (Change in Raw Counts)"
           percentages={
             [
               {
@@ -30,7 +30,7 @@ const PolicingCEID = ({ toggleExpandedSubsection }) => (
         />
 
         <PercentVis
-          title="total personal/ prop crime reports"
+          title="Personal/Property Filed Crime Reports, CEID (Change in Raw Counts)"
           percentages={
             [
               {

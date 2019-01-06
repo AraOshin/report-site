@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PercentVis from '../Visualizations/PercentVis';
 import Subsection from '../Layout/Subsection';
 
-const HEADING_TEXT = 'Greater Central Eastside Requests for Service';
+const HEADING_TEXT = 'Crime Report Counts in The Central Eastside Industrial Area';
 
 const PolicingCES = ({ toggleExpandedSubsection }) => (
   <Subsection
@@ -12,7 +12,7 @@ const PolicingCES = ({ toggleExpandedSubsection }) => (
     vis={(
       <div className="percent-vis-row">
         <PercentVis
-          title="total crime reports filed "
+          title="How Crime Statistics Can Mislead"
           percentages={
             [
               {
@@ -30,16 +30,16 @@ const PolicingCES = ({ toggleExpandedSubsection }) => (
         />
 
         <PercentVis
-          title="total dispatched calls"
+          title="Dispatched Calls to Police, Central Eastside (Change in Raw Counts)"
           percentages={
             [
               {
-                percent: -1.1,
+                percent: 8.8,
                 years: '2016-2017',
                 months: 'Jan - Oct',
               },
               {
-                percent: 5.7,
+                percent: 0.4,
                 years: '2017-2018',
                 months: 'Oct - Aug',
               },

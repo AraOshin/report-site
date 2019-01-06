@@ -47,7 +47,7 @@ export default class Home extends React.Component {
 
     return (
       <div>
-        <Head title="Home" />
+        <Head />
         <WindowSizeContext.Provider value={windowSize}>
           <DataContext.Provider
             value={{

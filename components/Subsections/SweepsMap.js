@@ -9,8 +9,8 @@ const SweepsMap = ({ toggleExpandedSubsection }) => (
     isRow
     toggleExpandedSubsection={toggleExpandedSubsection}
     vis={<SweepsMapImage />}
-    headingText="WHAT IS THE CITY-WIDE IMPACT OF SWEEP-EVICTIONS?"
-    subHeadingText="Using Maps to Appreciate the Magnitude & Trauma of Evictions"
+    headingText="WHAT IS THE CITY-WIDE MAGNITUDE OF SWEEP-EVICTIONS?"
+    subHeadingText="Using Maps to Visualize the Distribution of Sweep-Evictions"
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">The City of Portland is currently spending an estimated $4,818,306.00 on its ineffectual and harmful sweep-evictions and personnel hours diverted to responding to problems arising from our punishing public policies toward our unsheltered neighbors (Evans & Lindsey, 2018). In 2017 our city evicted 1,377 camps. From January through October of 2018, 1,845 camps were disrupted. These numbers alone shock the conscience; yet they do not even include the additional Department of Transportation-run evictions, nor do they include the "clean-ups" run by private crews paid for by businesses in the downtown and Lloyd districts, who frequently confiscate private property. With 1,668 unsheltered residents for ALL of Portland, Gresham, and Multnomah County counted by the government in 2017, the magnitude and serial character of the cruelty we are inflicting on our most economically and physically vulnerable citizens is truly alarming.</div>

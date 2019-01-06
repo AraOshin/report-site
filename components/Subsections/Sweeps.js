@@ -14,7 +14,7 @@ const Sweeps = ({ toggleExpandedSubsection }) => (
 
       <LineChart
         dataContext="sweepsWeeklyData"
-        legendLabel="Number of Sweeps"
+        legendLabel=" Number of Campsite Sweeps Per Week (One Point of Contact Weekly Reports)"
         lineColor="#E36639"
         yMax={80}
         toolTipLabel="Sweeps"
