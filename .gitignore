@@ -19,5 +19,5 @@ yarn-debug.log*
 yarn-error.log*
 
 
-# data files 
-/data-store
+# # data files 
+# /data-store

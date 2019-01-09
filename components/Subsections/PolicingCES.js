@@ -32,12 +32,12 @@ const PolicingCES = ({ toggleExpandedSubsection }) => (
           percentages={
             [
               {
-                percent: -1.6,
+                percent: 2.2,
                 years: '2016-2017',
                 months: 'Jan - Oct',
               },
               {
-                percent: 6.2,
+                percent: -1.2,
                 years: '2017-2018',
                 months: 'Oct - Aug',
               },
@@ -94,7 +94,7 @@ const PolicingCES = ({ toggleExpandedSubsection }) => (
         <div className="paragraph">
           This section has engaged in a high level analysis at summarizing totals across Portland and the Central Eastside, and one deeper dive into trends over time in the CEID. Neighbor2neighbor plans a deeper dive into policing and crime reporting, and if you're interested in volunteering, please contact
 {' '}
-          <a href="mailto:n2npdx@gmail.com">n2npdx@gmail.com</a>
+          <a rel="noopener noreferrer" target="_blank" href="mailto:n2npdx@gmail.com">n2npdx@gmail.com</a>
           .
         </div>
 

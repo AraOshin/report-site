@@ -41,34 +41,34 @@ const Sources = () => (
           <div className="paragraph">
             Dispatched Calls to 9-1-1 and Non-Emergency for Police. Portland Police Bureau Open Data
 {' '}
-            <a href="https://www.portlandoregon.gov/police/76454">https://www.portlandoregon.gov/police/76454</a>
+            <a target="_blank" href="https://www.portlandoregon.gov/police/76454">https://www.portlandoregon.gov/police/76454</a>
             .
           </div>
           <div className="paragraph">
             Crime Reports. Portland Police Bureau Open Data
 {' '}
-            <a href="https://www.portlandoregon.gov/police/71978">http://www.portlandoregon.gov/police/71978</a>
+            <a target="_blank" href="https://www.portlandoregon.gov/police/71978">http://www.portlandoregon.gov/police/71978</a>
             .
           </div>
           <div className="paragraph">
             Campsite Reports. One Point of Contact Campsite Reporting System. Public Records Request.
 {' '}
-            <a href="https://www.portlandoregon.gov/toolkit/article/562214">https://www.portlandoregon.gov/toolkit/article/562214</a>
+            <a target="_blank" href="https://www.portlandoregon.gov/toolkit/article/562214">https://www.portlandoregon.gov/toolkit/article/562214</a>
           </div>
           <div className="paragraph">
             Map:
 {' '}
-            <a href="http://pdx.maps.arcgis.com/apps/TimeAware/index.html?appid=ac6a6abf1092482190984a5df9dfacb0">http://pdx.maps.arcgis.com/apps/TimeAware/index.html?appid=ac6a6abf1092482190984a5df9dfacb0</a>
+            <a target="_blank" href="http://pdx.maps.arcgis.com/apps/TimeAware/index.html?appid=ac6a6abf1092482190984a5df9dfacb0">http://pdx.maps.arcgis.com/apps/TimeAware/index.html?appid=ac6a6abf1092482190984a5df9dfacb0</a>
           </div>
           <div className="paragraph">
             Raw Campsite Sweeps. One Point of Contact Weekly Campsite Reports.
 {' '}
-            <a href="https://www.portlandoregon.gov/toolkit/71771">https://www.portlandoregon.gov/toolkit/71771</a>
+            <a target="_blank" href="https://www.portlandoregon.gov/toolkit/71771">https://www.portlandoregon.gov/toolkit/71771</a>
           </div>
           <div className="paragraph">
             Geocoded Campsite Sweeps (October, 2016 through April, 2018).
 {' '}
-            <a href="https://service.civicpdx.org/neighborhood-development/">Hack Oregon 2018 Neighborhood Development API.</a>
+            <a target="_blank" href="https://service.civicpdx.org/neighborhood-development/">Hack Oregon 2018 Neighborhood Development API.</a>
           </div>
           <div className="paragraph">Methods report for geocoded sweeps and data analysis.</div>
         </div>
@@ -84,7 +84,7 @@ const Sources = () => (
             <em>All Photo Credits</em>
             , Liz Obert.
 {' '}
-            <a href="http://www.lizobert.com">www.lizobert.com</a>
+            <a target="_blank" href="http://www.lizobert.com">www.lizobert.com</a>
           </div>
           <div className="paragraph">
             <em>Credit and Permission to Reprint Hygiene Project Report</em>
@@ -94,13 +94,13 @@ const Sources = () => (
             <em>Web Design</em>
             , amplified by design
 {' '}
-            <a href="http://www.amplifiedbydesign.com">www.amplifiedbydesign.com</a>
+            <a target="_blank" href="http://www.amplifiedbydesign.com">www.amplifiedbydesign.com</a>
           </div>
           <div className="paragraph">
             <em>Front End Development</em>
             , Ara Oshinsky.
 {' '}
-            <a href="http://www.araoshinsky.com">www.AraOshinsky.com</a>
+            <a target="_blank" href="https://github.com/AraOshin">www.AraOshinsky.com</a>
           </div>
           <div className="paragraph">Many thanks to our volunteers for GIS and data analysis.</div>
           <div className="paragraph">
@@ -108,11 +108,11 @@ const Sources = () => (
 
             Questions ? Feedback ? Would you like to contribute ? Contact :
 {' '}
-            <a href="mailto:n2npdx@gmail.com">n2npdx@gmail.com</a>
+            <a target="_blank" href="mailto:n2npdx@gmail.com">n2npdx@gmail.com</a>
             .
           </div>
 
-          <div className="paragraph"><a href="https://docs.google.com/document/d/1i8B07f74qOWLhTD1oFWiZue096Py7IWVT7CREp2r7so/">References</a></div>
+          <div className="paragraph"><a target="_blank" href="https://docs.google.com/document/d/1i8B07f74qOWLhTD1oFWiZue096Py7IWVT7CREp2r7so/">References</a></div>
         </div>
         <div />
 

@@ -11,7 +11,7 @@ const WhatWeCanDoBanner = () => (
                         <div className="about-us-description">
                             We are currently organizing to create a Compassionate Change District with a  peer-run safe sleep encampment, a peer-run hygiene and bathroom access program, a safe parking program, and a peer-run waste management and pick-up program. To sign the petition of support and learn more go to
 {' '}
-                            <a href="www.ccdpdx.org">ccdpdx.org</a>
+                            <a rel="noopener noreferrer" target="_blank" href="https://ccdpdx.org/">ccdpdx.org</a>
                             .
 
                         </div>

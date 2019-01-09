@@ -16,7 +16,7 @@ const WaterAccess = ({ toggleExpandedSubsection }) => (
       <div className="paragraph-container">
         <div className="paragraph">
           Many don't realize that our neighbors experiencing houselessness have little-to-no-access to bathrooms, showers, laundry; that no amount of patrolling, fining, cleaning, and shelter removals will change our neighbors' use of public space for survival because as a City we consistently deny our neighbors use of municipal water and sewer services so easily accessed by the rest of us in our homes, cafes, restaurants, public buildings, etc. (
-<em>Hygiene Report 2016; Kalpakis, Pitstop Pdx; Evans & Lindsey 2018</em>
+<em>Hygiene Report 2016; Kalpakis, Pitstop Pdx; Evans & Lindsay 2018</em>
           )
         </div>
       </div>

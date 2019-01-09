@@ -19,7 +19,7 @@ const ReporterConcerns = ({ toggleExpandedSubsection }) => (
         <div className="paragraph">
           Returning full circle to our analysis of Portland's Camp-Eviction reporting system, we ask what concerns motivate the public to report camps for eviction through One Point of Contact? Of the seven issues the City lists in their reporting questionnaire the reporting public's top three selections are the presence of trash/biohazards (43%), misuse of public space (43%), presence of tents/structures (39%), followed by concerns about blocking the right of way, environmental damage. It is important to note that according to Metro only 22% of street waste is illegally dumped by houseless campers; yet they are typically blamed for all trash found near their camps
 <em> (</em>
-          <a href="https://www.kgw.com/article/news/local/homeless/how-to-clean-up-garbage-at-homeless-camps-thats-a-question-metro-is-trying-to-answer/283-61429717"><em>Dooris, 11/13/2018</em></a>
+          <a rel="noopener noreferrer" target="_blank" href="https://www.kgw.com/article/news/local/homeless/how-to-clean-up-garbage-at-homeless-camps-thats-a-question-metro-is-trying-to-answer/283-614297177"><em>Dooris, 11/13/2018</em></a>
           <em>)</em>
           . Also, contrary to anti-houseless rhetoric, fewer than a quarter of public reports indicate "intoxication /drug use" and "aggressive behavior" as an area of concern.
         </div>

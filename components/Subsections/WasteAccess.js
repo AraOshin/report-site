@@ -19,7 +19,7 @@ const WasteAccess = ({ toggleExpandedSubsection }) => (
 <strong> according to Metro RID, 78% of illegal waste in the region is dumped on the streets by housed residents</strong>
           {' '}
           <em>(</em>
-          <a href="https://www.kgw.com/article/news/local/homeless/how-to-clean-up-garbage-at-homeless-camps-thats-a-question-metro-is-trying-to-answer/283-614297177"><em>Dooris, 11/13/2018</em></a>
+          <a rel="noopener noreferrer" target="_blank" href="https://www.kgw.com/article/news/local/homeless/how-to-clean-up-garbage-at-homeless-camps-thats-a-question-metro-is-trying-to-answer/283-614297177"><em>Dooris, 11/13/2018</em></a>
           <em>)</em>
           .
         </div>
@@ -32,7 +32,7 @@ const WasteAccess = ({ toggleExpandedSubsection }) => (
           Such an option would be best devised and implemented with the participation of people experiencing homelessness. A broader initiative to provide training and low barrier work opportunities for can and bottle recyclers is already in the works, and slated to begin in the spring of 2019 with Trash for Peace. With additional support, this initiative could also work to devise income-generation opportunities for peer-run waste management services within the houseless community
 <em>–</em>
           through approaches similar to the city of Belo Horizonte's "
-<a href="http://www.wiego.org/sites/default/files/publications/files/Dias_WIEGO_PB5.pdf"><em>Waste and Citizenship</em></a>
+<a rel="noopener noreferrer" target="_blank" href="http://www.wiego.org/sites/default/files/publications/files/Dias_WIEGO_PB5.pdf"><em>Waste and Citizenship</em></a>
           " forum.
         </div>
       </div>

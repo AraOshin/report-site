@@ -171,16 +171,16 @@ class Layout extends Component {
             <div className="tab police-action" id="police-section">
               <Policing toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-              <SubsectionDiver />
 
-              {/* <TextBanner
+
+              <TextBanner
                 text={(
                   <span>
                     52% of arrests in Portland in 2017 were of houseless neighbors -- mostly for procedural and low-level crimes. They represent just 3% of the population  (Woolington, 6/13/2018).
 
                   </span>
                 )}
-              /> */}
+              />
 
               <PolicingCEID toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
@@ -189,13 +189,14 @@ class Layout extends Component {
 
               <PolicingCES toggleExpandedSubsection={this.handleGetPositionFromTop} />
 
-              <TextBanner
+              <SubsectionDiver />
+              {/* <TextBanner
                 text={(
                   <span>
                     Housed residents accounted for more than twice the arrests for violent crimes in Portland in 2017; yet unsheltered residents account for 52% or all arrests mostly for low-level and procedural crimes related to trespass (camping) or procedural issues (failure to appear in court) (Lewis & Woolington, 06/29/2018).
                   </span>
                 )}
-              />
+              /> */}
 
             </div>
             <div className="tab hygiene-access" id="hygiene-section">

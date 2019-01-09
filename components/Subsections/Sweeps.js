@@ -28,7 +28,7 @@ const Sweeps = ({ toggleExpandedSubsection }) => (
     visableText={(
       <div className="paragraph-container">
         <div className="paragraph">
-          The City of Portland increased evictions on properties under its jurisdiction to a peak of 311 in Octobe 2017. By 2018, the number of sweeps is more constant, with at an average of 42 campsites swept per week in 2018 (January-November, at the time of writing). According to an estimate from the public campsite reports, the average number of campers involved in a single eviction is 4 residents per site. Using this data we estimate that
+          The City of Portland increased evictions on properties under its jurisdiction to a peak of 311 in October 2017. By 2018, the number of sweeps is more constant, with at an average of 42 campsites swept per week in 2018 (January-November, at the time of writing). According to an estimate from the public campsite reports, the average number of campers involved in a single eviction is 4 residents per site. Using this data we estimate that
 {' '}
           <strong>every week the</strong>
           {' '}
@@ -39,7 +39,7 @@ const Sweeps = ({ toggleExpandedSubsection }) => (
           <strong>the weekly eviction and dispossession of over 10% of the entire unsheltered homeless population in Portland</strong>
           {' '}
           <em>(</em>
-          <a href="https://www.portlandmercury.com/images/blogimages/2017/10/23/1508781908-psu_2017_point-in-time_final_clean.pdf"><em>Krishnan & Elliot; 10/2017</em></a>
+          <a rel="noopener noreferrer" target="_blank" href="https://www.portlandmercury.com/images/blogimages/2017/10/23/1508781908-psu_2017_point-in-time_final_clean.pdf"><em>Krishnan & Elliot; 10/2017</em></a>
           <em>). </em>
         </div>
       </div>

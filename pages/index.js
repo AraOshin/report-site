@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Head from '../components/head';
 import Layout from '../components/Layout/Layout';
 import '../styles/styles.css';
+import smoothscroll from 'smoothscroll-polyfill';
 
 export const DataContext = React.createContext({});
 export const WindowSizeContext = React.createContext(0);
@@ -30,6 +31,7 @@ export default class Home extends React.Component {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+    smoothscroll.polyfill();
   }
 
   handleResize = () => this.setState({ windowSize: window.innerWidth })

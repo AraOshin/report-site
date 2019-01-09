@@ -100,7 +100,7 @@ strong {
 .splash-heading-title{
   font-size: 26px;
   line-height: 30px;
-  font-weight: 100;
+  font-weight: 300;
 
 } 
 
@@ -184,7 +184,7 @@ strong {
 .splash-sub-heading-paragraph{
   font-size: 20px;
   line-height: 35px;
-  font-weight: 100;
+  font-weight: 300;
 } 
 
 @media (min-aspect-ratio: 8/4) {
@@ -915,10 +915,18 @@ strong {
   text-align: center;
   height: auto;
   max-width: 375px;
+  width: 50%;
   display: grid;
   grid-template-rows: 1.5fr 3fr;
+  grid-template-columns: 1fr;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+@media (max-width: 800px) {
+  .percent-vis {
+    width: 100%;
+  }
 }
 
 .percent-vis-title {

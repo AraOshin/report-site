@@ -15,6 +15,7 @@
     "react-progressive-image": "^0.6.0",
     "react-select": "^2.1.2",
     "react-sticky": "^6.0.3",
+    "smoothscroll-polyfill": "^0.4.3",
     "victory": "^31.0.1"
   }
 }
